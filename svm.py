@@ -1,3 +1,4 @@
+## SVM - OpenCV 2.4.13
 import cv2
 import numpy as np
 address ="DataBase/numbersDB/num_padronizado_MomCent_OpenCv.txt"
