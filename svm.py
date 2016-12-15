@@ -53,6 +53,7 @@ def GetQuantidadeDeObjetosPorClasse(lb):
 				NumObjPorClasses[x] = NumObjPorClasses[x]+1
 	return NumObjPorClasses
 
+
 def leave_on_out(percentualTreino,percentualTeste,quantidadeDeClasses,NumObjPorClasse,atributos,objetos,label,atrib,Treino,Teste,TreinoLabel,TesteLabel):
 	contadorTreino = -1
 	contadorTeste = -1
@@ -83,10 +84,32 @@ def leave_on_out(percentualTreino,percentualTeste,quantidadeDeClasses,NumObjPorC
 						##print "Treino - ",Treino[contadorTreino][xx]
 	return perTreino, perTeste, quantidadeClasses, NumObjPorClasse, atributos, objetos, label, atrib, Treino, Teste, TreinoLabel, TesteLabel
 
+def Normalizar(BancoDeDados,objetos,atributos):
+	matNormalizar = np.zeros((atributos,2))
+	for atrib in range(atributos):
+		for obj in range(objetos):
+			if (obj == 0):
+				ma = BancoDeDados[obj][atrib]
+				me = BancoDeDados[obj][atrib]
+			else:
+				if (ma<BancoDeDados[obj][atrib]):
+					ma = BancoDeDados[obj][atrib]
+				if (me > BancoDeDados[obj][atrib]):
+					me = BancoDeDados[obj][atrib]
+		matNormalizar[atrib][0] = me
+		matNormalizar[atrib][1] = ma
+	print matNormalizar
+	for atrib in range(atributos):
+		for obj in range(objetos):
+			BancoDeDados[obj][atrib] = (BancoDeDados[obj][atrib]-matNormalizar[atrib][0])/(matNormalizar[atrib][1]-matNormalizar[atrib][0])
+	return BancoDeDados
+
 ## inicializa as variaveis com o numero de objetos e o numero de atributos.
 objetos, atributos =  GetObjetosAtributos(address)
 ## Carrega o arquivo no Banco de dados no formato MAT
 BancoDeDados = PassaBancoDeDadosParaMat(objetos,atributos)
+## Nomaliza o banco de dados.
+BancoDeDados = Normalizar(BancoDeDados,objetos,atributos)
 ## cria a partir do banco uma matriz com os atributos e uma somente com a label dos objetos
 atrib , label = AtribuirValoresMatrizes(BancoDeDados,objetos,atributos+1)
 ## Atribui a quantidade de classes que existem.
