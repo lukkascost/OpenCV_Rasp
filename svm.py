@@ -98,7 +98,6 @@ def Normalizar(BancoDeDados,objetos,atributos):
 					me = BancoDeDados[obj][atrib]
 		matNormalizar[atrib][0] = me
 		matNormalizar[atrib][1] = ma
-	print matNormalizar
 	for atrib in range(atributos):
 		for obj in range(objetos):
 			BancoDeDados[obj][atrib] = (BancoDeDados[obj][atrib]-matNormalizar[atrib][0])/(matNormalizar[atrib][1]-matNormalizar[atrib][0])
