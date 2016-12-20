@@ -2,7 +2,7 @@
 import cv2
 import numpy as np
 address ="DataBase/numbersDB/num_padronizado_MomCent_OpenCv.txt"
-addressSave = "Desktop/DataBase/DataBase_Normalized.txt"
+addressSave = "DataBase/DataBase_Normalized.txt"
 
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
 def GetObjetosAtributos(ad):
@@ -132,7 +132,7 @@ perTreino, perTeste, quantidadeClasses, NumObjPorClasse, atributos, objetos, lab
 svm_params = dict( kernel_type = cv2.SVM_LINEAR, svm_type = cv2.SVM_C_SVC,C=7, gamma=20 , nu = 0.0, p = 0.0, class_weights = None)
 svm = cv2.SVM()
 svm.train(np.float32(Treino),np.float32(TreinoLabel),params=svm_params)
-
+svm.save(addressSave)
 acerto = 0
 erro = 0
 for tsample in range(int(objetos*(perTeste/100)-1)):
