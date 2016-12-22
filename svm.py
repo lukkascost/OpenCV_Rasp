@@ -1,7 +1,7 @@
 ## SVM - OpenCV 2.4.13
 import cv2
 import numpy as np
-address ="DataBase/numbersDB/num_padronizado_MomCent_OpenCv.txt"
+address ="glcm.txt"
 addressSave = "DataBase/DataBase_Normalized.txt"
 
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
@@ -15,9 +15,9 @@ def GetObjetosAtributos(ad):
 	atributos =  len(file.readline().split(","))
 	return objetos, atributos-1
 ##Converte o arquivo em um banco de dados tipo MAT objetos x atributos
-def PassaBancoDeDadosParaMat(objetos,atributos):
+def PassaBancoDeDadosParaMat(ad,objetos,atributos):
 		bd = []
-		file = open(address,"r")
+		file = open(ad,"r")
 		obj = 0
 		for line in file:
 			bd.append([])
@@ -47,9 +47,9 @@ def AtribuirValoresMatrizes(bd,obj,atr):
 def GetQuantidadeDeObjetosPorClasse(lb):
 	NumObjPorClasses = []
 	for x in range(int(max(lb)[0])+1):
-		NumObjPorClasses.append(-1.0)
-		for y in range(len(label)):
-			if(int(label[y][0]) == x):
+		NumObjPorClasses.append(0.0)
+		for y in range(len(lb)):
+			if(int(lb[y][0]) == x):
 				NumObjPorClasses[x] = NumObjPorClasses[x]+1
 	return NumObjPorClasses
 
@@ -62,7 +62,7 @@ def leave_on_out(percentualTreino,percentualTeste,quantidadeDeClasses,NumObjPorC
 		for y in range(objetos):
 			if(int(label[y][0]) == controle):
 				contador = contador +1
-				if(contador<=int(NumObjPorClasse[controle]*(percentualTreino/100))):
+				if(contador<=int((NumObjPorClasse[controle] -1)*(percentualTreino/100))):
 					contadorTreino = contadorTreino+1
 					for xx in range(atributos+1):
 						if (xx!=atributos):
@@ -106,7 +106,7 @@ def Normalizar(BancoDeDados,objetos,atributos):
 ## inicializa as variaveis com o numero de objetos e o numero de atributos.
 objetos, atributos =  GetObjetosAtributos(address)
 ## Carrega o arquivo no Banco de dados no formato MAT
-BancoDeDados = PassaBancoDeDadosParaMat(objetos,atributos)
+BancoDeDados = PassaBancoDeDadosParaMat(address,objetos,atributos)
 ## Nomaliza o banco de dados.
 BancoDeDados = Normalizar(BancoDeDados,objetos,atributos)
 ## cria a partir do banco uma matriz com os atributos e uma somente com a label dos objetos
@@ -116,7 +116,7 @@ quantidadeClasses = int(max(label)[0])+1
 ## Cria um vetor que guarda quantos objetos de cada classe existem. Num[0] = numero de objetos da classe 0
 NumObjPorClasse = GetQuantidadeDeObjetosPorClasse(label)
 ## Informado pelo usuario: Percentual de Treino
-perTreino = 90.0
+perTreino = 71.0
 ## percentual de testes.
 perTeste = 100.0 - perTreino
 ## criacao das matrizes de treino e testes
@@ -128,8 +128,8 @@ TesteLabel = np.zeros((int(objetos*(perTreino/100)),1))
 perTreino, perTeste, quantidadeClasses, NumObjPorClasse, atributos, objetos, label, atrib, Treino, Teste, TreinoLabel, TesteLabel = leave_on_out(perTreino, perTeste, quantidadeClasses, NumObjPorClasse, atributos, objetos, label, atrib, Treino, Teste, TreinoLabel, TesteLabel)
 
 ## Uso da Biblioteca do SVM padrao do OpenCv.
-#  kernel_type = SVM_LINEAR, SVM_RBF, SVM_POLY, SVM_SIGMOID.
-svm_params = dict( kernel_type = cv2.SVM_LINEAR, svm_type = cv2.SVM_C_SVC,C=7, gamma=20 , nu = 0.0, p = 0.0, class_weights = None)
+##  kernel_type = SVM_LINEAR, SVM_RBF, SVM_POLY, SVM_SIGMOID.
+svm_params = dict( kernel_type = cv2.SVM_LINEAR, svm_type = cv2.SVM_C_SVC,C=3,degree =1, gamma=20 , nu = 0.0, p = 0.0, class_weights = None)
 svm = cv2.SVM()
 svm.train(np.float32(Treino),np.float32(TreinoLabel),params=svm_params)
 svm.save(addressSave)
@@ -142,4 +142,4 @@ for tsample in range(int(objetos*(perTeste/100)-1)):
 
 	if(test!=res): erro = erro +1
 	else:  acerto = acerto +1
-print "Taxa de acerto:", float((acerto*100))/float((acerto+erro))
+#print "Taxa de acerto:", float((acerto*100))/float((acerto+erro))

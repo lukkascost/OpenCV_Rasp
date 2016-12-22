@@ -24,6 +24,3 @@ def GLCM(img):
 	row,col = len(img), len(img[0])
 	gl = np.zeros((256,256))
 	print row,col
-
-img = cv2.imread("Couro/c2_50.JPG")
-GLCM(img)

@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from svm import *
+from img2atrib import *
 address ="DataBase/numbersDB/num_padronizado_MomCent_OpenCv.txt"
 addressSave = "DataBase/DataBase_Normalized.txt"
 
