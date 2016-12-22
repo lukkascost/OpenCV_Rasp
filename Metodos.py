@@ -79,7 +79,7 @@ def leave_on_out(percentualTreino,percentualTeste,quantidadeDeClasses,NumObjPorC
 						#print "Classe - ",controle
 						#print contador,"ATE",NumObjPorClasse[controle]
 						##print "Treino - ",Treino[contadorTreino][xx]
-	return perTreino, perTeste, quantidadeClasses, NumObjPorClasse, atributos, objetos, label, atrib, Treino, Teste, TreinoLabel, TesteLabel
+	return percentualTreino, percentualTeste, quantidadeDeClasses, NumObjPorClasse, atributos, objetos, label, atrib, Treino, Teste, TreinoLabel, TesteLabel
 
 def Normalizar(BancoDeDados,objetos,atributos):
 	matNormalizar = np.zeros((atributos,2))
