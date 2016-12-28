@@ -99,3 +99,23 @@ def Normalizar(BancoDeDados,objetos,atributos):
 		for obj in range(objetos):
 			BancoDeDados[obj][atrib] = (BancoDeDados[obj][atrib]-matNormalizar[atrib][0])/(matNormalizar[atrib][1]-matNormalizar[atrib][0])
 	return BancoDeDados
+
+def Salvar_arquivo(bd, address):
+	arquivo = open(address,"w")
+	for i in bd:
+		for j in i:
+			arquivo.write(str(j))
+			arquivo.write(",")
+		arquivo.write("\n")
+	arquivo.close()
+def ler_arquivo(address):
+	arquivo = open(address,"r")
+	bd = []
+	obj = 0
+	for line in arquivo:
+		bd.append([])
+		lines = line.split(",")
+		for attr in lines:
+			if(len(attr)>1): bd[obj].append(float(attr))
+		obj = obj+1
+	return bd
