@@ -9,7 +9,7 @@ Vetores.load(address)
 
 acerto = 0
 acerto2 = 0
-erro =0
+erro = 0
 print "Total: ", len(Teste)
 for tsample in range(len(Teste)):
     res = float(Vetores.predict(np.float32(Teste[tsample])))

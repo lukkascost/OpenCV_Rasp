@@ -47,4 +47,5 @@ for tsample in range(int(objetos*(perTeste/100))):
     if(test!=res): erro = erro +1
     else:  acerto = acerto +1
 #print "Taxa de acerto:", float((acerto*100))/float((acerto+erro))
+print "Acertos = ",acerto," Erros: ", erro
 Salvar_arquivo(ResultadoSvmTreino, "DataBase/resultadosSVM_TREINO.txt")
