@@ -32,9 +32,24 @@ Salvar_arquivo(Teste,"DataBase/teste.txt")
 ResultadoSvmTreino = []
 ## Uso da Biblioteca do SVM padrao do OpenCv.
 ##  kernel_type = SVM_LINEAR, SVM_RBF, SVM_POLY, SVM_SIGMOID.
-svm_params = dict( kernel_type = cv2.SVM_LINEAR, svm_type = cv2.SVM_C_SVC,C=179,degree =1, gamma=20 , nu = 0.0, p = 0.0, class_weights = None)
+criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 1000,1e-6)
+svm_params = dict( kernel_type = cv2.SVM_POLY,
+svm_type = cv2.SVM_C_SVC,
+C=7,
+degree =1,
+gamma=20,
+nu = 0.0,
+p = 0.0,
+coef0 = 10,
+class_weights = None,
+epsilon = 1e-6
+)
+
+
 svm = cv2.SVM()
-svm.train(np.float32(Treino),np.float32(TreinoLabel),params=svm_params)
+#svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = svm_params, k_fold = 100)
+svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
+
 ## Salva vetores suporte do treinamento.
 svm.save(addressSave)
 acerto = 0

@@ -19,4 +19,3 @@ for tsample in range(len(Teste)):
     else: acerto = acerto+1
     if(resul == res): acerto2 = acerto2 +1
 print "Acertos = ",acerto," Erros: ", erro," Acertos entre SVMs:", acerto2
-os.system("cat /proc/"+str(os.getpid())+"/status > Memoria/predict_completo")

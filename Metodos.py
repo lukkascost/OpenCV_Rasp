@@ -12,7 +12,7 @@ def GetObjetosAtributos(ad):
 	atributos =  len(file.readline().split(","))
 	return objetos, atributos-1
 ##Converte o arquivo em um banco de dados tipo MAT objetos x atributos
-def PassaBancoDeDadosParaMat(ad,objetos,atributos):
+def PassaBancoDeDadosParaMat(ad):
 		bd = []
 		file = open(ad,"r")
 		obj = 0
@@ -108,6 +108,7 @@ def Salvar_arquivo(bd, address):
 			arquivo.write(",")
 		arquivo.write("\n")
 	arquivo.close()
+
 def ler_arquivo(address):
 	arquivo = open(address,"r")
 	bd = []
