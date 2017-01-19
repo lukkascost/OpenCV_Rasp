@@ -18,7 +18,8 @@ for i in range(len(bdTreino)):
 
 
 Resultado = ""
-for K in range(50):
+for x in range(1,50):
+	print "K = ", x
         Resultado = Resultado +  "\n-------------------------------------------------------------"
 
         Resultado = Resultado +   "\n  KERNEL_RBF "
@@ -34,10 +35,11 @@ for K in range(50):
         class_weights = None,
         epsilon = 1e-6
         )
+	svm_p = dict(params = svm_params, k_fold = x)
 
         svm = cv2.SVM()
-        svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = svm_params, k_fold = K )
-        Resultado = Resultado +  "\n  PARAMETROS AUTOMATICOS   K = " + str(K)
+        svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,svm_p )
+        Resultado = Resultado +  "\n  PARAMETROS AUTOMATICOS   K = " + str(x)
         #svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
         #print "   PARAMETROS ESTATICOS"
 
@@ -59,5 +61,5 @@ for K in range(50):
         Resultado = Resultado +   "\nTaxa de acerto:"+  str(float((acerto*100))/float((acerto+erro)))
         Resultado = Resultado +   "\nAcertos = "+str(acerto) + " Erros: "+ str(erro)
         for i in range(7):
-                print "\nClasse"+str(i)+"Acc = "+str(acertos[i]/(acertos[i]+erros[i]))
-Salvar_texto(text,"Resultado.txt")
+                Resultado = Resultado + "\nClasse"+str(i)+"Acc = "+str(acertos[i]/(acertos[i]+erros[i]))
+Salvar_texto(Resultado,"Resultado.txt")
