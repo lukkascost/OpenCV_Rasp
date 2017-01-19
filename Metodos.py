@@ -109,6 +109,11 @@ def Salvar_arquivo(bd, address):
 		arquivo.write("\n")
 	arquivo.close()
 
+def Salvar_texto(text,address):
+	arquivo = open(address,"w")
+	arquivo.write(text)
+	arquivo.close()
+
 def ler_arquivo(address):
 	arquivo = open(address,"r")
 	bd = []
