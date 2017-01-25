@@ -22,9 +22,9 @@ print "  KERNEL_RBF "
 
 svm_params = dict(kernel_type = cv2.SVM_RBF,
 svm_type = cv2.SVM_C_SVC,
-C=7,
-degree =1,
-gamma=20,
+C=7.0,
+degree =1.0,
+gamma=20.0,
 nu = 0.0,
 p = 0.0,
 coef0 = 10,
@@ -33,10 +33,10 @@ epsilon = 1e-6
 )
 
 svm = cv2.SVM()
-svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = svm_params, k_fold = K )
-print "  PARAMETROS AUTOMATICOS   K = ",K
-#svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
-#print "   PARAMETROS ESTATICOS"
+#svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = svm_params, k_fold = 10 )
+#print "  PARAMETROS AUTOMATICOS   K = ",K
+svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
+print "   PARAMETROS ESTATICOS"
 
 svm.save(addressSave)
 acerto = 0
@@ -56,4 +56,4 @@ for tsample in range(len(Teste)):
 print "Taxa de acerto:", float((acerto*100))/float((acerto+erro))
 print "Acertos = ",acerto," Erros: ", erro
 for i in range(7):
-	print "Classe",i,"Acc = ",acertos[i]/(acertos[i]+erros[i])
+	print "Classe",i,"Acc = ",acertos[i]*100/(acertos[i]+erros[i]),"acertos",acertos[i],"Erros",erros[i]
