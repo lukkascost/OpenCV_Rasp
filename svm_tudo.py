@@ -33,10 +33,10 @@ epsilon = 1e-6
 )
 
 svm = cv2.SVM()
-#svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = svm_params, k_fold = 10 )
-#print "  PARAMETROS AUTOMATICOS   K = ",K
-svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
-print "   PARAMETROS ESTATICOS"
+svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = svm_params )
+print "  PARAMETROS AUTOMATICOS   K = 1"
+#svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
+#print "   PARAMETROS ESTATICOS"
 
 svm.save(addressSave)
 acerto = 0
