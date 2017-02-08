@@ -24,9 +24,13 @@ def getFeatures(coOccurenceNormalized, grayscale):
 		for j in range(grayscale):
 			glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i][j]))
 			glcm_features[2] =glcm_features[2] + (coOccurenceNormalized[i][j] * coOccurenceNormalized[i][j] )
+			glcm_features[3] =glcm_features[3] + (( coOccurenceNormalized[i][j]) / ( 1+abs(i-j) ));
 			if(i!=j):
-				glcm_features[4]=glcm_features[4]+ (coOccurenceNormalized[i][j] / (1 + (i-j)*(i-j)))
-                		glcm_features[6]=glcm_features[6]+ (coOccurenceNormalized[i][j]*(abs(i-j)) )
+				glcm_features[4]=glcm_features[4] + (coOccurenceNormalized[i][j] / (1 + (i-j)*(i-j)))
+                		glcm_features[6]=glcm_features[6] + (coOccurenceNormalized[i][j]*(abs(i-j)) )
+			 if(coOccurenceNormalized[i][j]!=0):
+				glcm_features[5] =glcm_features[5] + (coOccurenceNormalized[i][j]*log10(coOccurenceNormalized[i][j]))
+			glcm_features[7] = glcm_features[7] +(coOccurenceNormalized[i][j]*coOccurenceNormalized[i][j])
 	return glcm_features
 # Load an color image in grayscale
 img = cv2.imread('DataBase/c1_1.JPG',0)
