@@ -134,7 +134,6 @@ def getCoOccurrenceMatrix(image, grayscale):
     for i in range(len(image)):
         for j in range(len(image[0])-1):
             coOccurence[image[i][j]][image[i][j+1]]= coOccurence[image[i][j]][image[i][j+1]] +1
-        print i,j
     return coOccurence 
 
 def normalizeCoOccurrenceMatrix(coOccurence,imageQuantized, grayscale):
@@ -143,10 +142,9 @@ def normalizeCoOccurrenceMatrix(coOccurence,imageQuantized, grayscale):
 		for j in range(grayscale):
 			coOccurenceNormalized[i][j] = coOccurence[i][j]/(len(imageQuantized)*(len(imageQuantized[0]) -1)) 
 	return coOccurenceNormalized
-
-
 def getFeatures(coOccurenceNormalized, grayscale):
     glcm_features = np.zeros(9)
+    correlation,mean1,mean2,deviation,deviation1,deviation2 = 0,0,0,0,0,0
     for i in range(grayscale):
         for j in range(grayscale):
             glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i][j]))
@@ -159,4 +157,22 @@ def getFeatures(coOccurenceNormalized, grayscale):
                 glcm_features[5] =glcm_features[5] + (coOccurenceNormalized[i][j]*mp.log10(coOccurenceNormalized[i][j]))
             glcm_features[7] = glcm_features[7] +(coOccurenceNormalized[i][j]*coOccurenceNormalized[i][j])
             correlation = correlation + ( (i*j) * ( (coOccurenceNormalized[i][j]) ) )
+            mean1 = mean1+(i * ( (coOccurenceNormalized[i][j]) ))
+            mean2+= (j * ( (coOccurenceNormalized[i][j]) ))
+            deviation1+= ( (i*i) * (coOccurenceNormalized[i][j]) )
+            deviation2+= ( (j*j) * (coOccurenceNormalized[i][j]) )
+    glcm_features[5] *= -1
+    deviation1-=mean1*mean1
+    deviation2-=mean2*mean2
+    deviation1=mp.sqrt(deviation1)
+    deviation2=mp.sqrt(deviation2)
+    deviation=(deviation1*deviation2)
+    if(deviation==0):
+        deviation = 1
+    glcm_features[1]=(correlation-(mean1*mean2))/deviation
+
+    for i in range(grayscale):
+        for j in range(grayscale):
+            glcm_features[8] += ((i-(mean1+mean2)/2)*(i-(mean1+mean2)/2))*coOccurenceNormalized[i][j]
     return glcm_features
+

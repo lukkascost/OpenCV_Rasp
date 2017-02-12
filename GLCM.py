@@ -1,10 +1,7 @@
-
-import cv2
-import numpy as np
-import math as mp
 from Metodos import *
+
 # Load an color image in grayscale
-img = cv2.imread('DataBase/c1_1.JPG',0)
+img = cv2.imread('../couro_images/c1_1.JPG',0)
 imgQuantized = img.copy()
 
 coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
