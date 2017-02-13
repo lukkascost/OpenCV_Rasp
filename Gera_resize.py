@@ -1,23 +1,19 @@
+import thread
 from Metodos import *
-img = cv2.imread('../couro_images/c1_1.JPG',0)
-x,y =  len(img), len(img[0])
+percent = 90
 
 
+thread.start_new_thread( cria_Arquivo_GLCM, (0.1,) )
+thread.start_new_thread( cria_Arquivo_GLCM, (0.2,) )
 
-while (x>0 and y>0):
-    # Load an color image in grayscale
-    bd = []
-    for i in range(1,8):
-        for j in range(1,51):
-            print '../couro_images/c'+str(i)+'_'+str(j)+'.JPG'
-            img = cv2.imread('../couro_images/c'+str(i)+'_'+str(j)+'.JPG',0)
-            img = cv2.resize(img,(y,x))
-            imgQuantized = img.copy()
-            coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
-            coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
-            glcm_features  = getFeatures(coOccurenceNormalized, 256)
-            bd.append(glcm_features)
-    Salvar_arquivo(bd,"../OpenCV_Rasp/GLCM_RESIZE/GLCM_X"+str(y)+"_Y"+str(x)+".txt")
-    x-=100
-    y-=100
-#print glcm_features
+thread.start_new_thread( cria_Arquivo_GLCM, (0.3,) )
+thread.start_new_thread( cria_Arquivo_GLCM, (0.4,) )
+
+thread.start_new_thread( cria_Arquivo_GLCM, (0.5,) )
+thread.start_new_thread( cria_Arquivo_GLCM, (0.6,) )
+
+thread.start_new_thread( cria_Arquivo_GLCM, (0.7,) )
+thread.start_new_thread( cria_Arquivo_GLCM, (0.8,) )
+
+thread.start_new_thread( cria_Arquivo_GLCM, (0.9,) )
+thread.start_new_thread( cria_Arquivo_GLCM, (1,) )
