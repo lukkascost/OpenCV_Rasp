@@ -1,19 +1,21 @@
 
 from Metodos import *
 import random
-addressSave = "DataBase/SVM_Vectors.txt"
+addressSave = "DataBase/SVM_Vectors020.txt"
 Resultado = ""
 acc = np.zeros((8,2))
 soma = np.zeros(8)
-bd = ler_arquivo("DataBase/DB_GLCM.txt")
-bd = Normalizar(bd,len(bd),9)
-iteracoes = 50
-
+tab_des = np.zeros(8)
+bd = ler_arquivo("GLCM_RESIZE/GLCM_0.2%_X921_Y691.txt")
+bd = Normalizar(bd,len(bd),len(bd[0])-1)
+iteracoes = 2000
+maior = 0
+mudou = 0
 tab_res = np.zeros((8,iteracoes))
 for i in range (8):
         acc[i][0] = 100.0
 for x in range(iteracoes):
-        print "iteracao",x+1
+        print "iteracao",x+1, "changes",mudou, "maior",maior
         Resultado += "\n--------------Iteracao "+str(x) + "-------------------"
         atributos = []
         labels = []
@@ -25,7 +27,7 @@ for x in range(iteracoes):
        
         for i in bd:
                 atributos.append(i[:9])
-                labels.append([i[-1]])
+                labels.append([i[-1]-1])
         while(qtdtreino>0):
                 ##Atributo da classe 0 
                 rd = random.randint(0,qtdTeste+qtdtreino)
@@ -108,7 +110,7 @@ for x in range(iteracoes):
         #svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
         #print "   PARAMETROS ESTATICOS"
 
-        svm.save(addressSave)
+        
         acerto = 0
         erro = 0
         acertos = np.zeros(7)
@@ -141,7 +143,10 @@ for x in range(iteracoes):
                         acc[i][0] = tab_res[i][x]
                 if tab_res[i][x] > acc[i][1]:
                         acc[i][1] = tab_res[i][x]
-tab_des = np.zeros(8)
+        if(tab_res[7,x]>maior):
+                svm.save(addressSave)
+                maior = tab_res[7,x]
+                mudou+=1
 for i in range(8):
         sum_desvio = 0
         for j in range(iteracoes):
@@ -154,4 +159,4 @@ for i in range(7):
 Resultado += "\n Acc total das Classes: \n\tMinima= "+ str(acc[7][0])+"% \n\tMaxima = "+str(acc[7][1])+ "%\n\tMedia = "+str(soma[7]/iteracoes)+"\n\tDesvio = "+str(tab_des[7])
 print Resultado
 
-Salvar_texto(Resultado,"DataBase/Resultados_iter.txt")
+Salvar_texto(Resultado,"Resultados/Resultados_iter020percent.txt")
