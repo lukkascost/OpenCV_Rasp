@@ -1,15 +1,15 @@
 
 from Metodos import *
 import random
-addressSave = "DataBase/SVM_Vectors020.txt"
+addressSave = "Resultados/SVM_Vectors090.txt"
 Resultado = ""
 acc = np.zeros((8,2))
 soma = np.zeros(8)
 tab_des = np.zeros(8)
-bd = ler_arquivo("GLCM_RESIZE/GLCM_0.2%_X921_Y691.txt")
+bd = ler_arquivo("GLCM_RESIZE/GLCM_0.9%_X4147_Y3110.txt")
 bd = Normalizar(bd,len(bd),len(bd[0])-1)
-iteracoes = 2000
-maior = 0
+iteracoes = 50
+maior = 68.13
 mudou = 0
 tab_res = np.zeros((8,iteracoes))
 for i in range (8):
@@ -159,4 +159,4 @@ for i in range(7):
 Resultado += "\n Acc total das Classes: \n\tMinima= "+ str(acc[7][0])+"% \n\tMaxima = "+str(acc[7][1])+ "%\n\tMedia = "+str(soma[7]/iteracoes)+"\n\tDesvio = "+str(tab_des[7])
 print Resultado
 
-Salvar_texto(Resultado,"Resultados/Resultados_iter020percent.txt")
+Salvar_texto(Resultado,"Resultados/Resultados_iter090percent.txt")
