@@ -1,12 +1,12 @@
 
 from Metodos import *
 import random
-addressSave = "Resultados/SVM_Vectors090.txt"
+addressSave = "Resultados/SVM_Vectors100.txt"
 Resultado = ""
 acc = np.zeros((8,2))
 soma = np.zeros(8)
 tab_des = np.zeros(8)
-bd = ler_arquivo("GLCM_RESIZE/GLCM_0.9%_X4147_Y3110.txt")
+bd = ler_arquivo("GLCM_RESIZE/GLCM_1%_X4608_Y3456.txt")
 bd = Normalizar(bd,len(bd),len(bd[0])-1)
 iteracoes = 50
 maior = 68.13
@@ -28,6 +28,7 @@ for x in range(iteracoes):
         for i in bd:
                 atributos.append(i[:9])
                 labels.append([i[-1]-1])
+        Salvar_arquivo(atributos,"GLCM_RESIZE/GLCM_A_100N.txt")
         while(qtdtreino>0):
                 ##Atributo da classe 0 
                 rd = random.randint(0,qtdTeste+qtdtreino)
@@ -159,4 +160,4 @@ for i in range(7):
 Resultado += "\n Acc total das Classes: \n\tMinima= "+ str(acc[7][0])+"% \n\tMaxima = "+str(acc[7][1])+ "%\n\tMedia = "+str(soma[7]/iteracoes)+"\n\tDesvio = "+str(tab_des[7])
 print Resultado
 
-Salvar_texto(Resultado,"Resultados/Resultados_iter090percent.txt")
+Salvar_texto(Resultado,"Resultados/Resultados_iter100percent.txt")
