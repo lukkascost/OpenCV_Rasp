@@ -1,4 +1,4 @@
-
+import os
 from Metodos import *
 addressSave = "DataBase/SVM_Vectors.txt"
 bdTeste = ler_arquivo("DataBase/testing.dat")
@@ -37,7 +37,7 @@ svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = sv
 print "  PARAMETROS AUTOMATICOS   K = 1"
 #svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
 #print "   PARAMETROS ESTATICOS"
-
+os.system("cat /proc/"+str(os.getpid())+"/status > arqs1")
 svm.save(addressSave)
 acerto = 0
 erro = 0
@@ -57,3 +57,4 @@ print "Taxa de acerto:", float((acerto*100))/float((acerto+erro))
 print "Acertos = ",acerto," Erros: ", erro
 for i in range(7):
 	print "Classe",i,"Acc = ",acertos[i]*100/(acertos[i]+erros[i]),"acertos",acertos[i],"Erros",erros[i]
+os.system("cat /proc/"+str(os.getpid())+"/status > arqs2")

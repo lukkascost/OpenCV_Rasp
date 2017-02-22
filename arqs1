@@ -1,29 +1,29 @@
 Name:	python
 State:	S (sleeping)
-Tgid:	1787
+Tgid:	1892
 Ngid:	0
-Pid:	1787
+Pid:	1892
 PPid:	937
 TracerPid:	0
 Uid:	1000	1000	1000	1000
 Gid:	1000	1000	1000	1000
 FDSize:	256
 Groups:	4 20 24 27 29 44 46 60 100 101 108 997 998 999 1000 
-NStgid:	1787
-NSpid:	1787
-NSpgid:	1787
+NStgid:	1892
+NSpid:	1892
+NSpgid:	1892
 NSsid:	937
-VmPeak:	    8996 kB
-VmSize:	    8992 kB
+VmPeak:	   94540 kB
+VmSize:	   94540 kB
 VmLck:	       0 kB
 VmPin:	       0 kB
-VmHWM:	    5136 kB
-VmRSS:	    5136 kB
-VmData:	    1708 kB
+VmHWM:	   36552 kB
+VmRSS:	   36552 kB
+VmData:	   20944 kB
 VmStk:	     136 kB
 VmExe:	    2768 kB
-VmLib:	    1948 kB
-VmPTE:	      16 kB
+VmLib:	   60036 kB
+VmPTE:	      96 kB
 VmPMD:	       0 kB
 VmSwap:	       0 kB
 Threads:	1
@@ -43,5 +43,5 @@ Cpus_allowed:	f
 Cpus_allowed_list:	0-3
 Mems_allowed:	1
 Mems_allowed_list:	0
-voluntary_ctxt_switches:	1
-nonvoluntary_ctxt_switches:	3
+voluntary_ctxt_switches:	440
+nonvoluntary_ctxt_switches:	466
