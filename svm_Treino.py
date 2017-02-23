@@ -1,11 +1,12 @@
 ## SVM - OpenCV 2.4.13
 from Metodos import *
+men1 = memory()
 address ="DataBase/glcm_mix.txt"
 addressSave = "DataBase/SVM_Vectors.txt"
 ## inicializa as variaveis com o numero de objetos e o numero de atributos.
 objetos, atributos =  GetObjetosAtributos(address)
 ## Carrega o arquivo no Banco de dados no formato MAT
-BancoDeDados = PassaBancoDeDadosParaMat(address,objetos,atributos)
+BancoDeDados = PassaBancoDeDadosParaMat(address)
 ## Nomaliza o banco de dados.
 BancoDeDados = Normalizar(BancoDeDados,objetos,atributos)
 ## cria a partir do banco uma matriz com os atributos e uma somente com a label dos objetos
@@ -49,7 +50,8 @@ epsilon = 1e-6
 svm = cv2.SVM()
 #svm.train_auto(np.float32(Treino),np.float32(TreinoLabel),None,None ,params = svm_params, k_fold = 100)
 svm.train(np.float32(Treino),np.float32(TreinoLabel),params = svm_params)
-
+men2 = memory()
+print "tamanho predict :",men2['used']-men1['used'] ,"Kb","\t", men1,"\t",men2
 ## Salva vetores suporte do treinamento.
 svm.save(addressSave)
 acerto = 0
