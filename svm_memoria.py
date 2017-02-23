@@ -1,6 +1,9 @@
-import os
+from Metodos import *
 import cv2
 svm = cv2.SVM()
-os.system("cat /proc/"+str(os.getpid())+"/status > Memoria/svm_memoria_antes")
+
+
+men1 =  memory()
 svm.load("DataBase/SVM_Vectors.txt")
-os.system("cat /proc/"+str(os.getpid())+"/status > Memoria/svm_memoria_depois")
+men2 =  memory()
+print "Arquivo vetores tamanho:",men2['used']-men1['used'] ,"Kb\n"
