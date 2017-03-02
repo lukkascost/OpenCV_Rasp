@@ -4,6 +4,8 @@ from Metodos import *
 
 ##Resultados no nivel de proporcao da imagem
 rs = np.zeros((8,100,2))
+rsee = np.zeros((8,100,2))
+
 ##Variavel para contar o numero de resolucoes testadas
 cont = 0
 ########################################################################################################################################################
@@ -21,7 +23,7 @@ pesos = np.matrix(pesos);
 
 
 ## Laço que define as resoluçoes 
-for percent in range(10,11,10):
+for percent in range(1,11):
         cont +=1
         ## Endereço para guardar os vetores suporte;
         addressSave = "Resultados/SVM_Vectors"+str(percent)+".txt"
@@ -55,6 +57,7 @@ for percent in range(10,11,10):
         
         for i in range (8):
                 acc[i][0] = 100.0
+                esc_err[i][0] = 10000.0
         for x in range(iteracoes):
                 Resultado += "\n------------------------------------------Iteracao "+str(x) + "-----------------------------------------------"
                 atributos = []
@@ -147,7 +150,6 @@ for percent in range(10,11,10):
                 ########################################################################################################################################################
 
                 ## CALCULO DO ESCORE DE ERROS 
-                score_err = 0                                                                           ## VALOR ESCORE DE ERROS
                 resultado_score_err = ""                                                                ## TEXTO PARA SER INSERIDO NO ARQUIVO DE RESULTADOS
                 for i in range(len(conf_mat[x])):                                                       ## LACO DA CLASSE CORRETA [I]
                         for j in range(len(conf_mat[x][0])):                                            ## LAÇO DA CLASSE PREDICT [J]
@@ -156,6 +158,7 @@ for percent in range(10,11,10):
                         esc_err_soma[i]+= esc_err_tab_res[i,x]                                          ## SOMA ACUMULADA DO ESCORE RELACIONADO A CLASSE
                         resultado_score_err+= "\nEscore classe "+str(i)+": "+str(esc_err_tab_res[i,x])  ## PARA ARQUIVO DE TEXTO
                 resultado_score_err+="\nTotal: "+str(esc_err_tab_res[7,x])                              ## PARA ARQUIVO DE TEXTO
+                esc_err_soma[7] += esc_err_tab_res[7,x]                                                 ## SOMA ACUMULADA DO ESCORE RELACIONADO AO GERAL
                 ########################################################################################################################################################
                 
                 ## Adicionando o resultado da acuracia geral das classes [7][x] 
@@ -175,7 +178,8 @@ for percent in range(10,11,10):
                 if acc_tab_res[7][x] > acc[7][1] :
                         acc[7][1] = acc_tab_res[7][x]
                         ##Escores de Erro
-                
+                if esc_err_tab_res[7][x] > esc_err[7][1] :
+                        esc_err[7][1] = esc_err_tab_res[7][x]
                 ########################################################################################################################################################
 
                 ## Calculos para atualização de minimos gerais 
@@ -193,59 +197,85 @@ for percent in range(10,11,10):
                         acc_soma[i]+= acc_tab_res[i][x]                                 ##  acumula o valor da acuracia ta iteração atual na soma geral. 
                         Resultado += "\nClasse "+str(i)+" Acc = "+str(acc_tab_res[i][x])+" Acertos "+str(acertos[i])+"  Erros "+str(erros[i])
 
-                        ## acuracia minima da classe [i] na iteração [x]
+                        ## Acuracia minima da classe [i] na iteração [x]
                         if acc_tab_res[i][x]< acc[i][0]:
                                 acc[i][0] = acc_tab_res[i][x]
 
                         ## Escore de Erro minimo da classe [i] na iteração [x]
                         if esc_err_tab_res[i][x] < esc_err[i][0]:
-                                esc_err_acc[i][0] = esc_err_acc_tab_res[i][x]
+                                esc_err[i][0] = esc_err_tab_res[i][x]
 
-                        ## acuracia maxima da classe [i] na iteração [x]
+                        ## Acuracia maxima da classe [i] na iteração [x]
                         if acc_tab_res[i][x] > acc[i][1]:
                                 acc[i][1] = acc_tab_res[i][x]
+                                
+                        ## Escore de Erro maximo da classe [i] na iteração [x]
+                        if esc_err_tab_res[i][x] >esc_err[i][1]:
+                                esc_err[i][1] = esc_err_tab_res[i][x]
                 ########################################################################################################################################################
                 
-                Resultado+= "\n\n  ...........ESCORES DE ERRO..........." + resultado_score_err
-                
-                esc_err_soma[7] = score_err
+                Resultado+= "\n\n  ...........ESCORES DE ERRO..........." + resultado_score_err ## texto
                 Resultado+= "\n\n  ...........MATRIZ CONFUSAO..........."
                 Resultado+= "\n \t\t0\t1\t2\t3\t4\t5\t6"
                 for i in range(len(conf_mat[x])):
                         Resultado+= "\n Classe "+str(i)+":"
                         for j in range(len(conf_mat[x][0])):
                                 Resultado+= "\t"+str(conf_mat[x,i,j])
-        for i in range(8):
+        ## Calculo do desvio padrao das metricas
+        for i in range(8):                                                                      ## LAÇO DA CLASSE [I]
                 sum_desvio = 0
-                for j in range(iteracoes):
-                        sum_desvio += mp.pow((acc_tab_res[i,j]-(acc_soma[i]/iteracoes)),2)
-                sum_desvio = sum_desvio/(iteracoes-1)
-                acc_tab_des[i] = mp.sqrt(sum_desvio)
+                sum_desvio_err = 0
+                for j in range(iteracoes):                                                                  ## LAÇO DAS ITERAÇOES [J]
+                        sum_desvio += mp.pow((acc_tab_res[i,j]-(acc_soma[i]/iteracoes)),2)                  ## CALCULO DO DESVIO DA ACURACIA
+                        sum_desvio_err += mp.pow((esc_err_tab_res[i,j]-(esc_err_soma[i]/iteracoes)),2)      ## CALCULO DO DESVIO DO ESCORE DE ERRO
+                sum_desvio = sum_desvio/(iteracoes-1)                                   ##
+                sum_desvio_err = sum_desvio_err/(iteracoes-1)                           ##
+                acc_tab_des[i] = mp.sqrt(sum_desvio)                                    ## GUARDANDO VALOR DESVIO ACURACIA DA CLASSE [I]
+                esc_err_tab_des[i] = mp.sqrt(sum_desvio_err)                            ## GUARDANDO VALOR DESVIO ESCORE DE ERRO DA CLASSE[I]
+        
+        ########################################################################################################################################################
+
+                
+        ########################################################################################################################################################
+        ## TEXTO RELACIONADO A CLASSES E ITERAÇÕES                                                                                                            ##
+        ########################################################################################################################################################
         Resultado += "\n------------------------------------------ RESULTADOS ------------------------------------------"
         for i in range(7):
-                rs[i,(percent/10)-1,0] = acc_soma[i]/iteracoes
-                rs[i,(percent/10)-1,1] = acc_tab_des[i]
+                rs[i,(percent)-1,0] = acc_soma[i]/iteracoes
+                rsee[i,(percent)-1,0] = esc_err_soma[i]/iteracoes
+                rs[i,(percent)-1,1] = acc_tab_des[i]
+                rsee[i,(percent)-1,1] = esc_err_tab_des[i]
                 Resultado += "\nClasse "+str(i)+":"
                 Resultado += "\n\tMinimos:\tAcc = "+str(acc[i][0])+"%\tErr_score = "+str(esc_err[i][0])
-                Resultado += "\n\tMaximos:\tAcc = "+str(acc[i][1])+"%"
+                Resultado += "\n\tMaximos:\tAcc = "+str(acc[i][1])+"%\tErr_score = "+str(esc_err[i][1])
                 Resultado += "\n\tMedias: \tAcc = "+str(acc_soma[i]/iteracoes)+"%\tErr_score = "+str(esc_err_soma[i]/iteracoes)
-                Resultado += "\n\tDesvios:\tAcc = "+str(acc_tab_des[i])+"%"
+                Resultado += "\n\tDesvios:\tAcc = "+str(acc_tab_des[i])+"%\tErr_score = "+str(esc_err_tab_des[i])
         Resultado += "\nAcc total das Classes: "
-        Resultado += "\n\tMinimos:\tAcc = "+ str(acc[7][0])+"%"
-        Resultado += "\n\tMaximos:\tAcc = "+str(acc[7][1])+ "%"
+        Resultado += "\n\tMinimos:\tAcc = "+ str(acc[7][0])+"%\tErr_score = "+str(esc_err[7][0])
+        Resultado += "\n\tMaximos:\tAcc = "+str(acc[7][1])+ "%\tErr_score = "+str(esc_err[7][1])
         Resultado += "\n\tMedias: \tAcc = "+str(acc_soma[7]/iteracoes)+"%\tErr_Score = "+str(esc_err_soma[7]/iteracoes)
-        Resultado += "\n\tDesvios:\tAcc = "+str(acc_tab_des[7])+"%"
+        Resultado += "\n\tDesvios:\tAcc = "+str(acc_tab_des[7])+"%\tErr_score = "+str(esc_err_tab_des[i])
         
-        rs[7,(percent/10)-1,0]  = acc_soma[7]/iteracoes
-        rs[7,(percent/10)-1,1]  = acc_tab_des[7]
+        rs[7,(percent)-1,0]  = acc_soma[7]/iteracoes
+        rs[7,(percent)-1,1]  = acc_tab_des[7]
+        rsee[7,(percent)-1,0]  = esc_err_soma[7]/iteracoes
+        rsee[7,(percent)-1,1]  = esc_err_tab_des[7]
         Salvar_texto(Resultado,"Resultados/Resultados_iter"+str(percent)+"percent.txt")
+        ########################################################################################################################################################
+        ########################################################################################################################################################
         
+## TEXTO RELACIONADO AS RESOLUÇÕES
 rsString = ""
+rsString2 = ""
 for i in range(8):
-        rsString += "\nClasse "+str(i)+";"
+        rsString += "\nClasse "+str(i)+":\t"
+        rsString2 += "\nClasse "+str(i)+":\t"
         for j in range(cont):
                 #rsString+= str(round(rs[i,j,0],3))+";"+str(round(rs[i,j,1],3))+";"
-                rsString+= str(round(rs[i,j,0],3))+";"+str(round(rs[i,j,1],3))+"\t"
-#print rsString
-print Resultado
+                rsString+= str(round(rs[i,j,0],3))+"+-"+str(round(rs[i,j,1],3))+"\t"
+                rsString2+= str(round(rsee[i,j,0],3))+"+-"+str(round(rsee[i,j,1],3))+"\t"
+########################################################################################################################################################
+
+print  "\n\nAcuracia"
+print rsString+"\n\nESCORE DE ERRO\n"+rsString2
 
