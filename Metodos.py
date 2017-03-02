@@ -2,6 +2,7 @@
 import cv2
 import numpy as np
 import math as mp
+import random
 
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
 def GetObjetosAtributos(ad):
@@ -195,7 +196,7 @@ def cria_Arquivo_GLCM(percent):
             glcm_features  = getFeatures(coOccurenceNormalized, 256)
             glcm_features[9] = float(i)
             bd.append(glcm_features)
-    Salvar_arquivo(bd,"../OpenCV_Rasp/GLCM_RESIZE/GLCM_"+str(percent)+"%_X"+str(y)+"_Y"+str(x)+".txt")
+    Salvar_arquivo(bd,"../OpenCV_Rasp/GLCM_RESIZE/GLCM_"+str(percent*100)+".txt")
 
 def memory():
     """
@@ -213,5 +214,15 @@ def memory():
         ret['free'] = tmp
         ret['used'] = int(ret['total']) - int(ret['free'])
     return ret
+
+def Train_extract(atributos,labels,fClass,qtdtreino,qtdTeste,Treino,TreinoLabel):
+        while(qtdtreino>0):
+                rd = ((qtdTeste+1)*fClass) + random.randint(0,qtdTeste+qtdtreino)
+                Treino.append(atributos[rd])
+                TreinoLabel.append(labels[rd])
+                del atributos[rd]
+                del labels[rd]
+                qtdtreino -=1
+        return atributos,labels,Treino,TreinoLabel
 
 

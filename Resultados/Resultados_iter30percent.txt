@@ -1,0 +1,42 @@
+
+-----------RESULTADOS-------------
+Classe 0:
+	Acc Minima = 38.4615384615%
+	Acc Maxima = 92.3076923077%
+	Acc Media = 71.3846153846
+	Desvio = 12.533254883
+Classe 1:
+	Acc Minima = 15.3846153846%
+	Acc Maxima = 92.3076923077%
+	Acc Media = 59.8461538462
+	Desvio = 15.2498017867
+Classe 2:
+	Acc Minima = 46.1538461538%
+	Acc Maxima = 92.3076923077%
+	Acc Media = 67.6923076923
+	Desvio = 12.2368447535
+Classe 3:
+	Acc Minima = 15.3846153846%
+	Acc Maxima = 61.5384615385%
+	Acc Media = 39.5384615385
+	Desvio = 10.4262494665
+Classe 4:
+	Acc Minima = 38.4615384615%
+	Acc Maxima = 92.3076923077%
+	Acc Media = 61.3846153846
+	Desvio = 11.8854167984
+Classe 5:
+	Acc Minima = 53.8461538462%
+	Acc Maxima = 100.0%
+	Acc Media = 74.1538461538
+	Desvio = 12.0137585659
+Classe 6:
+	Acc Minima = 46.1538461538%
+	Acc Maxima = 92.3076923077%
+	Acc Media = 68.1538461538
+	Desvio = 9.5812581212
+ Acc total das Classes: 
+	Minima= 54.9450549451% 
+	Maxima = 73.6263736264%
+	Media = 63.1648351648
+	Desvio = 4.24291891853
