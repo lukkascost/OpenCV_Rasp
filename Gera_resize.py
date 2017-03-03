@@ -2,18 +2,10 @@ import thread
 from Metodos import *
 percent = 90
 
-
-thread.start_new_thread( cria_Arquivo_GLCM, (0.01,) )
-thread.start_new_thread( cria_Arquivo_GLCM, (0.02,) )
-
-thread.start_new_thread( cria_Arquivo_GLCM, (0.03,) )
-thread.start_new_thread( cria_Arquivo_GLCM, (0.04,) )
-
-thread.start_new_thread( cria_Arquivo_GLCM, (0.05,) )
-thread.start_new_thread( cria_Arquivo_GLCM, (0.06,) )
-
-thread.start_new_thread( cria_Arquivo_GLCM, (0.07,) )
-thread.start_new_thread( cria_Arquivo_GLCM, (0.08,) )
-
-thread.start_new_thread( cria_Arquivo_GLCM, (0.09,) )
-thread.start_new_thread( cria_Arquivo_GLCM, (0.11,) )
+for i in range(1,6):
+    thread.start_new_thread( cria_Arquivo_GLCM, ((float(i)/100),0,"INTER_NEAREST"))
+    thread.start_new_thread( cria_Arquivo_GLCM, ((float(i)/100),1,"INTER_LINEAR"))
+    thread.start_new_thread( cria_Arquivo_GLCM, ((float(i)/100),2,"INTER_AREA"))
+    thread.start_new_thread( cria_Arquivo_GLCM, ((float(i)/100),3,"INTER_CUBIC"))
+    thread.start_new_thread( cria_Arquivo_GLCM, ((float(i)/100),4,"INTER_LANCZOS4"))
+    

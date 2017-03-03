@@ -179,7 +179,7 @@ def getFeatures(coOccurenceNormalized, grayscale):
 
 #print glcm_features
 
-def cria_Arquivo_GLCM(percent):
+def cria_Arquivo_GLCM(percent,method, text):
     img = cv2.imread('../couro_images/c1_1.JPG',0)
     x = int(len(img)*percent)
     y = int(len(img[0])*percent)
@@ -187,16 +187,20 @@ def cria_Arquivo_GLCM(percent):
     bd = []
     for i in range(1,8):
         for j in range(1,51):
-            print '../couro_images/c'+str(i)+'_'+str(j)+'.JPG', percent
+            print '../couro_images/c'+str(i)+'_'+str(j)+'.JPG', percent, text
             img = cv2.imread('../couro_images/c'+str(i)+'_'+str(j)+'.JPG',0)
-            img = cv2.resize(img,(y,x))
+            if(method ==0 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_NEAREST)
+            if(method ==1 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LINEAR)
+            if(method ==2 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_AREA)
+            if(method ==3 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_CUBIC )
+            if(method ==4 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LANCZOS4 )
             imgQuantized = img.copy()
             coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
             coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
             glcm_features  = getFeatures(coOccurenceNormalized, 256)
             glcm_features[9] = float(i)
             bd.append(glcm_features)
-    Salvar_arquivo(bd,"../OpenCV_Rasp/GLCM_RESIZE/GLCM_"+str(percent*100)+".txt")
+    Salvar_arquivo(bd,"../OpenCV_Rasp/GLCM_RESIZE/"+text+"/GLCM_"+str(percent*100)+".txt")
 
 def memory():
     """

@@ -27,7 +27,9 @@ pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
 ########################################################################################################################################################
 
 ## Laço que define as resoluçoes 
-for percent in range(1,10):
+for percent in range(1,101):
+        print percent
+        if percent == 44 or percent == 56: percent+=1
         cont +=1
         ## Endereço para guardar os vetores suporte;
         addressSave = "Resultados/SVM_Vectors"+str(percent)+".txt"
@@ -38,8 +40,8 @@ for percent in range(1,10):
         ########################################################################################################################################################
 
         ## Variaveis relacionadas ao arquivo que contem a saida do GLCM         
-        bd = ler_arquivo("GLCM_RESIZE/GLCM_"+str(percent)+".0.txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
-        bd = Normalizar(bd,len(bd),len(bd[0])-1)                          ##Normaliza Banco
+        bd = ler_arquivo("GLCM_RESIZE/DB_GLCM_"+str(percent)+".txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
+        bd = Normalizar(bd,len(bd),len(bd[0])-1)                           ##Normaliza Banco
         iteracoes = 50                                                    ## Numero de iteraçoes para re-treinamento
         ########################################################################################################################################################
 
@@ -120,7 +122,7 @@ for percent in range(1,10):
                 svm_type = cv2.SVM_C_SVC,
                 C=7.0,
                 degree =1.0,
-                gamma=2.0,
+                gamma=0.50625,
                 nu = 0.0,
                 p = 0.0,
                 coef0 = 0,
@@ -281,12 +283,12 @@ for percent in range(1,10):
         ########################################################################################################################################################
         Resultado += "\n------------------------------------------ RESULTADOS ------------------------------------------"
         for i in range(7):
-                rs[i,(percent)-1,0] = acc_soma[i]/iteracoes
-                rsee[i,(percent)-1,0] = esc_err_soma[i]/iteracoes
-                rsec[i,(percent)-1,0] = esc_cor_soma[i]/iteracoes
-                rs[i,(percent)-1,1] = acc_tab_des[i]
-                rsee[i,(percent)-1,1] = esc_err_tab_des[i]
-                rsec[i,(percent)-1,1] = esc_cor_tab_des[i]
+                rs[i,(percent)-1,0] = round(acc_soma[i]/iteracoes,3)
+                rsee[i,(percent)-1,0] = round(esc_err_soma[i]/iteracoes,3)
+                rsec[i,(percent)-1,0] = round(esc_cor_soma[i]/iteracoes,3)
+                rs[i,(percent)-1,1] = round(acc_tab_des[i],3)
+                rsee[i,(percent)-1,1] = round(esc_err_tab_des[i],3)
+                rsec[i,(percent)-1,1] = round(esc_cor_tab_des[i],3)
                 Resultado += "\nClasse "+str(i)+":"
                 Resultado += "\n\tMinimos:\tAcc = "+str(acc[i][0])+"%\tErr_score = "+str(esc_err[i][0])+" \tCor_score = "+str(esc_cor[i][0])
                 Resultado += "\n\tMaximos:\tAcc = "+str(acc[i][1])+"%\tErr_score = "+str(esc_err[i][1])+" \tCor_score = "+str(esc_cor[i][1])
@@ -313,14 +315,14 @@ rsString = ""
 rsString2 = ""
 rsString3 = ""
 for i in range(8):
-        rsString += "\nClasse "+str(i)+":\t"
-        rsString2 += "\nClasse "+str(i)+":\t"
-        rsString3 += "\nClasse "+str(i)+":\t"
+        rsString += "\nClasse "+str(i)+";"
+        rsString2 += "\nClasse "+str(i)+";"
+        rsString3 += "\nClasse "+str(i)+";"
         for j in range(cont):
                 #rsString+= str(round(rs[i,j,0],3))+";"+str(round(rs[i,j,1],3))+";"
-                rsString+= str(round(rs[i,j,0],3))+"\t"+str(round(rs[i,j,1],3))+"\t"
-                rsString2+= str(round(rsee[i,j,0],3))+"\t"+str(round(rsee[i,j,1],3))+"\t"
-                rsString3+= str(round(rsec[i,j,0],3))+"\t"+str(round(rsec[i,j,1],3))+"\t"
+                rsString+= str(round(rs[i,j,0],3))+";"#+str(round(rs[i,j,1],3))+";"
+                rsString2+= str(round(rsee[i,j,0],3))+";"#+str(round(rsee[i,j,1],3))+";"
+                rsString3+= str(round(rsec[i,j,0],3))+";"#+str(round(rsec[i,j,1],3))+";"
 ########################################################################################################################################################
 print Resultado
 print  "\n\nAcuracia"

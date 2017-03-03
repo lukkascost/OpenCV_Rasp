@@ -1,42 +1,1642 @@
 
------------RESULTADOS-------------
+------------------------------------------Iteracao 0-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.9115646259
+ Acertos = 348 Erros: 93
+Classe 0 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 92.0634920635 Acertos 58.0  Erros 5.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 29.0
+Escore classe 1: 20.0
+Escore classe 2: 19.0
+Escore classe 3: 19.0
+Escore classe 4: 7.0
+Escore classe 5: 34.0
+Escore classe 6: 58.0
+Total: 186.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	47.0	3.0	13.0	0.0	0.0	0.0	0.0
+ Classe 1:	3.0	56.0	0.0	0.0	0.0	3.0	1.0
+ Classe 2:	5.0	0.0	52.0	5.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	7.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	58.0	3.0	2.0
+ Classe 5:	0.0	3.0	0.0	2.0	6.0	40.0	12.0
+ Classe 6:	0.0	9.0	0.0	0.0	2.0	9.0	43.0
+------------------------------------------Iteracao 1-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.5510204082
+ Acertos = 342 Erros: 99
+Classe 0 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 5 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 28.0
+Escore classe 1: 19.0
+Escore classe 2: 31.0
+Escore classe 3: 20.0
+Escore classe 4: 12.0
+Escore classe 5: 30.0
+Escore classe 6: 61.0
+Total: 201.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	48.0	3.0	11.0	1.0	0.0	0.0	0.0
+ Classe 1:	3.0	56.0	0.0	0.0	0.0	4.0	0.0
+ Classe 2:	7.0	0.0	42.0	13.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	5.0	53.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	54.0	6.0	3.0
+ Classe 5:	0.0	2.0	0.0	3.0	3.0	42.0	13.0
+ Classe 6:	0.0	11.0	0.0	0.0	1.0	4.0	47.0
+------------------------------------------Iteracao 2-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:79.5918367347
+ Acertos = 351 Erros: 90
+Classe 0 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 1 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 2 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 6 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 25.0
+Escore classe 1: 19.0
+Escore classe 2: 28.0
+Escore classe 3: 23.0
+Escore classe 4: 9.0
+Escore classe 5: 18.0
+Escore classe 6: 66.0
+Total: 188.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	49.0	3.0	11.0	0.0	0.0	0.0	0.0
+ Classe 1:	2.0	57.0	0.0	0.0	0.0	3.0	1.0
+ Classe 2:	9.0	0.0	47.0	6.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	5.0	52.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	5.0	2.0
+ Classe 5:	0.0	0.0	0.0	3.0	5.0	48.0	7.0
+ Classe 6:	0.0	11.0	0.0	0.0	1.0	9.0	42.0
+------------------------------------------Iteracao 3-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:75.283446712
+ Acertos = 332 Erros: 109
+Classe 0 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 1 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 2 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 93.6507936508 Acertos 59.0  Erros 4.0
+Classe 5 Acc = 61.9047619048 Acertos 39.0  Erros 24.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 44.0
+Escore classe 1: 46.0
+Escore classe 2: 30.0
+Escore classe 3: 23.0
+Escore classe 4: 5.0
+Escore classe 5: 35.0
+Escore classe 6: 57.0
+Total: 240.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	41.0	7.0	13.0	0.0	0.0	1.0	1.0
+ Classe 1:	4.0	49.0	0.0	0.0	0.0	8.0	2.0
+ Classe 2:	9.0	0.0	45.0	8.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	5.0	52.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	59.0	3.0	1.0
+ Classe 5:	0.0	3.0	0.0	2.0	4.0	39.0	15.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 4-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.5510204082
+ Acertos = 342 Erros: 99
+Classe 0 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 1 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 2 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 28.0
+Escore classe 1: 44.0
+Escore classe 2: 26.0
+Escore classe 3: 20.0
+Escore classe 4: 9.0
+Escore classe 5: 36.0
+Escore classe 6: 64.0
+Total: 227.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	51.0	2.0	8.0	0.0	0.0	2.0	0.0
+ Classe 1:	2.0	51.0	0.0	0.0	0.0	8.0	2.0
+ Classe 2:	7.0	0.0	47.0	8.0	0.0	0.0	1.0
+ Classe 3:	2.0	0.0	5.0	53.0	0.0	0.0	3.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	3.0	3.0
+ Classe 5:	0.0	3.0	0.0	2.0	6.0	38.0	14.0
+ Classe 6:	0.0	11.0	0.0	0.0	2.0	5.0	45.0
+------------------------------------------Iteracao 5-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.231292517
+ Acertos = 345 Erros: 96
+Classe 0 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 1 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 4 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 5 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+Classe 6 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 27.0
+Escore classe 1: 34.0
+Escore classe 2: 31.0
+Escore classe 3: 24.0
+Escore classe 4: 11.0
+Escore classe 5: 23.0
+Escore classe 6: 48.0
+Total: 198.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	48.0	6.0	8.0	0.0	0.0	1.0	0.0
+ Classe 1:	1.0	55.0	0.0	0.0	0.0	2.0	5.0
+ Classe 2:	10.0	0.0	48.0	3.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	9.0	49.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	55.0	5.0	3.0
+ Classe 5:	0.0	0.0	0.0	2.0	5.0	42.0	14.0
+ Classe 6:	0.0	8.0	0.0	0.0	1.0	6.0	48.0
+------------------------------------------Iteracao 6-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.0045351474
+ Acertos = 344 Erros: 97
+Classe 0 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 1 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 6 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 29.0
+Escore classe 1: 28.0
+Escore classe 2: 28.0
+Escore classe 3: 24.0
+Escore classe 4: 8.0
+Escore classe 5: 27.0
+Escore classe 6: 72.0
+Total: 216.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	48.0	4.0	10.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	55.0	0.0	0.0	0.0	4.0	2.0
+ Classe 2:	7.0	1.0	48.0	5.0	0.0	0.0	2.0
+ Classe 3:	5.0	0.0	6.0	51.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	4.0	2.0
+ Classe 5:	0.0	1.0	0.0	2.0	5.0	41.0	14.0
+ Classe 6:	0.0	13.0	0.0	0.0	1.0	5.0	44.0
+------------------------------------------Iteracao 7-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.3242630385
+ Acertos = 341 Erros: 100
+Classe 0 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 1 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 92.0634920635 Acertos 58.0  Erros 5.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 26.0
+Escore classe 1: 22.0
+Escore classe 2: 33.0
+Escore classe 3: 20.0
+Escore classe 4: 6.0
+Escore classe 5: 31.0
+Escore classe 6: 67.0
+Total: 205.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	47.0	6.0	10.0	0.0	0.0	0.0	0.0
+ Classe 1:	5.0	54.0	0.0	0.0	0.0	3.0	1.0
+ Classe 2:	8.0	2.0	44.0	7.0	0.0	0.0	2.0
+ Classe 3:	3.0	0.0	5.0	53.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	58.0	4.0	1.0
+ Classe 5:	0.0	2.0	0.0	2.0	5.0	40.0	14.0
+ Classe 6:	0.0	12.0	0.0	0.0	1.0	5.0	45.0
+------------------------------------------Iteracao 8-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.9115646259
+ Acertos = 348 Erros: 93
+Classe 0 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 1 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 4 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 5 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 22.0
+Escore classe 1: 24.0
+Escore classe 2: 29.0
+Escore classe 3: 19.0
+Escore classe 4: 12.0
+Escore classe 5: 26.0
+Escore classe 6: 71.0
+Total: 203.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	52.0	3.0	7.0	0.0	0.0	1.0	0.0
+ Classe 1:	3.0	55.0	0.0	0.0	0.0	4.0	1.0
+ Classe 2:	6.0	0.0	46.0	9.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	4.0	54.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	54.0	6.0	3.0
+ Classe 5:	0.0	1.0	0.0	2.0	6.0	42.0	12.0
+ Classe 6:	0.0	13.0	0.0	0.0	1.0	4.0	45.0
+------------------------------------------Iteracao 9-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.6848072562
+ Acertos = 347 Erros: 94
+Classe 0 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 1 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 4 Acc = 92.0634920635 Acertos 58.0  Erros 5.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 33.0
+Escore classe 1: 19.0
+Escore classe 2: 33.0
+Escore classe 3: 24.0
+Escore classe 4: 5.0
+Escore classe 5: 28.0
+Escore classe 6: 53.0
+Total: 195.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	49.0	2.0	10.0	0.0	0.0	1.0	1.0
+ Classe 1:	2.0	57.0	0.0	0.0	0.0	3.0	1.0
+ Classe 2:	11.0	0.0	44.0	7.0	0.0	0.0	1.0
+ Classe 3:	5.0	0.0	6.0	51.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	58.0	5.0	0.0
+ Classe 5:	0.0	1.0	0.0	2.0	4.0	40.0	16.0
+ Classe 6:	0.0	9.0	0.0	0.0	2.0	4.0	48.0
+------------------------------------------Iteracao 10-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.8707482993
+ Acertos = 339 Erros: 102
+Classe 0 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 1 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 6 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 30.0
+Escore classe 1: 31.0
+Escore classe 2: 26.0
+Escore classe 3: 20.0
+Escore classe 4: 6.0
+Escore classe 5: 25.0
+Escore classe 6: 66.0
+Total: 204.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	47.0	5.0	10.0	0.0	0.0	1.0	0.0
+ Classe 1:	5.0	52.0	0.0	0.0	0.0	4.0	2.0
+ Classe 2:	8.0	0.0	48.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	8.0	51.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	6.0	0.0
+ Classe 5:	0.0	0.0	0.0	3.0	6.0	41.0	13.0
+ Classe 6:	0.0	11.0	0.0	0.0	2.0	7.0	43.0
+------------------------------------------Iteracao 11-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.5510204082
+ Acertos = 342 Erros: 99
+Classe 0 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 1 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 61.9047619048 Acertos 39.0  Erros 24.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 25.0
+Escore classe 1: 40.0
+Escore classe 2: 27.0
+Escore classe 3: 26.0
+Escore classe 4: 8.0
+Escore classe 5: 26.0
+Escore classe 6: 57.0
+Total: 209.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	51.0	2.0	9.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	52.0	0.0	0.0	0.0	7.0	2.0
+ Classe 2:	6.0	2.0	48.0	5.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	8.0	49.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	6.0	1.0
+ Classe 5:	0.0	0.0	0.0	2.0	7.0	39.0	15.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 12-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.6439909297
+ Acertos = 338 Erros: 103
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 6 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 23.0
+Escore classe 1: 54.0
+Escore classe 2: 28.0
+Escore classe 3: 19.0
+Escore classe 4: 10.0
+Escore classe 5: 22.0
+Escore classe 6: 62.0
+Total: 218.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	3.0	10.0	0.0	0.0	0.0	0.0
+ Classe 1:	4.0	47.0	0.0	0.0	0.0	10.0	2.0
+ Classe 2:	8.0	0.0	46.0	8.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	7.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	2.0	4.0
+ Classe 5:	0.0	0.0	0.0	2.0	4.0	43.0	14.0
+ Classe 6:	1.0	9.0	0.0	0.0	1.0	9.0	43.0
+------------------------------------------Iteracao 13-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.0045351474
+ Acertos = 344 Erros: 97
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 5 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 20.0
+Escore classe 1: 38.0
+Escore classe 2: 25.0
+Escore classe 3: 22.0
+Escore classe 4: 10.0
+Escore classe 5: 34.0
+Escore classe 6: 64.0
+Total: 213.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	6.0	7.0	0.0	0.0	0.0	0.0
+ Classe 1:	3.0	52.0	0.0	0.0	0.0	5.0	3.0
+ Classe 2:	7.0	0.0	48.0	7.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	4.0	53.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	55.0	6.0	2.0
+ Classe 5:	0.0	3.0	0.0	3.0	5.0	41.0	11.0
+ Classe 6:	0.0	11.0	0.0	0.0	2.0	5.0	45.0
+------------------------------------------Iteracao 14-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.231292517
+ Acertos = 345 Erros: 96
+Classe 0 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 1 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 92.0634920635 Acertos 58.0  Erros 5.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 30.0
+Escore classe 1: 26.0
+Escore classe 2: 26.0
+Escore classe 3: 20.0
+Escore classe 4: 6.0
+Escore classe 5: 31.0
+Escore classe 6: 57.0
+Total: 196.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	47.0	2.0	14.0	0.0	0.0	0.0	0.0
+ Classe 1:	4.0	54.0	0.0	0.0	0.0	3.0	2.0
+ Classe 2:	6.0	3.0	46.0	7.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	5.0	53.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	58.0	4.0	1.0
+ Classe 5:	0.0	2.0	0.0	2.0	6.0	40.0	13.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 15-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:81.179138322
+ Acertos = 358 Erros: 83
+Classe 0 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 1 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 4 Acc = 96.8253968254 Acertos 61.0  Erros 2.0
+Classe 5 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 30.0
+Escore classe 1: 29.0
+Escore classe 2: 24.0
+Escore classe 3: 21.0
+Escore classe 4: 3.0
+Escore classe 5: 22.0
+Escore classe 6: 63.0
+Total: 192.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	49.0	1.0	12.0	0.0	0.0	1.0	0.0
+ Classe 1:	3.0	54.0	0.0	0.0	0.0	4.0	2.0
+ Classe 2:	6.0	0.0	48.0	8.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	3.0	54.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	61.0	1.0	1.0
+ Classe 5:	0.0	1.0	0.0	3.0	5.0	47.0	7.0
+ Classe 6:	0.0	11.0	0.0	0.0	1.0	6.0	45.0
+------------------------------------------Iteracao 16-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.9115646259
+ Acertos = 348 Erros: 93
+Classe 0 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 1 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 2 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 92.0634920635 Acertos 58.0  Erros 5.0
+Classe 5 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 6 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 32.0
+Escore classe 1: 46.0
+Escore classe 2: 21.0
+Escore classe 3: 20.0
+Escore classe 4: 7.0
+Escore classe 5: 31.0
+Escore classe 6: 66.0
+Total: 223.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	49.0	2.0	10.0	0.0	0.0	2.0	0.0
+ Classe 1:	1.0	51.0	0.0	0.0	0.0	10.0	1.0
+ Classe 2:	6.0	1.0	51.0	4.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	5.0	53.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	58.0	3.0	2.0
+ Classe 5:	0.0	3.0	0.0	2.0	4.0	43.0	11.0
+ Classe 6:	1.0	10.0	0.0	0.0	1.0	8.0	43.0
+------------------------------------------Iteracao 17-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.1904761905
+ Acertos = 336 Erros: 105
+Classe 0 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 58.7301587302 Acertos 37.0  Erros 26.0
+Classe 6 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 32.0
+Escore classe 1: 27.0
+Escore classe 2: 33.0
+Escore classe 3: 21.0
+Escore classe 4: 7.0
+Escore classe 5: 41.0
+Escore classe 6: 61.0
+Total: 222.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	45.0	4.0	14.0	0.0	0.0	0.0	0.0
+ Classe 1:	1.0	56.0	0.0	0.0	0.0	4.0	2.0
+ Classe 2:	10.0	0.0	46.0	5.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	6.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	5.0	1.0
+ Classe 5:	0.0	4.0	0.0	3.0	5.0	37.0	14.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	9.0	43.0
+------------------------------------------Iteracao 18-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.4580498866
+ Acertos = 346 Erros: 95
+Classe 0 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 3 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 4 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 34.0
+Escore classe 1: 34.0
+Escore classe 2: 23.0
+Escore classe 3: 17.0
+Escore classe 4: 11.0
+Escore classe 5: 35.0
+Escore classe 6: 63.0
+Total: 217.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	46.0	3.0	13.0	0.0	0.0	1.0	0.0
+ Classe 1:	3.0	53.0	0.0	0.0	0.0	4.0	3.0
+ Classe 2:	5.0	0.0	51.0	5.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	5.0	54.0	0.0	0.0	0.0
+ Classe 4:	0.0	0.0	0.0	0.0	55.0	5.0	3.0
+ Classe 5:	0.0	3.0	0.0	3.0	3.0	40.0	14.0
+ Classe 6:	2.0	9.0	0.0	0.0	1.0	4.0	47.0
+------------------------------------------Iteracao 19-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.1904761905
+ Acertos = 336 Erros: 105
+Classe 0 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 1 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 24.0
+Escore classe 1: 48.0
+Escore classe 2: 27.0
+Escore classe 3: 19.0
+Escore classe 4: 9.0
+Escore classe 5: 34.0
+Escore classe 6: 65.0
+Total: 226.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	49.0	4.0	10.0	0.0	0.0	0.0	0.0
+ Classe 1:	2.0	50.0	0.0	0.0	0.0	9.0	2.0
+ Classe 2:	9.0	0.0	48.0	5.0	0.0	0.0	1.0
+ Classe 3:	2.0	0.0	10.0	50.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	3.0	3.0
+ Classe 5:	0.0	2.0	0.0	3.0	6.0	38.0	14.0
+ Classe 6:	0.0	11.0	0.0	0.0	2.0	6.0	44.0
+------------------------------------------Iteracao 20-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.4172335601
+ Acertos = 337 Erros: 104
+Classe 0 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 42.0
+Escore classe 1: 33.0
+Escore classe 2: 23.0
+Escore classe 3: 19.0
+Escore classe 4: 12.0
+Escore classe 5: 37.0
+Escore classe 6: 52.0
+Total: 218.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	43.0	4.0	14.0	0.0	0.0	2.0	0.0
+ Classe 1:	3.0	53.0	0.0	0.0	0.0	5.0	2.0
+ Classe 2:	6.0	0.0	49.0	7.0	0.0	0.0	1.0
+ Classe 3:	2.0	0.0	7.0	52.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	54.0	6.0	3.0
+ Classe 5:	0.0	3.0	0.0	3.0	5.0	38.0	14.0
+ Classe 6:	0.0	9.0	0.0	0.0	1.0	5.0	48.0
+------------------------------------------Iteracao 21-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.7777777778
+ Acertos = 343 Erros: 98
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 24.0
+Escore classe 1: 24.0
+Escore classe 2: 31.0
+Escore classe 3: 20.0
+Escore classe 4: 11.0
+Escore classe 5: 37.0
+Escore classe 6: 61.0
+Total: 208.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	2.0	11.0	0.0	0.0	0.0	0.0
+ Classe 1:	2.0	56.0	0.0	0.0	0.0	3.0	2.0
+ Classe 2:	10.0	1.0	45.0	6.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	5.0	53.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	54.0	7.0	2.0
+ Classe 5:	0.0	3.0	0.0	3.0	6.0	38.0	13.0
+ Classe 6:	0.0	11.0	0.0	0.0	1.0	4.0	47.0
+------------------------------------------Iteracao 22-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.8707482993
+ Acertos = 339 Erros: 102
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 26.0
+Escore classe 1: 48.0
+Escore classe 2: 34.0
+Escore classe 3: 20.0
+Escore classe 4: 9.0
+Escore classe 5: 29.0
+Escore classe 6: 57.0
+Total: 223.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	3.0	9.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	50.0	0.0	0.0	0.0	9.0	2.0
+ Classe 2:	12.0	0.0	44.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	8.0	51.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	3.0	3.0
+ Classe 5:	0.0	1.0	0.0	3.0	6.0	40.0	13.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 23-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.1904761905
+ Acertos = 336 Erros: 105
+Classe 0 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 1 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 2 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 3 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 30.0
+Escore classe 1: 24.0
+Escore classe 2: 34.0
+Escore classe 3: 23.0
+Escore classe 4: 9.0
+Escore classe 5: 37.0
+Escore classe 6: 66.0
+Total: 223.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	46.0	7.0	9.0	0.0	0.0	1.0	0.0
+ Classe 1:	3.0	55.0	0.0	0.0	0.0	4.0	1.0
+ Classe 2:	11.0	2.0	43.0	6.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	8.0	50.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	5.0	2.0
+ Classe 5:	0.0	4.0	0.0	2.0	5.0	40.0	12.0
+ Classe 6:	0.0	12.0	0.0	0.0	1.0	4.0	46.0
+------------------------------------------Iteracao 24-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:75.9637188209
+ Acertos = 335 Erros: 106
+Classe 0 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 1 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 4 Acc = 92.0634920635 Acertos 58.0  Erros 5.0
+Classe 5 Acc = 58.7301587302 Acertos 37.0  Erros 26.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 45.0
+Escore classe 1: 51.0
+Escore classe 2: 29.0
+Escore classe 3: 19.0
+Escore classe 4: 7.0
+Escore classe 5: 37.0
+Escore classe 6: 57.0
+Total: 245.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	43.0	6.0	11.0	0.0	0.0	1.0	2.0
+ Classe 1:	4.0	48.0	0.0	0.0	0.0	8.0	3.0
+ Classe 2:	8.0	0.0	48.0	5.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	4.0	54.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	58.0	3.0	2.0
+ Classe 5:	0.0	3.0	0.0	2.0	5.0	37.0	16.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 25-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:74.8299319728
+ Acertos = 330 Erros: 111
+Classe 0 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 4 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 5 Acc = 58.7301587302 Acertos 37.0  Erros 26.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 37.0
+Escore classe 1: 23.0
+Escore classe 2: 30.0
+Escore classe 3: 21.0
+Escore classe 4: 11.0
+Escore classe 5: 34.0
+Escore classe 6: 60.0
+Total: 216.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	43.0	6.0	13.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	56.0	0.0	0.0	0.0	4.0	1.0
+ Classe 2:	8.0	4.0	44.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	9.0	50.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	55.0	5.0	3.0
+ Classe 5:	0.0	2.0	0.0	2.0	6.0	37.0	16.0
+ Classe 6:	0.0	10.0	0.0	0.0	2.0	6.0	45.0
+------------------------------------------Iteracao 26-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.4172335601
+ Acertos = 337 Erros: 104
+Classe 0 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 1 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 5 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 37.0
+Escore classe 1: 38.0
+Escore classe 2: 27.0
+Escore classe 3: 20.0
+Escore classe 4: 14.0
+Escore classe 5: 27.0
+Escore classe 6: 54.0
+Total: 217.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	46.0	4.0	11.0	0.0	0.0	1.0	1.0
+ Classe 1:	4.0	51.0	0.0	0.0	0.0	6.0	2.0
+ Classe 2:	7.0	0.0	46.0	9.0	0.0	0.0	1.0
+ Classe 3:	2.0	0.0	5.0	53.0	0.0	0.0	3.0
+ Classe 4:	0.0	0.0	0.0	0.0	53.0	6.0	4.0
+ Classe 5:	0.0	1.0	0.0	2.0	6.0	41.0	13.0
+ Classe 6:	0.0	9.0	0.0	0.0	2.0	5.0	47.0
+------------------------------------------Iteracao 27-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.5510204082
+ Acertos = 342 Erros: 99
+Classe 0 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 6 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 37.0
+Escore classe 1: 36.0
+Escore classe 2: 22.0
+Escore classe 3: 23.0
+Escore classe 4: 12.0
+Escore classe 5: 30.0
+Escore classe 6: 62.0
+Total: 222.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	44.0	4.0	14.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	53.0	0.0	0.0	0.0	6.0	2.0
+ Classe 2:	6.0	0.0	50.0	6.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	5.0	52.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	2.0	5.0
+ Classe 5:	0.0	2.0	0.0	2.0	5.0	41.0	13.0
+ Classe 6:	0.0	11.0	0.0	0.0	1.0	5.0	46.0
+------------------------------------------Iteracao 28-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.231292517
+ Acertos = 345 Erros: 96
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 2 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 93.6507936508 Acertos 59.0  Erros 4.0
+Classe 5 Acc = 58.7301587302 Acertos 37.0  Erros 26.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 23.0
+Escore classe 1: 19.0
+Escore classe 2: 35.0
+Escore classe 3: 21.0
+Escore classe 4: 6.0
+Escore classe 5: 41.0
+Escore classe 6: 57.0
+Total: 202.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	3.0	10.0	0.0	0.0	0.0	0.0
+ Classe 1:	2.0	57.0	0.0	0.0	0.0	3.0	1.0
+ Classe 2:	9.0	4.0	43.0	5.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	6.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	59.0	2.0	2.0
+ Classe 5:	0.0	4.0	0.0	3.0	5.0	37.0	14.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 29-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.0975056689
+ Acertos = 340 Erros: 101
+Classe 0 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 1 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 2 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 3 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 4 Acc = 93.6507936508 Acertos 59.0  Erros 4.0
+Classe 5 Acc = 61.9047619048 Acertos 39.0  Erros 24.0
+Classe 6 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 45.0
+Escore classe 1: 42.0
+Escore classe 2: 20.0
+Escore classe 3: 23.0
+Escore classe 4: 5.0
+Escore classe 5: 29.0
+Escore classe 6: 50.0
+Total: 214.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	43.0	6.0	11.0	0.0	0.0	1.0	2.0
+ Classe 1:	5.0	49.0	0.0	0.0	0.0	8.0	1.0
+ Classe 2:	4.0	1.0	50.0	7.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	8.0	50.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	59.0	3.0	1.0
+ Classe 5:	0.0	1.0	0.0	2.0	6.0	39.0	15.0
+ Classe 6:	0.0	9.0	0.0	0.0	1.0	3.0	50.0
+------------------------------------------Iteracao 30-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.3242630385
+ Acertos = 341 Erros: 100
+Classe 0 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 1 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 2 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 3 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 61.9047619048 Acertos 39.0  Erros 24.0
+Classe 6 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 32.0
+Escore classe 1: 39.0
+Escore classe 2: 26.0
+Escore classe 3: 23.0
+Escore classe 4: 8.0
+Escore classe 5: 33.0
+Escore classe 6: 47.0
+Total: 208.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	45.0	4.0	14.0	0.0	0.0	0.0	0.0
+ Classe 1:	2.0	52.0	0.0	0.0	0.0	8.0	1.0
+ Classe 2:	6.0	0.0	49.0	6.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	8.0	50.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	4.0	2.0
+ Classe 5:	0.0	2.0	0.0	3.0	7.0	39.0	12.0
+ Classe 6:	0.0	8.0	0.0	0.0	1.0	5.0	49.0
+------------------------------------------Iteracao 31-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.4172335601
+ Acertos = 337 Erros: 104
+Classe 0 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 1 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 4 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 5 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 24.0
+Escore classe 1: 46.0
+Escore classe 2: 31.0
+Escore classe 3: 24.0
+Escore classe 4: 11.0
+Escore classe 5: 28.0
+Escore classe 6: 55.0
+Total: 219.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	51.0	3.0	8.0	0.0	0.0	1.0	0.0
+ Classe 1:	5.0	48.0	0.0	0.0	0.0	9.0	1.0
+ Classe 2:	11.0	1.0	46.0	4.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	6.0	51.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	55.0	5.0	3.0
+ Classe 5:	0.0	1.0	0.0	3.0	5.0	41.0	13.0
+ Classe 6:	0.0	9.0	0.0	0.0	1.0	8.0	45.0
+------------------------------------------Iteracao 32-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.231292517
+ Acertos = 345 Erros: 96
+Classe 0 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 3 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+Classe 6 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 28.0
+Escore classe 1: 23.0
+Escore classe 2: 36.0
+Escore classe 3: 24.0
+Escore classe 4: 10.0
+Escore classe 5: 27.0
+Escore classe 6: 52.0
+Total: 200.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	49.0	3.0	10.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	56.0	0.0	0.0	0.0	4.0	1.0
+ Classe 2:	10.0	1.0	43.0	7.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	6.0	51.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	4.0	3.0
+ Classe 5:	0.0	1.0	0.0	3.0	5.0	42.0	12.0
+ Classe 6:	0.0	9.0	0.0	0.0	1.0	5.0	48.0
+------------------------------------------Iteracao 33-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:75.7369614512
+ Acertos = 334 Erros: 107
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 2 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 5 Acc = 58.7301587302 Acertos 37.0  Erros 26.0
+Classe 6 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 30.0
+Escore classe 1: 31.0
+Escore classe 2: 36.0
+Escore classe 3: 18.0
+Escore classe 4: 11.0
+Escore classe 5: 36.0
+Escore classe 6: 70.0
+Total: 232.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	2.0	9.0	0.0	0.0	2.0	0.0
+ Classe 1:	2.0	54.0	0.0	0.0	0.0	6.0	1.0
+ Classe 2:	12.0	1.0	42.0	7.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	6.0	53.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	54.0	7.0	2.0
+ Classe 5:	0.0	2.0	0.0	4.0	6.0	37.0	14.0
+ Classe 6:	2.0	10.0	0.0	0.0	1.0	6.0	44.0
+------------------------------------------Iteracao 34-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.4580498866
+ Acertos = 346 Erros: 95
+Classe 0 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 29.0
+Escore classe 1: 16.0
+Escore classe 2: 26.0
+Escore classe 3: 17.0
+Escore classe 4: 8.0
+Escore classe 5: 36.0
+Escore classe 6: 61.0
+Total: 193.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	46.0	5.0	12.0	0.0	0.0	0.0	0.0
+ Classe 1:	4.0	56.0	0.0	0.0	0.0	3.0	0.0
+ Classe 2:	8.0	1.0	48.0	5.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	5.0	54.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	4.0	2.0
+ Classe 5:	0.0	3.0	0.0	2.0	6.0	38.0	14.0
+ Classe 6:	0.0	11.0	0.0	0.0	1.0	4.0	47.0
+------------------------------------------Iteracao 35-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.3242630385
+ Acertos = 341 Erros: 100
+Classe 0 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 5 Acc = 58.7301587302 Acertos 37.0  Erros 26.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 26.0
+Escore classe 1: 20.0
+Escore classe 2: 25.0
+Escore classe 3: 18.0
+Escore classe 4: 12.0
+Escore classe 5: 39.0
+Escore classe 6: 70.0
+Total: 210.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	48.0	4.0	11.0	0.0	0.0	0.0	0.0
+ Classe 1:	3.0	56.0	0.0	0.0	0.0	3.0	1.0
+ Classe 2:	7.0	1.0	48.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	6.0	53.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	54.0	6.0	3.0
+ Classe 5:	0.0	3.0	0.0	4.0	4.0	37.0	15.0
+ Classe 6:	2.0	10.0	0.0	0.0	2.0	4.0	45.0
+------------------------------------------Iteracao 36-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.0975056689
+ Acertos = 340 Erros: 101
+Classe 0 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 1 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 93.6507936508 Acertos 59.0  Erros 4.0
+Classe 5 Acc = 61.9047619048 Acertos 39.0  Erros 24.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 35.0
+Escore classe 1: 19.0
+Escore classe 2: 32.0
+Escore classe 3: 19.0
+Escore classe 4: 5.0
+Escore classe 5: 42.0
+Escore classe 6: 66.0
+Total: 218.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	45.0	4.0	13.0	0.0	0.0	1.0	0.0
+ Classe 1:	3.0	56.0	0.0	0.0	0.0	4.0	0.0
+ Classe 2:	10.0	2.0	44.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	7.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	59.0	3.0	1.0
+ Classe 5:	0.0	5.0	0.0	3.0	4.0	39.0	12.0
+ Classe 6:	2.0	9.0	0.0	0.0	2.0	5.0	45.0
+------------------------------------------Iteracao 37-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.4172335601
+ Acertos = 337 Erros: 104
+Classe 0 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 1 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 4 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 33.0
+Escore classe 1: 41.0
+Escore classe 2: 29.0
+Escore classe 3: 17.0
+Escore classe 4: 10.0
+Escore classe 5: 30.0
+Escore classe 6: 57.0
+Total: 217.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	47.0	2.0	13.0	0.0	0.0	1.0	0.0
+ Classe 1:	4.0	50.0	0.0	0.0	0.0	8.0	1.0
+ Classe 2:	9.0	1.0	46.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	5.0	54.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	55.0	6.0	2.0
+ Classe 5:	0.0	1.0	0.0	2.0	9.0	38.0	13.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 38-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.6439909297
+ Acertos = 338 Erros: 103
+Classe 0 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 3 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 4 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 5 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 35.0
+Escore classe 1: 35.0
+Escore classe 2: 33.0
+Escore classe 3: 18.0
+Escore classe 4: 16.0
+Escore classe 5: 27.0
+Escore classe 6: 57.0
+Total: 221.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	46.0	5.0	10.0	0.0	0.0	2.0	0.0
+ Classe 1:	2.0	53.0	0.0	0.0	0.0	7.0	1.0
+ Classe 2:	10.0	1.0	43.0	8.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	3.0	55.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	53.0	4.0	6.0
+ Classe 5:	0.0	1.0	0.0	2.0	5.0	41.0	14.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 39-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:75.9637188209
+ Acertos = 335 Erros: 106
+Classe 0 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 1 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 80.9523809524 Acertos 51.0  Erros 12.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 61.9047619048 Acertos 39.0  Erros 24.0
+Classe 6 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 31.0
+Escore classe 1: 31.0
+Escore classe 2: 31.0
+Escore classe 3: 22.0
+Escore classe 4: 9.0
+Escore classe 5: 38.0
+Escore classe 6: 58.0
+Total: 220.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	45.0	8.0	9.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	54.0	0.0	0.0	0.0	6.0	1.0
+ Classe 2:	9.0	1.0	44.0	8.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	7.0	51.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	5.0	2.0
+ Classe 5:	0.0	4.0	0.0	2.0	5.0	39.0	13.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	6.0	46.0
+------------------------------------------Iteracao 40-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.0975056689
+ Acertos = 340 Erros: 101
+Classe 0 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 1 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 2 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 6 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 34.0
+Escore classe 1: 34.0
+Escore classe 2: 27.0
+Escore classe 3: 21.0
+Escore classe 4: 10.0
+Escore classe 5: 22.0
+Escore classe 6: 61.0
+Total: 209.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	45.0	5.0	12.0	0.0	0.0	1.0	0.0
+ Classe 1:	2.0	54.0	0.0	0.0	0.0	3.0	4.0
+ Classe 2:	5.0	0.0	47.0	9.0	0.0	0.0	2.0
+ Classe 3:	4.0	0.0	6.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	4.0	3.0
+ Classe 5:	0.0	0.0	0.0	2.0	5.0	43.0	13.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	9.0	43.0
+------------------------------------------Iteracao 41-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:75.283446712
+ Acertos = 332 Erros: 109
+Classe 0 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 1 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 2 Acc = 68.253968254 Acertos 43.0  Erros 20.0
+Classe 3 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 38.0
+Escore classe 1: 32.0
+Escore classe 2: 33.0
+Escore classe 3: 24.0
+Escore classe 4: 10.0
+Escore classe 5: 34.0
+Escore classe 6: 57.0
+Total: 228.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	44.0	7.0	10.0	0.0	0.0	1.0	1.0
+ Classe 1:	1.0	55.0	0.0	0.0	0.0	4.0	3.0
+ Classe 2:	10.0	3.0	43.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	9.0	49.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	4.0	3.0
+ Classe 5:	0.0	2.0	0.0	3.0	6.0	38.0	14.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 42-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.3242630385
+ Acertos = 341 Erros: 100
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 2 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 3 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 4 Acc = 90.4761904762 Acertos 57.0  Erros 6.0
+Classe 5 Acc = 66.6666666667 Acertos 42.0  Erros 21.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 23.0
+Escore classe 1: 47.0
+Escore classe 2: 30.0
+Escore classe 3: 26.0
+Escore classe 4: 8.0
+Escore classe 5: 33.0
+Escore classe 6: 54.0
+Total: 221.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	3.0	10.0	0.0	0.0	0.0	0.0
+ Classe 1:	3.0	50.0	0.0	0.0	0.0	6.0	4.0
+ Classe 2:	10.0	1.0	46.0	5.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	8.0	49.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	57.0	4.0	2.0
+ Classe 5:	0.0	3.0	0.0	3.0	5.0	42.0	10.0
+ Classe 6:	0.0	9.0	0.0	0.0	2.0	5.0	47.0
+------------------------------------------Iteracao 43-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.5510204082
+ Acertos = 342 Erros: 99
+Classe 0 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 4 Acc = 93.6507936508 Acertos 59.0  Erros 4.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 36.0
+Escore classe 1: 32.0
+Escore classe 2: 28.0
+Escore classe 3: 19.0
+Escore classe 4: 5.0
+Escore classe 5: 32.0
+Escore classe 6: 54.0
+Total: 206.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	45.0	3.0	14.0	0.0	0.0	1.0	0.0
+ Classe 1:	3.0	53.0	0.0	0.0	0.0	6.0	1.0
+ Classe 2:	6.0	0.0	44.0	12.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	4.0	54.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	59.0	3.0	1.0
+ Classe 5:	0.0	2.0	0.0	3.0	6.0	40.0	12.0
+ Classe 6:	0.0	9.0	0.0	0.0	2.0	5.0	47.0
+------------------------------------------Iteracao 44-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.3242630385
+ Acertos = 341 Erros: 100
+Classe 0 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+Classe 1 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 2 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 3 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 4 Acc = 93.6507936508 Acertos 59.0  Erros 4.0
+Classe 5 Acc = 63.4920634921 Acertos 40.0  Erros 23.0
+Classe 6 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 26.0
+Escore classe 1: 48.0
+Escore classe 2: 29.0
+Escore classe 3: 27.0
+Escore classe 4: 5.0
+Escore classe 5: 28.0
+Escore classe 6: 56.0
+Total: 219.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	48.0	4.0	11.0	0.0	0.0	0.0	0.0
+ Classe 1:	3.0	49.0	0.0	0.0	0.0	10.0	1.0
+ Classe 2:	10.0	0.0	47.0	5.0	0.0	0.0	1.0
+ Classe 3:	5.0	0.0	6.0	50.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	59.0	3.0	1.0
+ Classe 5:	0.0	1.0	0.0	2.0	6.0	40.0	14.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	4.0	48.0
+------------------------------------------Iteracao 45-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:76.1904761905
+ Acertos = 336 Erros: 105
+Classe 0 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 1 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 95.2380952381 Acertos 60.0  Erros 3.0
+Classe 5 Acc = 58.7301587302 Acertos 37.0  Erros 26.0
+Classe 6 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 34.0
+Escore classe 1: 45.0
+Escore classe 2: 31.0
+Escore classe 3: 21.0
+Escore classe 4: 4.0
+Escore classe 5: 34.0
+Escore classe 6: 57.0
+Total: 226.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	47.0	3.0	10.0	2.0	0.0	1.0	0.0
+ Classe 1:	4.0	49.0	0.0	0.0	0.0	9.0	1.0
+ Classe 2:	9.0	2.0	44.0	7.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	6.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	60.0	2.0	1.0
+ Classe 5:	0.0	2.0	0.0	2.0	9.0	37.0	13.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	5.0	47.0
+------------------------------------------Iteracao 46-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:75.9637188209
+ Acertos = 335 Erros: 106
+Classe 0 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 65.0793650794 Acertos 41.0  Erros 22.0
+Classe 3 Acc = 87.3015873016 Acertos 55.0  Erros 8.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 57.1428571429 Acertos 36.0  Erros 27.0
+Classe 6 Acc = 77.7777777778 Acertos 49.0  Erros 14.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 36.0
+Escore classe 1: 32.0
+Escore classe 2: 33.0
+Escore classe 3: 16.0
+Escore classe 4: 9.0
+Escore classe 5: 38.0
+Escore classe 6: 51.0
+Total: 215.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	45.0	6.0	10.0	0.0	0.0	2.0	0.0
+ Classe 1:	3.0	53.0	0.0	0.0	0.0	6.0	1.0
+ Classe 2:	8.0	4.0	41.0	9.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	4.0	55.0	0.0	0.0	0.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	5.0	2.0
+ Classe 5:	0.0	3.0	0.0	2.0	6.0	36.0	16.0
+ Classe 6:	0.0	9.0	0.0	0.0	1.0	4.0	49.0
+------------------------------------------Iteracao 47-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:78.231292517
+ Acertos = 345 Erros: 96
+Classe 0 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 3 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 6 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 24.0
+Escore classe 1: 35.0
+Escore classe 2: 27.0
+Escore classe 3: 23.0
+Escore classe 4: 10.0
+Escore classe 5: 29.0
+Escore classe 6: 48.0
+Total: 196.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	47.0	8.0	8.0	0.0	0.0	0.0	0.0
+ Classe 1:	2.0	53.0	0.0	0.0	0.0	7.0	1.0
+ Classe 2:	8.0	1.0	47.0	6.0	0.0	0.0	1.0
+ Classe 3:	3.0	0.0	8.0	50.0	0.0	0.0	2.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	4.0	3.0
+ Classe 5:	0.0	2.0	0.0	4.0	5.0	44.0	8.0
+ Classe 6:	0.0	8.0	0.0	0.0	1.0	6.0	48.0
+------------------------------------------Iteracao 48-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.7777777778
+ Acertos = 343 Erros: 98
+Classe 0 Acc = 79.3650793651 Acertos 50.0  Erros 13.0
+Classe 1 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 2 Acc = 74.6031746032 Acertos 47.0  Erros 16.0
+Classe 3 Acc = 82.5396825397 Acertos 52.0  Erros 11.0
+Classe 4 Acc = 92.0634920635 Acertos 58.0  Erros 5.0
+Classe 5 Acc = 60.3174603175 Acertos 38.0  Erros 25.0
+Classe 6 Acc = 71.4285714286 Acertos 45.0  Erros 18.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 27.0
+Escore classe 1: 27.0
+Escore classe 2: 26.0
+Escore classe 3: 23.0
+Escore classe 4: 8.0
+Escore classe 5: 34.0
+Escore classe 6: 63.0
+Total: 208.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	50.0	2.0	10.0	0.0	0.0	1.0	0.0
+ Classe 1:	5.0	53.0	0.0	0.0	0.0	3.0	2.0
+ Classe 2:	7.0	2.0	47.0	6.0	0.0	0.0	1.0
+ Classe 3:	5.0	0.0	5.0	52.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	58.0	2.0	3.0
+ Classe 5:	0.0	2.0	0.0	3.0	6.0	38.0	14.0
+ Classe 6:	0.0	11.0	0.0	0.0	1.0	6.0	45.0
+------------------------------------------Iteracao 49-----------------------------------------------
+  ...........KERNEL_RBF GAMMA 2...........
+  ...........PARAMETROS ESTATICOS...........
+Taxa de acerto:77.0975056689
+ Acertos = 340 Erros: 101
+Classe 0 Acc = 73.0158730159 Acertos 46.0  Erros 17.0
+Classe 1 Acc = 85.7142857143 Acertos 54.0  Erros 9.0
+Classe 2 Acc = 69.8412698413 Acertos 44.0  Erros 19.0
+Classe 3 Acc = 84.126984127 Acertos 53.0  Erros 10.0
+Classe 4 Acc = 88.8888888889 Acertos 56.0  Erros 7.0
+Classe 5 Acc = 61.9047619048 Acertos 39.0  Erros 24.0
+Classe 6 Acc = 76.1904761905 Acertos 48.0  Erros 15.0
+
+  ...........ESCORES DE ERRO...........
+Escore classe 0: 32.0
+Escore classe 1: 28.0
+Escore classe 2: 31.0
+Escore classe 3: 20.0
+Escore classe 4: 8.0
+Escore classe 5: 32.0
+Escore classe 6: 56.0
+Total: 207.0
+
+  ...........MATRIZ CONFUSAO...........
+ 		0	1	2	3	4	5	6
+ Classe 0:	46.0	5.0	11.0	0.0	0.0	1.0	0.0
+ Classe 1:	3.0	54.0	0.0	0.0	0.0	5.0	1.0
+ Classe 2:	9.0	0.0	44.0	9.0	0.0	0.0	1.0
+ Classe 3:	4.0	0.0	5.0	53.0	0.0	0.0	1.0
+ Classe 4:	0.0	0.0	0.0	0.0	56.0	6.0	1.0
+ Classe 5:	0.0	2.0	0.0	2.0	4.0	39.0	16.0
+ Classe 6:	0.0	10.0	0.0	0.0	1.0	4.0	48.0
+------------------------------------------ RESULTADOS ------------------------------------------
 Classe 0:
-	Acc Minima = 46.1538461538%
-	Acc Maxima = 100.0%
-	Acc Media = 71.3846153846
-	Desvio = 12.629237713
+	Minimos:	Acc = 65.0793650794%	Err_score = 20.0 	Cor_score = 287.0
+	Maximos:	Acc = 82.5396825397%	Err_score = 45.0 	Cor_score = 364.0
+	Medias: 	Acc = 74.9206349206%	Err_score = 30.6 	Cor_Score = 330.4
+	Desvios:	Acc = 4.08163265306%	Err_score = 6.04405594323 	Cor_score = 18.0
 Classe 1:
-	Acc Minima = 30.7692307692%
-	Acc Maxima = 92.3076923077%
-	Acc Media = 61.3846153846
-	Desvio = 14.7833854202
+	Minimos:	Acc = 74.6031746032%	Err_score = 16.0 	Cor_score = 282.0
+	Maximos:	Acc = 90.4761904762%	Err_score = 54.0 	Cor_score = 342.0
+	Medias: 	Acc = 84.1904761905%	Err_score = 32.94 	Cor_Score = 318.24
+	Desvios:	Acc = 4.28997137066%	Err_score = 10.1828387045 	Cor_score = 16.2160917811
 Classe 2:
-	Acc Minima = 30.7692307692%
-	Acc Maxima = 84.6153846154%
-	Acc Media = 58.0
-	Desvio = 12.5496237551
+	Minimos:	Acc = 65.0793650794%	Err_score = 19.0 	Cor_score = 205.0
+	Maximos:	Acc = 82.5396825397%	Err_score = 36.0 	Cor_score = 260.0
+	Medias: 	Acc = 73.2698412698%	Err_score = 28.66 	Cor_Score = 230.8
+	Desvios:	Acc = 4.06091998286%	Err_score = 4.07886538846 	Cor_score = 12.791897946
 Classe 3:
-	Acc Minima = 15.3846153846%
-	Acc Maxima = 69.2307692308%
-	Acc Media = 40.0
-	Desvio = 12.9091649719
+	Minimos:	Acc = 77.7777777778%	Err_score = 16.0 	Cor_score = 196.0
+	Maximos:	Acc = 87.3015873016%	Err_score = 27.0 	Cor_score = 220.0
+	Medias: 	Acc = 82.4761904762%	Err_score = 21.0 	Cor_Score = 207.84
+	Desvios:	Acc = 2.56466494614%	Err_score = 2.53948411923 	Cor_score = 6.46295566427
 Classe 4:
-	Acc Minima = 23.0769230769%
-	Acc Maxima = 76.9230769231%
-	Acc Media = 52.4615384615
-	Desvio = 14.962013649
+	Minimos:	Acc = 84.126984127%	Err_score = 3.0 	Cor_score = 159.0
+	Maximos:	Acc = 96.8253968254%	Err_score = 16.0 	Cor_score = 183.0
+	Medias: 	Acc = 89.746031746%	Err_score = 8.68 	Cor_Score = 169.62
+	Desvios:	Acc = 2.92525795716%	Err_score = 2.71383454897 	Cor_score = 5.52873753903
 Classe 5:
-	Acc Minima = 30.7692307692%
-	Acc Maxima = 84.6153846154%
-	Acc Media = 58.4615384615
-	Desvio = 11.7330530242
+	Minimos:	Acc = 57.1428571429%	Err_score = 18.0 	Cor_score = 72.0
+	Maximos:	Acc = 76.1904761905%	Err_score = 42.0 	Cor_score = 96.0
+	Medias: 	Acc = 63.3968253968%	Err_score = 31.58 	Cor_Score = 79.88
+	Desvios:	Acc = 3.9329168443%	Err_score = 5.4551604477 	Cor_score = 4.95547522382
 Classe 6:
-	Acc Minima = 23.0769230769%
-	Acc Maxima = 84.6153846154%
-	Acc Media = 68.9230769231
-	Desvio = 12.6215859476
- Acc total das Classes: 
-	Minima= 50.5494505495% 
-	Maxima = 70.3296703297%
-	Media = 58.6593406593
-	Desvio = 4.14686432303
+	Minimos:	Acc = 66.6666666667%	Err_score = 47.0 	Cor_score = 42.0
+	Maximos:	Acc = 79.3650793651%	Err_score = 72.0 	Cor_score = 50.0
+	Medias: 	Acc = 73.1111111111%	Err_score = 59.34 	Cor_Score = 46.06
+	Desvios:	Acc = 2.96367631439%	Err_score = 6.13989962027 	Cor_score = 1.86711607807
+Acc total das Classes: 
+	Minimos:	Acc = 74.8299319728%	Err_score = 186.0 	Cor_score = 1316.0
+	Maximos:	Acc = 81.179138322%	Err_score = 245.0 	Cor_score = 1445.0
+	Medias: 	Acc = 77.3015873016%	Err_Score = 212.8 	Cor_Score = 1382.84
+	Desvios:	Acc = 1.19747977903%	Err_score = 6.13989962027 	Cor_score = 27.4087428328
