@@ -27,7 +27,7 @@ pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
 ########################################################################################################################################################
 
 ## Laço que define as resoluçoes 
-for percent in range(1,101):
+for percent in range(1,10):
         print percent
         if percent == 44 or percent == 56: percent+=1
         cont +=1
@@ -40,7 +40,7 @@ for percent in range(1,101):
         ########################################################################################################################################################
 
         ## Variaveis relacionadas ao arquivo que contem a saida do GLCM         
-        bd = ler_arquivo("GLCM_RESIZE/DB_GLCM_"+str(percent)+".txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
+        bd = ler_arquivo("GLCM_RESIZE/INTER_LANCZOS4/GLCM_"+str(percent)+".0.txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
         bd = Normalizar(bd,len(bd),len(bd[0])-1)                           ##Normaliza Banco
         iteracoes = 50                                                    ## Numero de iteraçoes para re-treinamento
         ########################################################################################################################################################
@@ -122,7 +122,7 @@ for percent in range(1,101):
                 svm_type = cv2.SVM_C_SVC,
                 C=7.0,
                 degree =1.0,
-                gamma=0.50625,
+                gamma=2,
                 nu = 0.0,
                 p = 0.0,
                 coef0 = 0,
