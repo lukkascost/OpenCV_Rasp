@@ -27,7 +27,7 @@ pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
 ########################################################################################################################################################
 
 ## Laço que define as resoluçoes 
-for percent in range(1,10):
+for percent in range(1,35):
         print percent
         if percent == 44 or percent == 56: percent+=1
         cont +=1
@@ -40,7 +40,7 @@ for percent in range(1,10):
         ########################################################################################################################################################
 
         ## Variaveis relacionadas ao arquivo que contem a saida do GLCM         
-        bd = ler_arquivo("GLCM_RESIZE/INTER_LANCZOS4/GLCM_"+str(percent)+".0.txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
+        bd = ler_arquivo("GLCM_RESIZE/INTER_CUBIC/GLCM_"+str(percent)+".0.txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
         bd = Normalizar(bd,len(bd),len(bd[0])-1)                           ##Normaliza Banco
         iteracoes = 50                                                    ## Numero de iteraçoes para re-treinamento
         ########################################################################################################################################################
@@ -84,7 +84,7 @@ for percent in range(1,10):
                 for i in bd:
                         atributos.append(i[:9])
                         labels.append([i[-1]-1])
-                Salvar_arquivo(atributos,"GLCM_RESIZE/GLCM_A_"+str(percent)+"N.txt")
+                ##Salvar_arquivo(atributos,"GLCM_RESIZE/GLCM_A_"+str(percent)+"N.txt")
                 
                 ##Atributo da classe 0
                 atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,0,qtdtreino,qtdTeste,Treino,TreinoLabel)
