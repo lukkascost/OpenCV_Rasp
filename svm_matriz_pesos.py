@@ -2,6 +2,14 @@
 
 from Metodos import *
 
+##stringCaminho = "INTER_LINEAR"
+stringCaminho = "INTER_AREA"
+##stringCaminho = "INTER_LANCZOS4"
+##stringCaminho = "INTER_CUBIC"
+##stringCaminho = "INTER_NEAREST"
+
+
+
 ##Resultados no nivel de proporcao da imagem
 rs = np.zeros((8,100,2))
 rsee = np.zeros((8,100,2))
@@ -27,9 +35,8 @@ pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
 ########################################################################################################################################################
 
 ## Laço que define as resoluçoes 
-for percent in range(1,35):
+for percent in range(1,11):
         print percent
-        if percent == 44 or percent == 56: percent+=1
         cont +=1
         ## Endereço para guardar os vetores suporte;
         addressSave = "Resultados/SVM_Vectors"+str(percent)+".txt"
@@ -40,7 +47,7 @@ for percent in range(1,35):
         ########################################################################################################################################################
 
         ## Variaveis relacionadas ao arquivo que contem a saida do GLCM         
-        bd = ler_arquivo("GLCM_RESIZE/INTER_CUBIC/GLCM_"+str(percent)+".0.txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
+        bd = ler_arquivo("GLCM_RESIZE/"+stringCaminho+"/GLCM_"+str(percent)+".0.txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
         bd = Normalizar(bd,len(bd),len(bd[0])-1)                           ##Normaliza Banco
         iteracoes = 50                                                    ## Numero de iteraçoes para re-treinamento
         ########################################################################################################################################################
@@ -80,12 +87,10 @@ for percent in range(1,35):
                 Treino = []
                 qtdtreino = 37
                 qtdTeste = 49-qtdtreino
-               
                 for i in bd:
                         atributos.append(i[:9])
                         labels.append([i[-1]-1])
                 ##Salvar_arquivo(atributos,"GLCM_RESIZE/GLCM_A_"+str(percent)+"N.txt")
-                
                 ##Atributo da classe 0
                 atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,0,qtdtreino,qtdTeste,Treino,TreinoLabel)
                 ########################################################################################################################################################
@@ -149,7 +154,8 @@ for percent in range(1,35):
                 erros = np.zeros(7)             ## Numero de Erros[x] da classe x;
                 ########################################################################################################################################################
 
-                ## CALCULO DA ACURACIA 
+                ## CALCULO DA ACURACIA
+                
                 for tsample in range(len(atributos)):
                         test_sample = np.float32(atributos[tsample])
                         res = int(svm.predict(test_sample))
@@ -306,7 +312,11 @@ for percent in range(1,35):
         rsee[7,(percent)-1,1]  = esc_err_tab_des[7]
         rsec[7,(percent)-1,0]  = esc_cor_soma[7]/iteracoes
         rsec[7,(percent)-1,1]  = esc_cor_tab_des[7]
-        Salvar_texto(Resultado,"Resultados/Resultados_iter"+str(percent)+"percent.txt")
+        Salvar_texto(Resultado,"Resultados/"+stringCaminho+"/Result_"+str(percent)+"percent.txt")
+        np.save("Resultados/"+stringCaminho+"/Acc"+str(percent)+"percentMat",acc_tab_res)
+        np.save("Resultados/"+stringCaminho+"/EscErr"+str(percent)+"percentMat",esc_err_tab_res)
+        np.save("Resultados/"+stringCaminho+"/EscAce"+str(percent)+"percentMat",esc_cor_tab_res)
+        np.save("Resultados/"+stringCaminho+"/ConfMat"+str(percent)+"percentMat",conf_mat)
         ########################################################################################################################################################
         ########################################################################################################################################################
         
