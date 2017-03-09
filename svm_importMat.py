@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt2
 
 
-metodo = "INTER_AREA"
+metodo = "INTER_LINEAR"
 
 totais = np.zeros((3,101,1))
 medias = np.zeros((101,3,8,1))
-for i in range(1,31):
+for i in range(1,40):
     address ="Resultados/"+metodo+"/"
     esc_err_tab_res = np.load(address+"EscErr"+str(i)+"percentMat.npy")
     esc_cor_tab_res = np.load(address+"EscAce"+str(i)+"percentMat.npy")
@@ -34,7 +34,7 @@ for i in range(3):
         if (medias[j,i,7,0] != 0):
             for k in range(len(medias[j,i])):
                 strAcc[i][k].append(("{:03.1f}".format(medias[j,i,k,0])))
-		s[i,j,0]= medias[j,i,7,0]
+                s[i,j,0]= medias[j,i,7,0]
 
 for j in range(3):
     stri = ""
@@ -42,16 +42,15 @@ for j in range(3):
         stri+="\nClasse "+str(i)+";"
         for k in strAcc[j][i]:
             stri+=k+";"
-    print stri
+    #print stri
 
-        
-t = np.arange(0.0, 30.0, 1)
-plt.plot(s[0],label="Acuracia 5")
-plt.plot(totais[0],label="Acuracia t")
-plt.plot(s[1],label="erro 5")
-plt.plot(totais[1],label="erro t")
-plt.plot(s[2],label="Acerto 5")
-plt.plot(totais[2],label="Acerto t")
+t = np.arange(0, 101, 1)
+plt.plot(t,s[0],label="Acuracia 5")
+plt.plot(t,totais[0],label="Acuracia t")
+plt.plot(t,s[1],label="erro 5")
+plt.plot(t,totais[1],label="erro t")
+plt.plot(t,s[2],label="Acerto 5")
+plt.plot(t,totais[2],label="Acerto t")
 
 
 plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
@@ -59,7 +58,7 @@ plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
 #plt.legend([l1,l2,l3],["1","2","3"])
 plt.xlabel('resize (%)')
 plt.ylabel('Pontos')
-plt.title('About as simple as it gets, folks')
+#plt.title('About as simple as it gets, folks')
 plt.grid(True)
 plt.show()
 

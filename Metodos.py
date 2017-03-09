@@ -1,5 +1,5 @@
 ## SVM - OpenCV 2.4.13
-#import cv2
+import cv2
 import numpy as np
 import math as mp
 import random
