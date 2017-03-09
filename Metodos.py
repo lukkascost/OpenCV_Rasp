@@ -229,4 +229,15 @@ def Train_extract(atributos,labels,fClass,qtdtreino,qtdTeste,Treino,TreinoLabel)
                 qtdtreino -=1
         return atributos,labels,Treino,TreinoLabel
 
+def five_best_avg(mat):
+    res = np.zeros((len(mat),1))
+    for i in range(len(mat)):
+        mat[i] = np.sort(mat[i])
+        res[i,0] =  sum(mat[i][len(mat[i])-5:])/5
+    return res
 
+def avg(l):
+    res = np.zeros((len(l),1))
+    for i in range(len(l)):
+        res[i,0] = reduce(lambda x, y: x + y, l[i]) / len(l[i])
+    return res
