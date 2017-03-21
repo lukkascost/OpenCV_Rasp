@@ -6,8 +6,8 @@ from Metodos import *
 ##stringCaminho = "INTER_AREA"
 ##stringCaminho = "INTER_LANCZOS4"
 ##stringCaminho = "INTER_CUBIC"
-stringCaminho = "INTER_NEAREST"
-
+##stringCaminho = "INTER_NEAREST"
+stringCaminho = "DECIMACAO"
 
 
 ##Resultados no nivel de proporcao da imagem
@@ -35,7 +35,7 @@ pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
 ########################################################################################################################################################
 
 ## Laço que define as resoluçoes 
-for percent in range(1,101):
+for percent in range(4,9):
         print percent
         cont +=1
         ## Endereço para guardar os vetores suporte;

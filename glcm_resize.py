@@ -21,13 +21,5 @@ def resize(i):
                         cv2.imwrite('../couro_images_semfundo/'+str(divisao)+'/c'+str(i)+'_'+str(j)+'.JPG',saida)
 
 
-
-resize(1)
-resize(2)
-resize(3)
-resize(4)
-resize(5)
-resize(6)
-resize(7)
-
         
+resize_img(cv2.imread("../ROI/c1_1.JPG",0),8)

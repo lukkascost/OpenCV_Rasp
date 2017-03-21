@@ -1,13 +1,13 @@
 from Metodos import *
 import matplotlib.pyplot as plt
 
-smetodo = ["INTER_LANCZOS4","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_NEAREST"]
-de = 1
-ate = 39
+smetodo = ["INTER_LANCZOS4","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_NEAREST","DECIMACAO"]
+de = 4
+ate = 9
 for metodo in smetodo:
     totais = np.zeros((3,101,1))
     medias = np.zeros((101,3,8,1))
-    for i in range(1,40):
+    for i in range(de,ate):
         address ="Resultados/"+metodo+"/"
         esc_err_tab_res = np.load(address+"EscErr"+str(i)+"percentMat.npy")
         esc_cor_tab_res = np.load(address+"EscAce"+str(i)+"percentMat.npy")
