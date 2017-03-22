@@ -214,6 +214,15 @@ def cria_Arquivo_GLCM(percent,method, text,caminho):
     Salvar_arquivo(bd,"GLCM_RESIZE/"+text+"/GLCM_"+str(percent*100)+".txt")
 #####################################################################################################################################################################################################
 ##
+def GLCM(img,classe):
+        imgQuantized = img.copy()
+        coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
+        coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
+        glcm_features  = getFeatures(coOccurenceNormalized, 256)
+        glcm_features[9] = classe
+        return glcm_features
+##################################################################################################################################################################################################### 
+##
 def memory():
     """
     Get node total memory and memory usage
