@@ -178,15 +178,46 @@ def getFeatures(coOccurenceNormalized, grayscale):
     return glcm_features                                                                                                        ##
 #####################################################################################################################################################################################################
 ##
-def resize_img(img,division):
-        height, width = img.shape[:2]
-        saida = np.zeros((width/division,height/division))
-        for k in range(height/division):
-                for g in range(width/division):
-                        a = division * k
-                        b = division * g
-                        saida.itemset((g,k),img[a][b])
-        return saida
+def resize_img(img,i):
+    x,y = img.shape
+    yreal = int(y*(float(i)/100))
+    xreal = int(x*(float(i)/100))
+    saida = np.zeros((xreal,yreal))
+    xmeu = 0
+    ymeu = 0
+    ix = 0
+    laco = 0
+    passo = int(x/xreal)+1
+    inx = []
+    iny = []
+    while(xreal>xmeu):
+        contador = 0+laco
+        while(contador<x):
+            if (xreal==xmeu):
+                break
+            xmeu+=1
+            inx.append(contador)
+            ix+=1
+            contador += passo
+        laco+=1
+    laco = 0
+    ix =0
+    passo = int(y/yreal)+1
+    while(yreal>ymeu):
+        contador = 0+laco
+        while(contador<y):
+            if (yreal<ymeu):
+                break
+            ymeu+=1
+            iny.append(contador)
+            contador += passo
+        laco+=1
+    inx.sort()
+    iny.sort()
+    for j in range(xreal):
+        for k in range(yreal):
+            saida.itemset((j,k),img[inx[j]][iny[k]])
+    return saida  
 #####################################################################################################################################################################################################
 ##
 def cria_Arquivo_GLCM(percent,method, text,caminho):
@@ -204,7 +235,7 @@ def cria_Arquivo_GLCM(percent,method, text,caminho):
             if(method ==2 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_AREA)
             if(method ==3 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_CUBIC )
             if(method ==4 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LANCZOS4 )
-            if(method ==5 ): img = resize_img(img,percent)
+            if(method ==5 ): img = resize_img(img,percent*100)
             imgQuantized = img.copy()
             coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
             coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
