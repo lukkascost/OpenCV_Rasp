@@ -8,7 +8,8 @@ from Metodos import *
 ##stringCaminho = "INTER_CUBIC"
 ##stringCaminho = "INTER_NEAREST"
 ##stringCaminho = "DECIMACAO"
-stringCaminho = "ROI"
+##stringCaminho = "ROI"
+stringCaminho = "ROI_PRETO"
 
 ##Resultados no nivel de proporcao da imagem
 rs = np.zeros((8,100,2))
