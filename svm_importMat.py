@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 smetodo = ["INTER_LANCZOS4","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_NEAREST","DECIMACAO","ROI"]
 de = 1
-ate = 4
+ate = 20
 for metodo in smetodo:
     totais = np.zeros((3,101,1))
     medias = np.zeros((101,3,8,1))
