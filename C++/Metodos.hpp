@@ -8,6 +8,7 @@
 
 using namespace cv;
 
+
 void GetObjetosAtributos(float &objetos,float &atributos , char address[500]){
     FILE* file;
 	objetos=0;
@@ -38,14 +39,17 @@ void PassarBancoDeDadosParaMat(Mat BancoDeDados,float objetos,float atributos , 
     FILE* file;
 	file=fopen(address, "r");
     float num;
+    printf ("\nok");
     for (int obj=0; obj<objetos; obj++) {
-        for (int atrib=0; atrib<atributos+1; atrib++) {
+      printf ("\nok %f",atributos);
+      for (int atrib=0; atrib<(atributos+1); atrib++) {
+	  printf ("\nok");	  
             if (atrib!=atributos) {
                 fscanf(file,"%f,",&num);
                 BancoDeDados.at<float>(obj,atrib)=num;
             }
             if (atrib==atributos) {
-                fscanf(file,"%f",&num);
+                fscanf(file,"%f,",&num);
                 BancoDeDados.at<float>(obj,atrib)=num;
             }
         }
@@ -180,4 +184,29 @@ void getFeatures(vector<double> &glcm_features, Mat coOccurenceNormalized, int g
     glcm_features[9]*=(-1);//sum_entropy
     glcm_features[12]*=(-1);//difference_entropy
     
+}
+
+vector<double> glcm_extraction(Mat image, int grayscale){
+  vector<double> glcm_features;
+
+  Mat imageQuantized, coOccurence, coOccurenceNormalized;
+  image.copyTo(imageQuantized);
+
+  /* Quantiza a imagem de entrada */
+  //quantizerMatrix(image, imageQuantized, grayscale);
+
+  /* Calcula a Matriz de Co-Ocorrencia */
+  getCoOccurrenceMatrix(imageQuantized, coOccurence, grayscale);
+
+  /* Normaliza a Matriz de Co-Ocorrencia */
+  normalizeCoOccurrenceMatrix(coOccurence, coOccurenceNormalized, imageQuantized, grayscale);
+
+  /* Calcula os atributos da GLCM */
+  getFeatures(glcm_features, coOccurenceNormalized, grayscale);
+
+  imageQuantized.release();
+  coOccurence.release();
+  coOccurenceNormalized.release();
+
+  return glcm_features;
 }
