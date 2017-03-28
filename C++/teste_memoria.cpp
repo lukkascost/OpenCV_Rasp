@@ -1,18 +1,10 @@
-#include <stdio.h>
-#include <string.h>
-#include "sys/types.h"
-#include "sys/sysinfo.h"
-#include "Metodos.cpp"
-struct sysinfo memInfo;
-
-//Add other values in next statement to avoid int overflow on right hand side...
-
+#include "Metodos.hpp"
 
 int  main(){
-	sysinfo (&memInfo);
-	printf("Antes total:%ld  ",memInfo.totalram);
-	printf("Livre: %ld ",memInfo.freeram);
-	
-	
+float* i = (float*)malloc(sizeof(float)*2048);
+int x,y= 10 ;
+for (x=0;x<2048;x++){
+	i[x] = x+y;
+}
 return 0;
 }
