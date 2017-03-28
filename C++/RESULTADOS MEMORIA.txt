@@ -1,0 +1,12 @@
+   text    data     bss     dec     hex filename
+   1380     336       4    1720     6b8 main
+  25105     500     256   25861    6505 biblioteca
+  28234     516     256   29006    714e GLCM
+  26619     520     256   27395    6b03 svm_predict
+  29209     536     256   30001    7531 glcm+svm
+
+
+TEXT =  is the code (and maybe any read-only data)
+DATA =  is initialized global/static variables and maybe some other stuff
+BSS  =  is uninitialized globals/statics (which will automatically get set to 0/NULL)...  
+
