@@ -1,10 +1,10 @@
 from Metodos import *
 import matplotlib.pyplot as plt
 
-smetodo = ["ROI","ROI_PRETO","DECIMACAO"]
-#smetodo = ["INTER_LANCZOS4","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_NEAREST","DECIMACAO","ROI"]
+#smetodo = ["ROI","ROI_PRETO","DECIMACAO"]
+smetodo = ["INTER_LANCZOS4","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_NEAREST","DECIMACAO","ROI","ROI_PRETO"]
 de = 1
-ate = 10
+ate = 20
 for metodo in smetodo:
     totais = np.zeros((3,101,1))
     medias = np.zeros((101,3,8,1))
