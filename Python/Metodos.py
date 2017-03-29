@@ -217,7 +217,23 @@ def resize_img(img,i):
     for j in range(xreal):
         for k in range(yreal):
             saida.itemset((j,k),img[inx[j]][iny[k]])
-    return saida  
+    return saida
+
+def resize_img_passo(img,k):
+        saida = []
+        i = 0
+        ci = 0
+        while ci < img.shape[0]:
+                cj = 0
+                j = 0
+                saida.append([])
+                while cj<img.shape[1]:
+                        saida[i].append(img[i*k][j*k])
+                        cj+=k
+                        j+=1
+                ci+=k
+                i +=1
+        return np.matrix(saida)  
 #####################################################################################################################################################################################################
 ##
 def cria_Arquivo_GLCM(percent,method, text,caminho):
@@ -228,7 +244,6 @@ def cria_Arquivo_GLCM(percent,method, text,caminho):
     bd = []
     for i in range(1,8):
         for j in range(1,51):
-            print caminho+'/c'+str(i)+'_'+str(j)+'.JPG', percent, text
             img = cv2.imread(caminho+'/c'+str(i)+'_'+str(j)+'.JPG',0)
             if(method ==0 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_NEAREST)
             if(method ==1 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LINEAR)
@@ -236,12 +251,14 @@ def cria_Arquivo_GLCM(percent,method, text,caminho):
             if(method ==3 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_CUBIC )
             if(method ==4 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LANCZOS4 )
             if(method ==5 ): img = resize_img(img,percent*100)
+            if(method ==6 ): img = resize_img_passo(img,percent)
             imgQuantized = img.copy()
             coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
             coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
             glcm_features  = getFeatures(coOccurenceNormalized, 256)
             glcm_features[9] = float(i)
             bd.append(glcm_features)
+            print caminho+'/c'+str(i)+'_'+str(j)+'.JPG', percent, text, img.shape
     Salvar_arquivo(bd,"GLCM_RESIZE/"+text+"/GLCM_"+str(percent*100)+".txt")
 #####################################################################################################################################################################################################
 ##
