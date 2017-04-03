@@ -1,10 +1,10 @@
 from Metodos import *
 import matplotlib.pyplot as plt
 
-#smetodo = ["ROI","ROI_PRETO","DECIMACAO"]
-smetodo = ["INTER_LANCZOS4","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_NEAREST","DECIMACAO","ROI","ROI_PRETO"]
-de = 1
-ate = 20
+smetodo = ["PASSO_ROI","PASSO_ROI_PRETO","PASSO_DECIMACAO"]
+#smetodo = ["INTER_LANCZOS4","INTER_LINEAR","INTER_AREA","INTER_CUBIC","INTER_NEAREST","DECIMACAO","ROI","ROI_PRETO"]
+de = 70
+ate = 99
 for metodo in smetodo:
     totais = np.zeros((4,101,1))
     medias = np.zeros((101,4,8,1))
@@ -51,7 +51,7 @@ for metodo in smetodo:
                 stri+=k+";"
     t = np.arange(de, ate+1, 1)
     escreal = np.add(totais[2,de:ate+1],np.dot(-1,totais[1,de:ate+1]))
-    #plt.plot(t,s[0,de:ate+1],label="Acuracia 5")
+    plt.plot(t,totais[0,de:ate+1],label="Acuracia t")
     #plt.plot(t,escreal,label="Escore Real")
     plt.plot(t,s[1,de:ate+1],label="erro 5")
     #plt.plot(t,totais[1,de:ate+1],label="erro t")
@@ -60,7 +60,7 @@ for metodo in smetodo:
     plt.plot(t,s[3,de:ate+1],label="Lucro 5")
     #plt.plot(t,totais[3,de:ate+1],label="Lucro t")
 
-    plt.ylim([0,5070])
+    plt.ylim([0,100])
     plt.xlim([de,ate])
 
     plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
@@ -68,7 +68,7 @@ for metodo in smetodo:
     plt.ylabel('Pontos')
     plt.title("real_"+metodo)
     plt.grid(True)
-    plt.savefig("Resultados_real/graficos-"+metodo+"--"+str(de)+"-a-"+str(ate)+".png",bbox_inches='tight',dpi=400)
+    plt.savefig("Resultados_real/graficos-"+metodo+"--"+str(de)+"-a-"+str(ate)+"acc.png",bbox_inches='tight',dpi=400)
     ##plt.show()
     plt.gcf().clear()
 

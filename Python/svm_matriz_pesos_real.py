@@ -1,16 +1,8 @@
 # -*- coding: cp1252 -*-
 
 from Metodos import *
-
-##stringCaminho = "INTER_LINEAR"
-##stringCaminho = "INTER_AREA"
-##stringCaminho = "INTER_LANCZOS4"
-##stringCaminho = "INTER_CUBIC"
-##stringCaminho = "INTER_NEAREST"
-stringCaminho = "DECIMACAO"
-##stringCaminho = "ROI"
-##stringCaminho = "ROI_PRETO"
-for stringCaminho in ["INTER_LINEAR","INTER_AREA","INTER_LANCZOS4","INTER_CUBIC","INTER_NEAREST","DECIMACAO","ROI","ROI_PRETO"]:
+##["INTER_LINEAR","INTER_AREA","INTER_LANCZOS4","INTER_CUBIC","INTER_NEAREST","DECIMACAO","ROI","ROI_PRETO"]
+for stringCaminho in ["PASSO_DECIMACAO","PASSO_ROI","PASSO_ROI_PRETO"]:
         ##Resultados no nivel de proporcao da imagem
         rs = np.zeros((8,100,2))
         rsee = np.zeros((8,100,2))
@@ -44,7 +36,7 @@ for stringCaminho in ["INTER_LINEAR","INTER_AREA","INTER_LANCZOS4","INTER_CUBIC"
         ########################################################################################################################################################
 
         ## Laço que define as resoluçoes 
-        for percent in range(1,21):
+        for percent in range(70,100):
                 print percent
                 cont +=1
                 ## Endereço para guardar os vetores suporte;
@@ -54,9 +46,9 @@ for stringCaminho in ["INTER_LINEAR","INTER_AREA","INTER_LANCZOS4","INTER_CUBIC"
                 ## Variavel com o texto que vai ser inserido no Arquivo de Resultados;
                 Resultado = ""
                 ########################################################################################################################################################
-
+                percent *=100
                 ## Variaveis relacionadas ao arquivo que contem a saida do GLCM         
-                bd = ler_arquivo("GLCM_RESIZE/"+stringCaminho+"/GLCM_"+str(percent)+".0.txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
+                bd = ler_arquivo("GLCM_RESIZE/"+stringCaminho+"/GLCM_"+str(percent)+".txt")       ##Ex. GLCM_RESIZE/GLCM_10.0.txt para 10% da imagem original
                 bd = Normalizar(bd,len(bd),len(bd[0])-1)                           ##Normaliza Banco
                 iteracoes = 50                                                    ## Numero de iteraçoes para re-treinamento
                 ########################################################################################################################################################
@@ -299,6 +291,7 @@ for stringCaminho in ["INTER_LINEAR","INTER_AREA","INTER_LANCZOS4","INTER_CUBIC"
                 ## TEXTO RELACIONADO A CLASSES E ITERAÇÕES                                                                                                            ##
                 ########################################################################################################################################################
                 Resultado += "\n------------------------------------------ RESULTADOS ------------------------------------------"
+                percent /=100
                 for i in range(7):
                         rs[i,(percent)-1,0] = round(acc_soma[i]/iteracoes,3)
                         rsee[i,(percent)-1,0] = round(esc_err_soma[i]/iteracoes,3)
