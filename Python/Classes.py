@@ -45,7 +45,6 @@ class iteracao(object):
                         string+="\nClasse {:02d}:\t".format(i)
                         for j in range(self.nclasses):
                                 string+="{:05.02f}\t".format(self.dados[i,j])
-                        
                 return string
 ##################################################################################################################################################################################################
 
@@ -104,8 +103,3 @@ class rodada(object):
                         string+= "Acc++ = {:014.10f}%\t".format(self.get_avg_acc()[1][i,0]*100)
                 return string
 
-if __name__== "__main__":
-        obj = rodada(50,7)
-        obj = obj.load("OBJETOS/PASSO_DECIMACAO-099%-050Iteracoes-PESOS_TIPO_01.pkl")
-        print obj
-        

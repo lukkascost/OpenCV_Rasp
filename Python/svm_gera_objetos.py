@@ -1,7 +1,7 @@
 from Classes import *
 oAddress = "OBJETOS/"
 vAddress = "VETORES/"
-Metodo = "PASSO_DECIMACAO"
+Metodo = "PASSO_ROI_PRETO"
 PesosTipo = "01"
 iteracoes = 50
 qtdtreino = 37
