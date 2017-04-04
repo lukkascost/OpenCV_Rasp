@@ -3,6 +3,8 @@ import cv2
 import numpy as np
 import math as mp
 import random
+from Classes import *
+import matplotlib.pyplot as plt
 #####################################################################################################################################################################################################
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
 def GetObjetosAtributos(ad):
@@ -323,3 +325,30 @@ def avg(l):
         res[i,0] = reduce(lambda x, y: x + y, l[i]) / len(l[i])         ##
     return res                                                          ##
 #####################################################################################################################################################################################################
+def geraGraficos(smetodo,inicio,tamanho,peso):
+    objAr = [rodada(50,7) for i in range(100)]
+    for metodo in smetodo:
+        acc_ = []
+        acc = []
+        for percent in range(inicio,inicio+tamanho+1):
+            objAr[percent] = objAr[percent].load("OBJETOS/{}-{:03d}%-{:03d}Iteracoes-PESOS_TIPO_{:02d}.pkl".format(metodo,percent,50,peso))
+            acc_.append(objAr[percent].get_avg_acc()[1][7,0]*100)
+            acc.append(objAr[percent].get_avg_acc()[0][7,0]*100)
+        
+        t = np.arange(inicio, inicio+tamanho+1, 1)
+        plt.plot(t,acc_,label="Acuracia ++")
+        plt.plot(t,acc,label="Acuracia")
+        plt.ylim([0,100])
+        plt.xlim([inicio,inicio+tamanho])
+
+        plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
+        plt.xlabel('resize (%)')
+        plt.ylabel('Pontos')
+        plt.title("real_"+metodo)
+        plt.grid(True)
+        plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_ACURACIAS.png".format(peso,metodo,inicio,tamanho),bbox_inches='tight',dpi=400)
+        print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_ACURACIAS.png".format(peso,metodo,inicio,tamanho)
+        ##plt.show()
+        plt.gcf().clear()
+
+
