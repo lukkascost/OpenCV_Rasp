@@ -7,8 +7,9 @@ from Metodos import *
 ##stringCaminho = "INTER_LANCZOS4"
 ##stringCaminho = "INTER_CUBIC"
 ##stringCaminho = "INTER_NEAREST"
-##stringCaminho = "DECIMACAO"
-stringCaminho = "ROI"
+stringCaminho = "DECIMACAO"
+##stringCaminho = "ROI"
+##stringCaminho = "ROI_PRETO"
 
 ##Resultados no nivel de proporcao da imagem
 rs = np.zeros((8,100,2))
@@ -35,7 +36,7 @@ pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
 ########################################################################################################################################################
 
 ## Laço que define as resoluçoes 
-for percent in range(1,21):
+for percent in range(1,2):
         print percent
         cont +=1
         ## Endereço para guardar os vetores suporte;
