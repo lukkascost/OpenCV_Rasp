@@ -1,11 +1,4 @@
 from Classes import *
-oAddress = "OBJETOS/"
-vAddress = "VETORES/"
-Metodo = "PASSO_DECIMACAO"
-
-iteracoes = 50
-qtdtreino = 37
-qtdTeste = 49-qtdtreino
 
 ## tipo 01
 PesosTipo = "01"
@@ -49,73 +42,57 @@ pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
 ##pesosCorr = [100.   ,85.   ,75.   ,55.   ,40.   ,20.   ,15.]
 ##########################################################################################################################################################
 
-for percent in range(3,4):
-    obj = rodada(iteracoes,7)
-    bd = ler_arquivo("GLCM_RESIZE/"+Metodo+"/GLCM_"+str(percent*100)+".txt")
-    bd = Normalizar(bd,len(bd),len(bd[0])-1)    
-    for it in range(iteracoes):
-        oIt = iteracao(7,13)
-        atributos = []
-        labels = []
-        TreinoLabel = []
-        Treino = []
-        for i in bd:
-            atributos.append(i[:9])
-            labels.append([i[-1]-1])
-        ##Atributo da classe 0
-        atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,0,qtdtreino,qtdTeste,Treino,TreinoLabel)
-        ########################################################################################################################################################
-        
-        ##Atributo da classe 1
-        atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,1,qtdtreino,qtdTeste,Treino,TreinoLabel)
-        ########################################################################################################################################################
-        
-        ##Atributo da classe 2
-        atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,2,qtdtreino,qtdTeste,Treino,TreinoLabel)
-        ########################################################################################################################################################
-        
-        ##Atributo da classe 3
-        atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,3,qtdtreino,qtdTeste,Treino,TreinoLabel)
-        ########################################################################################################################################################
-        
-        ##Atributo da classe 4
-        atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,4,qtdtreino,qtdTeste,Treino,TreinoLabel)
-        ########################################################################################################################################################
-        
-        ##Atributo da classe 5
-        atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,5,qtdtreino,qtdTeste,Treino,TreinoLabel)
-        ########################################################################################################################################################
-        
-        ##Atributo da classe 6
-        atributos,labels,Treino,TreinoLabel =  Train_extract(atributos,labels,6,qtdtreino,qtdTeste,Treino,TreinoLabel)
-        ########################################################################################################################################################
 
-        oIt.conj_treino = np.float32(np.matrix(Treino))
-        oIt.conj_teste = np.matrix(atributos)
-        oIt.conj_treino_label = np.float32(np.matrix(TreinoLabel))
-        oIt.conj_teste_label = np.matrix(labels)
-        oIt.svm_params = dict(kernel_type = cv2.SVM_RBF,
-                svm_type = cv2.SVM_C_SVC,
-                C=7.0,
-                degree =1.0,
-                gamma=2,
-                nu = 0.0,
-                p = 0.0,
-                coef0 = 0,
-                class_weights = None,
-                epsilon = 1e-6
-                )
-        svm = cv2.SVM()
-        svm.train(np.float32(Treino),np.float32(TreinoLabel),params = oIt.svm_params)
-        for tsample in range(len(atributos)):
-            test_sample = np.float32(atributos[tsample])
-            res = int(svm.predict(test_sample))
-            test = int(labels[tsample][0])
-            oIt.dados[test,res] +=1
-        mul = np.multiply(oIt.dados,pesos)
-        oIt.escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
-        oIt.escore_acerto = np.matrix([pesosCorr[i]*oIt.dados[i,i] for i in range(7)])
-        obj.set_iteracao(it+1,oIt)
-    obj.save(oAddress+"{}-{:03d}%-{:03d}Iteracoes-PESOS_TIPO_{}.pkl".format(Metodo,percent,iteracoes,PesosTipo))
-    
-        
+if __name__ == "__main__":
+        for metodo in ["PASSO_DECIMACAO","PASSO_ROI","PASSO_ROI_PRETO"]:
+                it = 50
+                for percent in range(3,35)+range(75,100):
+                        obj = rodada(it,7)
+                        bd = ler_arquivo("GLCM_RESIZE/{}/GLCM_{:d}00.txt".format(metodo,percent))
+                        bd = Normalizar(bd,len(bd),len(bd[0])-1)
+                        for i in bd:
+                                obj.GLCM.add_objeto(i)
+                        for k in range(it):
+                                while(len(obj.iteracoes[k].conj_teste) < obj.iteracoes[k].nTeste*obj.iteracoes[k].nclasses):
+                                        rd = random.randint(0,len(bd)-1)
+                                        if(rd not in obj.iteracoes[k].conj_teste):
+                                                if(obj.iteracoes[k].qtdTeste[obj.GLCM.labels[rd]] < obj.iteracoes[k].nTeste):
+                                                        obj.iteracoes[k].qtdTeste[obj.GLCM.labels[rd]]+=1
+                                                        obj.iteracoes[k].conj_teste.append(rd)
+
+                                for i in range(len(bd)):
+                                        if i not in obj.iteracoes[k].conj_teste:
+                                                obj.iteracoes[k].conj_treino.append(i)
+                                treino = []
+                                treinoL = []
+                                for i in obj.iteracoes[k].conj_treino:
+                                        treino.append(obj.GLCM.atributos[i])
+                                        treinoL.append(obj.GLCM.labels[i])
+                                obj.iteracoes[k].svm_params = dict(kernel_type = cv2.SVM_RBF,
+                                svm_type = cv2.SVM_C_SVC,
+                                C=7.0,
+                                degree =1.0,
+                                gamma=2,
+                                nu = 0.0,
+                                p = 0.0,
+                                coef0 = 0,
+                                class_weights = None,
+                                epsilon = 1e-6
+                                )
+                                svm = cv2.SVM()
+                                svm.train(np.float32(treino),np.float32(treinoL),params = obj.iteracoes[k].svm_params)
+                                for i in obj.iteracoes[k].conj_teste:
+                                        sample = np.float32(obj.GLCM.atributos[i])
+                                        res = int(svm.predict(sample))
+                                        test = int(obj.GLCM.labels[i])
+                                        obj.iteracoes[k].dados[test,res]+=1
+                                mul = np.multiply(obj.iteracoes[k].dados,pesos)
+                                obj.iteracoes[k].escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
+                                obj.iteracoes[k].escore_acerto = np.matrix([pesosCorr[l]*obj.iteracoes[k].dados[l,l] for l in range(obj.iteracoes[k].nclasses)])
+                        obj.save("OBJETOS/{}-{:03d}%-{:03d}Iteracoes-PESOS_TIPO_{}.pkl".format(metodo,percent,it,PesosTipo))
+
+
+
+
+
+
