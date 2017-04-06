@@ -4,7 +4,7 @@
 
 
 int main(){
-	Mat imageMethods = imread("Imagens/005_passo.JPG",CV_LOAD_IMAGE_GRAYSCALE);
+	Mat imageMethods = imread("../Imagens/035_passo.JPG",CV_LOAD_IMAGE_GRAYSCALE);
 	vector<double> data;
 	int i;
 	data = glcm_extraction(imageMethods, 256);
