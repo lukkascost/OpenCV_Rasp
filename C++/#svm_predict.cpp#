@@ -1,0 +1,29 @@
+// Compilar com
+// g++ svm_predict.cpp -o svm_predict -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml
+
+#include <stdio.h>
+#include <string.h>
+#include "sys/types.h"
+#include "sys/sysinfo.h"
+#include "Metodos.hpp"
+struct sysinfo memInfo;
+
+int main(){
+  float objetos,atributos;
+  FILE* file;
+  char address[500]="/DataBase/testing.dat";
+  CvSVM SVM;
+  SVM.load("vetores.txt");
+  //Pegar Quantidade de Objetos e Atributos do Banco de Dados
+  GetObjetosAtributos( objetos, atributos, address);
+
+  //Passar Banco de Dados Para Mat
+  Mat BancoDeDados(objetos,atributos+1,CV_32FC1);
+  PassarBancoDeDadosParaMat(BancoDeDados,objetos,atributos, address g++ svm_predict.cpp -o svm_predict -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml
+			    );
+	    
+}
+
+
+
+
