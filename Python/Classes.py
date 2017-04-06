@@ -16,6 +16,7 @@ class iteracao(object):
                 self.nclasses = nclasses
                 self.conj_treino = []
                 self.conj_teste = []
+                self.qtdTeste = np.zeros(nclasses)
                 self.nTeste = nTeste
                 svm_params = ""
         ##################################################################################################################################################################################################
@@ -118,14 +119,71 @@ class GLCM(object):
                         res+= "\nAtributo {:03d}:\t".format(i)+str(self.atributos[i])+"\t Label: "+str(self.labels[i])
                 return res
 
+## tipo 01
+PesosTipo = "01"
+#Pesos de erro para calculo do Score_error
+pesos = [[  0.   ,1.   ,2.   ,3.   ,4.   ,5.   ,6.],
+         [  1.   ,0.   ,1.   ,2.   ,3.   ,4.   ,5.],
+         [  2.   ,1.   ,0.   ,1.   ,2.   ,3.   ,4.],
+         [  3.   ,2.   ,1.   ,0.   ,1.   ,2.   ,3.],
+         [  4.   ,3.   ,2.   ,1.   ,0.   ,1.   ,2.],
+         [  5.   ,4.   ,3.   ,2.   ,1.   ,0.   ,1.],
+         [  6.   ,5.   ,4.   ,3.   ,2.   ,1.   ,0.]]
+pesos = np.matrix(pesos);
+########################################################################################################################################################
+
+#Pesos de classe para calculo do Score_correct
+pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
+########################################################################################################################################################
+
+
+
 if __name__ == "__main__":
-        obj = rodada(50,7)
-        bd = ler_arquivo("GLCM_RESIZE/PASSO_DECIMACAO/GLCM_300.txt")
-        bd = Normalizar(bd,len(bd),len(bd[0])-1)
-        for i in bd:
-                obj.GLCM.add_objeto(i)
-        
-        obj.save("OBJETOS/PASSO_DECIMACAO-004%-050Iteracoes-PESOS_TIPO_01.pkl")
+        it = 50
+        for percent in range(3,35):
+                obj = rodada(it,7)
+                bd = ler_arquivo("GLCM_RESIZE/PASSO_DECIMACAO/GLCM_{:d}00.txt".format(percent))
+                bd = Normalizar(bd,len(bd),len(bd[0])-1)
+                for i in bd:
+                        obj.GLCM.add_objeto(i)
+                for k in range(it):
+                        while(len(obj.iteracoes[k].conj_teste) < obj.iteracoes[k].nTeste*obj.iteracoes[k].nclasses):
+                                rd = random.randint(0,len(bd)-1)
+                                if(rd not in obj.iteracoes[k].conj_teste):
+                                        if(obj.iteracoes[k].qtdTeste[obj.GLCM.labels[rd]] < obj.iteracoes[k].nTeste):
+                                                obj.iteracoes[k].qtdTeste[obj.GLCM.labels[rd]]+=1
+                                                obj.iteracoes[k].conj_teste.append(rd)
+
+                        for i in range(len(bd)):
+                                if i not in obj.iteracoes[k].conj_teste:
+                                        obj.iteracoes[k].conj_treino.append(i)
+                        treino = []
+                        treinoL = []
+                        for i in obj.iteracoes[k].conj_treino:
+                                treino.append(obj.GLCM.atributos[i])
+                                treinoL.append(obj.GLCM.labels[i])
+                        obj.iteracoes[k].svm_params = dict(kernel_type = cv2.SVM_RBF,
+                        svm_type = cv2.SVM_C_SVC,
+                        C=7.0,
+                        degree =1.0,
+                        gamma=2,
+                        nu = 0.0,
+                        p = 0.0,
+                        coef0 = 0,
+                        class_weights = None,
+                        epsilon = 1e-6
+                        )
+                        svm = cv2.SVM()
+                        svm.train(np.float32(treino),np.float32(treinoL),params = obj.iteracoes[k].svm_params)
+                        for i in obj.iteracoes[k].conj_teste:
+                                sample = np.float32(obj.GLCM.atributos[i])
+                                res = int(svm.predict(sample))
+                                test = int(obj.GLCM.labels[i])
+                                obj.iteracoes[k].dados[test,res]+=1
+                        mul = np.multiply(obj.iteracoes[k].dados,pesos)
+                        obj.iteracoes[k].escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
+                        obj.iteracoes[k].escore_acerto = np.matrix([pesosCorr[l]*obj.iteracoes[k].dados[l,l] for l in range(obj.iteracoes[k].nclasses)])
+                obj.save("OBJETOS/PASSO_DECIMACAO-{:03d}%-{:03d}Iteracoes-PESOS_TIPO_{}.pkl".format(percent,it,PesosTipo))
 
 
 
