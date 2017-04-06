@@ -18,7 +18,7 @@ class iteracao(object):
                 self.conj_teste = []
                 self.qtdTeste = np.zeros(nclasses)
                 self.nTeste = nTeste
-                svm_params = ""
+                self.svm_params = ""
         ##################################################################################################################################################################################################
         ## ENCAPSULAMENTO DA VARIAVEL dados
         ## conf_mat UMA MATRIZ NUMPY nclasses X nclasses CONTENDO A MATRIZ CONFUSAO.
