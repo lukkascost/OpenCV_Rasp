@@ -14,10 +14,8 @@ class iteracao(object):
                 self.escore_erro = np.zeros((nclasses,1))
                 self.escore_acerto = np.zeros((nclasses,1))
                 self.nclasses = nclasses
-                self.conj_treino = ""
-                self.conj_treino_label = ""
-                self.conj_teste = ""
-                self.conj_teste_label = ""
+                self.conj_treino = []
+                self.conj_teste = []
                 self.nTeste = nTeste
                 svm_params = ""
         ##################################################################################################################################################################################################
@@ -49,13 +47,14 @@ class iteracao(object):
 ##################################################################################################################################################################################################
 
 class rodada(object):
-        def __init__(self, nIteracoes, nclasses, nTreino = 13):
+        def __init__(self, nIteracoes, nclasses, nTreino = 13, nAtrib = 9):
                 self.iteracoes = [iteracao(nclasses,nTreino) for i in range(nIteracoes)]
                 self.sum_err = np.zeros((nclasses,1))
                 self.sum_ace = np.zeros((nclasses,1))
                 self.sum_cfm = np.zeros((nclasses,nclasses))
                 self.num_ite = nIteracoes
                 self.num_cls = nclasses
+                self.GLCM = GLCM(nAtrib)
         def set_iteracao(self,nIter,oIter):
                 self.iteracoes[nIter-1] = copy.copy(oIter)
                 self.sum_err = np.add(self.sum_err,self.iteracoes[nIter-1].escore_erro)
@@ -83,11 +82,11 @@ class rodada(object):
                 soma_[self.num_cls] = sum(soma_[:self.num_cls])/float(self.num_cls)
                 return soma,soma_
         def save(self,path):
-                pk.dump(self, open(path,"wb"))
+                pk.dump(self, open(path,"w"))
                 print "Arquivo salvo com sucesso em ",path
         
         def load(self,path):
-                return copy.copy(pk.load(open(path,"rb")))
+                return copy.copy(pk.load(open(path,"r")))
         
         def __str__(self):
                 string = ""
@@ -102,4 +101,34 @@ class rodada(object):
                         string+= "Acc = {:014.10f}%\t".format(self.get_avg_acc()[0][i,0]*100)
                         string+= "Acc++ = {:014.10f}%\t".format(self.get_avg_acc()[1][i,0]*100)
                 return string
+        
+class GLCM(object):
+        def __init__(self,num_atributos):
+                self.num_atrib = num_atributos
+                self.num_objetos = 0
+                self.atributos = []
+                self.labels = []
+        def add_objeto(self,atributos):
+                self.atributos.append(atributos[:self.num_atrib])
+                self.labels.append(atributos[-1]-1)
+                self.num_objetos+=1
+        def __str__(self):
+                res = ""
+                for i in range(self.num_objetos):
+                        res+= "\nAtributo {:03d}:\t".format(i)+str(self.atributos[i])+"\t Label: "+str(self.labels[i])
+                return res
+
+if __name__ == "__main__":
+        obj = rodada(50,7)
+        bd = ler_arquivo("GLCM_RESIZE/PASSO_DECIMACAO/GLCM_300.txt")
+        bd = Normalizar(bd,len(bd),len(bd[0])-1)
+        for i in bd:
+                obj.GLCM.add_objeto(i)
+        
+        obj.save("OBJETOS/PASSO_DECIMACAO-004%-050Iteracoes-PESOS_TIPO_01.pkl")
+
+
+
+
+
 
