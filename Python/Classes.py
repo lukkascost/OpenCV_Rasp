@@ -16,6 +16,7 @@ class iteracao(object):
                 self.nclasses = nclasses
                 self.conj_treino = []
                 self.conj_teste = []
+                self.resultados_pc = []
                 self.qtdTeste = np.zeros(nclasses)
                 self.nTeste = nTeste
                 self.svm_params = ""
