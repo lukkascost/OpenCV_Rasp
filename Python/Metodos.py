@@ -138,6 +138,15 @@ def getCoOccurrenceMatrix(image, grayscale):
     return coOccurence                                                                          ##
 #####################################################################################################################################################################################################
 ##
+def getCoOccurrenceMatrixMod(image, grayscale):
+    coOccurence = np.zeros((grayscale,grayscale))                                               ##
+    for i in range(image.shape[0]):                                                             ##
+        for j in range(image.shape[1]-1):                                                       ##
+                if not (image[i,j] == 0 or image[i,j+1] == 0):
+                        coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
+    return coOccurence                                                                          ##
+#####################################################################################################################################################################################################
+##
 def normalizeCoOccurrenceMatrix(coOccurence,imageQuantized, grayscale):
 	coOccurenceNormalized = np.zeros((grayscale,grayscale))                                                                 ##
 	for i in range(grayscale):                                                                                              ##
@@ -238,7 +247,7 @@ def resize_img_passo(img,k):
         return np.matrix(saida)  
 #####################################################################################################################################################################################################
 ##
-def cria_Arquivo_GLCM(percent,method, text,caminho):
+def cria_Arquivo_GLCM(percent,method, text,caminho, roi=True):
     img = cv2.imread(caminho+'/c1_1.JPG',0)
     x = int(len(img)*percent)
     y = int(len(img[0])*percent)
@@ -255,7 +264,8 @@ def cria_Arquivo_GLCM(percent,method, text,caminho):
             if(method ==5 ): img = resize_img(img,percent*100)
             if(method ==6 ): img = resize_img_passo(img,percent)
             imgQuantized = img.copy()
-            coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
+            if roi:coOccurence = getCoOccurrenceMatrixMod(imgQuantized, 256)
+            else:  coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
             coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
             glcm_features  = getFeatures(coOccurenceNormalized, 256)
             glcm_features[9] = float(i)
@@ -263,6 +273,7 @@ def cria_Arquivo_GLCM(percent,method, text,caminho):
             print glcm_features
             print caminho+'/c'+str(i)+'_'+str(j)+'.JPG', percent, text, img.shape
     Salvar_arquivo(bd,"GLCM_RESIZE/"+text+"/GLCM_"+str(percent*100)+".txt")
+
 #####################################################################################################################################################################################################
 ##
 def GLCM(img,classe):
