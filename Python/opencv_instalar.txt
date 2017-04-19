@@ -1,0 +1,21 @@
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo rpi-update -y
+sudo apt-get install build-essential cmake pkg-config -y
+sudo apt-get install libjpeg8-dev libtiff4-dev libjasper-dev libpng12-dev -y
+sudo apt-get install libgtk2.0-dev -y
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev -y
+sudo apt-get install libatlas-base-dev gfortran -y
+sudo apt-get install python2.7-dev -y
+pip install numpy
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D BUILD_NEW_PYTHON_SUPPORT=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON  -D BUILD_EXAMPLES=ON ..
+make -j4
+
+
+
+
+sudo make install
+sudo ldconfig
+
+
+cd /usr/local/lib/python2.7/site-packages/cv2.so
