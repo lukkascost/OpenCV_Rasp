@@ -54,23 +54,30 @@ class rodada(object):
                 self.sum_err = np.zeros((nclasses,1))
                 self.sum_ace = np.zeros((nclasses,1))
                 self.sum_cfm = np.zeros((nclasses,nclasses))
+                self.max_err = 0
+                self.max_ace = 0
                 self.num_ite = nIteracoes
                 self.num_cls = nclasses
                 self.GLCM = GLCM(nAtrib)
         def set_iteracao(self,nIter,oIter):
                 self.iteracoes[nIter-1] = copy.copy(oIter)
-                self.sum_err = np.add(self.sum_err,self.iteracoes[nIter-1].escore_erro)
-                self.sum_ace = np.add(self.sum_ace,self.iteracoes[nIter-1].escore_acerto)
+                self.sum_err = np.add(self.sum_err,np.transpose(self.iteracoes[nIter-1].escore_erro))
+                self.sum_ace = np.add(self.sum_ace,np.transpose(self.iteracoes[nIter-1].escore_acerto))
                 self.sum_cfm = np.add(self.sum_cfm,self.iteracoes[nIter-1].dados)
                 
         def get_avg_cfm(self):
                 return np.divide(self.sum_cfm,float(self.num_ite))
         
         def get_avg_ace(self):
-                return np.matrix(map(lambda x:x/self.num_ite , self.sum_ace))
-        
+                res = np.zeros((self.num_cls+1,1))
+                res[:7] = np.divide(self.sum_ace,self.num_ite)
+                res[7]  = sum(res)
+                return res
         def get_avg_err(self):
-                return np.matrix(map(lambda x:x/self.num_ite , self.sum_err))
+                res = np.zeros((self.num_cls+1,1))
+                res[:7] = np.divide(self.sum_err,self.num_ite)
+                res[7]  = sum(res)
+                return res
         def get_avg_acc(self):
                 soma = np.zeros((8,1))
                 soma_= np.zeros((8,1))

@@ -1,25 +1,23 @@
 from Classes import *
 
 ## tipo 01
-PesosTipo = "01"
+PesosTipo = 2
+
+pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
+         [  0.   ,0.   ,10.   ,20.   ,45.   ,65.   ,70.],
+         [  0.   ,0.   ,0.    ,20.   ,35.   ,55.   ,60.],
+         [  0.   ,0.   ,0.    ,0.    ,15.   ,35.   ,40.],
+         [  0.   ,0.   ,0.    ,0.    ,0.    ,20.   ,25.],
+         [  0.   ,0.   ,0.    ,0.    ,0.    ,0.    ,5.],
+         [  0.   ,0.   ,0.    ,0.    ,0.    ,0.    ,0.]]
+pesosCorr = [100.   ,85.   ,75.   ,55.   ,40.   ,20.   ,15.]
 
 
-
-pesos = [[  0.   ,1.   ,2.   ,3.   ,4.   ,5.   ,6.],
-         [  1.   ,0.   ,1.   ,2.   ,3.   ,4.   ,5.],
-         [  2.   ,1.   ,0.   ,1.   ,2.   ,3.   ,4.],
-         [  3.   ,2.   ,1.   ,0.   ,1.   ,2.   ,3.],
-         [  4.   ,3.   ,2.   ,1.   ,0.   ,1.   ,2.],
-         [  5.   ,4.   ,3.   ,2.   ,1.   ,0.   ,1.],
-         [  6.   ,5.   ,4.   ,3.   ,2.   ,1.   ,0.]]
 pesos = np.matrix(pesos);
-
-pesosCorr = [7.   ,6.   ,5.   ,4.   ,3.   ,2.   ,1.]
-
 if __name__ == "__main__":
-        for metodo in ["PASSO_DECIMACAO","PASSO_ROI","PASSO_ROI_PRETO"]:
+        for metodo in ["PASSO_ROI_PRETO"]:
                 it = 50
-                for percent in range(3,36)+range(75,100):
+                for percent in range(4,100):
                         obj = rodada(it,7)
                         bd = ler_arquivo("GLCM_RESIZE/{}/GLCM_{:d}00.txt".format(metodo,percent))
                         bd = Normalizar(bd,len(bd),len(bd[0])-1)
@@ -64,10 +62,6 @@ if __name__ == "__main__":
                                 oIt.escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
                                 oIt.escore_acerto = np.matrix([pesosCorr[l]*oIt.dados[l,l] for l in range(oIt.nclasses)])
                                 obj.set_iteracao(k+1,oIt)
-                        obj.save("OBJETOS/{}-{:03d}%-{:03d}Iteracoes-PESOS_TIPO_{}.pkl".format(metodo,percent,it,PesosTipo))
-
-
-
-
-
-
+                        obj.max_ace = 5070
+                        obj.max_err = 3705
+                        obj.save("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7Classes.pkl".format(PesosTipo,metodo,percent,it))

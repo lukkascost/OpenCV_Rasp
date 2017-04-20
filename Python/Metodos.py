@@ -4,7 +4,7 @@ import numpy as np
 import math as mp
 import random
 from Classes import *
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #####################################################################################################################################################################################################
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
 def GetObjetosAtributos(ad):
@@ -133,17 +133,17 @@ def ler_arquivo(address):
 def getCoOccurrenceMatrix(image, grayscale):
     coOccurence = np.zeros((grayscale,grayscale))                                               ##
     for i in range(image.shape[0]):                                                             ##
-        for j in range(image.shape[1]-1):                                                       ##
-                coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
+	for j in range(image.shape[1]-1):                                                       ##
+		coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
     return coOccurence                                                                          ##
 #####################################################################################################################################################################################################
 ##
 def getCoOccurrenceMatrixMod(image, grayscale):
     coOccurence = np.zeros((grayscale,grayscale))                                               ##
     for i in range(image.shape[0]):                                                             ##
-        for j in range(image.shape[1]-1):                                                       ##
-                if not (image[i,j] == 0 or image[i,j+1] == 0):
-                        coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
+	for j in range(image.shape[1]-1):                                                       ##
+		if not (image[i,j] == 0 or image[i,j+1] == 0):
+			coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
     return coOccurence                                                                          ##
 #####################################################################################################################################################################################################
 ##
@@ -159,21 +159,21 @@ def getFeatures(coOccurenceNormalized, grayscale):
     glcm_features = np.zeros(10)                                                                                                ##
     correlation,mean1,mean2,deviation,deviation1,deviation2 = 0,0,0,0,0,0                                                       ##
     for i in range(grayscale):                                                                                                  ##
-        for j in range(grayscale):                                                                                              ##
-            glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i,j]))                                ##
-            glcm_features[2] =glcm_features[2] + (coOccurenceNormalized[i,j] * coOccurenceNormalized[i,j] )                     ##
-            glcm_features[3] =glcm_features[3] + (( coOccurenceNormalized[i,j]) / ( 1+abs(i-j) ));                              ##
-            if(i!=j):                                                                                                           ##
-                glcm_features[4]=glcm_features[4] + (coOccurenceNormalized[i,j] / (1 + (i-j)*(i-j)))                            ##
-                glcm_features[6]=glcm_features[6] + (coOccurenceNormalized[i,j]*(abs(i-j)) )                                    ##
-            if(coOccurenceNormalized[i,j]!=0):                                                                                  ##
-                glcm_features[5] =glcm_features[5] + (coOccurenceNormalized[i,j]*mp.log10(coOccurenceNormalized[i,j]))          ##
-            glcm_features[7] = glcm_features[7] +(coOccurenceNormalized[i,j]*coOccurenceNormalized[i,j])                        ##
-            correlation = correlation + ( (i*j) * ( (coOccurenceNormalized[i,j]) ) )                                            ##
-            mean1 = mean1+(i * ( (coOccurenceNormalized[i,j]) ))                                                                ##
-            mean2+= (j * ( (coOccurenceNormalized[i,j]) ))                                                                      ##
-            deviation1+= ( (i*i) * (coOccurenceNormalized[i,j]) )                                                               ##
-            deviation2+= ( (j*j) * (coOccurenceNormalized[i,j]) )                                                               ##
+	for j in range(grayscale):                                                                                              ##
+	    glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i,j]))                                ##
+	    glcm_features[2] =glcm_features[2] + (coOccurenceNormalized[i,j] * coOccurenceNormalized[i,j] )                     ##
+	    glcm_features[3] =glcm_features[3] + (( coOccurenceNormalized[i,j]) / ( 1+abs(i-j) ));                              ##
+	    if(i!=j):                                                                                                           ##
+		glcm_features[4]=glcm_features[4] + (coOccurenceNormalized[i,j] / (1 + (i-j)*(i-j)))                            ##
+		glcm_features[6]=glcm_features[6] + (coOccurenceNormalized[i,j]*(abs(i-j)) )                                    ##
+	    if(coOccurenceNormalized[i,j]!=0):                                                                                  ##
+		glcm_features[5] =glcm_features[5] + (coOccurenceNormalized[i,j]*mp.log10(coOccurenceNormalized[i,j]))          ##
+	    glcm_features[7] = glcm_features[7] +(coOccurenceNormalized[i,j]*coOccurenceNormalized[i,j])                        ##
+	    correlation = correlation + ( (i*j) * ( (coOccurenceNormalized[i,j]) ) )                                            ##
+	    mean1 = mean1+(i * ( (coOccurenceNormalized[i,j]) ))                                                                ##
+	    mean2+= (j * ( (coOccurenceNormalized[i,j]) ))                                                                      ##
+	    deviation1+= ( (i*i) * (coOccurenceNormalized[i,j]) )                                                               ##
+	    deviation2+= ( (j*j) * (coOccurenceNormalized[i,j]) )                                                               ##
     glcm_features[5] *= -1                                                                                                      ##
     deviation1-=mean1*mean1                                                                                                     ##
     deviation2-=mean2*mean2                                                                                                     ##
@@ -181,11 +181,11 @@ def getFeatures(coOccurenceNormalized, grayscale):
     deviation2=mp.sqrt(deviation2)                                                                                              ##
     deviation=(deviation1*deviation2)                                                                                           ##
     if(deviation==0):                                                                                                           ##
-        deviation = 1                                                                                                           ##
+	deviation = 1                                                                                                           ##
     glcm_features[1]=(correlation-(mean1*mean2))/deviation                                                                      ##
     for i in range(grayscale):                                                                                                  ##
-        for j in range(grayscale):                                                                                              ##
-            glcm_features[8] += ((i-(mean1+mean2)/2)*(i-(mean1+mean2)/2))*coOccurenceNormalized[i,j]                            ##
+	for j in range(grayscale):                                                                                              ##
+	    glcm_features[8] += ((i-(mean1+mean2)/2)*(i-(mean1+mean2)/2))*coOccurenceNormalized[i,j]                            ##
     return glcm_features                                                                                                        ##
 #####################################################################################################################################################################################################
 ##
@@ -202,49 +202,49 @@ def resize_img(img,i):
     inx = []
     iny = []
     while(xreal>xmeu):
-        contador = 0+laco
-        while(contador<x):
-            if (xreal==xmeu):
-                break
-            xmeu+=1
-            inx.append(contador)
-            ix+=1
-            contador += passo
-        laco+=1
+	contador = 0+laco
+	while(contador<x):
+	    if (xreal==xmeu):
+		break
+	    xmeu+=1
+	    inx.append(contador)
+	    ix+=1
+	    contador += passo
+	laco+=1
     laco = 0
     ix =0
     passo = int(y/yreal)+1
     while(yreal>ymeu):
-        contador = 0+laco
-        while(contador<y):
-            if (yreal<ymeu):
-                break
-            ymeu+=1
-            iny.append(contador)
-            contador += passo
-        laco+=1
+	contador = 0+laco
+	while(contador<y):
+	    if (yreal<ymeu):
+		break
+	    ymeu+=1
+	    iny.append(contador)
+	    contador += passo
+	laco+=1
     inx.sort()
     iny.sort()
     for j in range(xreal):
-        for k in range(yreal):
-            saida.itemset((j,k),img[inx[j]][iny[k]])
+	for k in range(yreal):
+	    saida.itemset((j,k),img[inx[j]][iny[k]])
     return saida
 
 def resize_img_passo(img,k):
-        saida = []
-        i = 0
-        ci = 0
-        while ci < img.shape[0]:
-                cj = 0
-                j = 0
-                saida.append([])
-                while cj<img.shape[1]:
-                        saida[i].append(img[i*k][j*k])
-                        cj+=k
-                        j+=1
-                ci+=k
-                i +=1
-        return np.matrix(saida)  
+	saida = []
+	i = 0
+	ci = 0
+	while ci < img.shape[0]:
+		cj = 0
+		j = 0
+		saida.append([])
+		while cj<img.shape[1]:
+			saida[i].append(img[i*k][j*k])
+			cj+=k
+			j+=1
+		ci+=k
+		i +=1
+	return np.matrix(saida)  
 #####################################################################################################################################################################################################
 ##
 def cria_Arquivo_GLCM(percent,method, text,caminho, roi=True):
@@ -254,35 +254,35 @@ def cria_Arquivo_GLCM(percent,method, text,caminho, roi=True):
     # Load an color image in grayscale
     bd = []
     for i in range(1,8):
-        for j in range(1,51):
-            img = cv2.imread(caminho+'/c'+str(i)+'_'+str(j)+'.JPG',0)
-            if(method ==0 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_NEAREST)
-            if(method ==1 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LINEAR)
-            if(method ==2 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_AREA)
-            if(method ==3 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_CUBIC )
-            if(method ==4 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LANCZOS4 )
-            if(method ==5 ): img = resize_img(img,percent*100)
-            if(method ==6 ): img = resize_img_passo(img,percent)
-            imgQuantized = img.copy()
-            if roi:coOccurence = getCoOccurrenceMatrixMod(imgQuantized, 256)
-            else:  coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
-            coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
-            glcm_features  = getFeatures(coOccurenceNormalized, 256)
-            glcm_features[9] = float(i)
-            bd.append(glcm_features)
-            print glcm_features
-            print caminho+'/c'+str(i)+'_'+str(j)+'.JPG', percent, text, img.shape
+	for j in range(1,51):
+	    img = cv2.imread(caminho+'/c'+str(i)+'_'+str(j)+'.JPG',0)
+	    if(method ==0 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_NEAREST)
+	    if(method ==1 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LINEAR)
+	    if(method ==2 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_AREA)
+	    if(method ==3 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_CUBIC )
+	    if(method ==4 ): img = cv2.resize(img,(y,x),interpolation = cv2.INTER_LANCZOS4 )
+	    if(method ==5 ): img = resize_img(img,percent*100)
+	    if(method ==6 ): img = resize_img_passo(img,percent)
+	    imgQuantized = img.copy()
+	    if roi:coOccurence = getCoOccurrenceMatrixMod(imgQuantized, 256)
+	    else:  coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
+	    coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
+	    glcm_features  = getFeatures(coOccurenceNormalized, 256)
+	    glcm_features[9] = float(i)
+	    bd.append(glcm_features)
+	    print glcm_features
+	    print caminho+'/c'+str(i)+'_'+str(j)+'.JPG', percent, text, img.shape
     Salvar_arquivo(bd,"GLCM_RESIZE/"+text+"/GLCM_"+str(percent*100)+".txt")
 
 #####################################################################################################################################################################################################
 ##
 def GLCM(img,classe):
-        imgQuantized = img.copy()
-        coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
-        coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
-        glcm_features  = getFeatures(coOccurenceNormalized, 256)
-        glcm_features[9] = classe
-        return glcm_features
+	imgQuantized = img.copy()
+	coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
+	coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
+	glcm_features  = getFeatures(coOccurenceNormalized, 256)
+	glcm_features[9] = classe
+	return glcm_features
 ##################################################################################################################################################################################################### 
 ##
 def memory():
@@ -290,76 +290,88 @@ def memory():
     Get node total memory and memory usage
     """
     with open('/proc/meminfo', 'r') as mem:
-        ret = {}
-        tmp = 0
-        for i in mem:
-            sline = i.split()
-            if str(sline[0]) == 'MemTotal:':
-                ret['total'] = int(sline[1])
-            elif str(sline[0]) in ('MemFree:', 'Buffers:', 'Cached:'):
-                tmp += int(sline[1])
-        ret['free'] = tmp
-        ret['used'] = int(ret['total']) - int(ret['free'])
+	ret = {}
+	tmp = 0
+	for i in mem:
+	    sline = i.split()
+	    if str(sline[0]) == 'MemTotal:':
+		ret['total'] = int(sline[1])
+	    elif str(sline[0]) in ('MemFree:', 'Buffers:', 'Cached:'):
+		tmp += int(sline[1])
+	ret['free'] = tmp
+	ret['used'] = int(ret['total']) - int(ret['free'])
     return ret
 #####################################################################################################################################################################################################
 ##
 def Train_extract(atributos,labels,fClass,qtdtreino,qtdTeste,Treino,TreinoLabel):
-        while(qtdtreino>0):
-                rd = ((qtdTeste+1)*fClass) + random.randint(0,qtdTeste+qtdtreino)
-                Treino.append(atributos[rd])
-                TreinoLabel.append(labels[rd])
-                del atributos[rd]
-                del labels[rd]
-                qtdtreino -=1
-        return atributos,labels,Treino,TreinoLabel
+	while(qtdtreino>0):
+		rd = ((qtdTeste+1)*fClass) + random.randint(0,qtdTeste+qtdtreino)
+		Treino.append(atributos[rd])
+		TreinoLabel.append(labels[rd])
+		del atributos[rd]
+		del labels[rd]
+		qtdtreino -=1
+	return atributos,labels,Treino,TreinoLabel
 #####################################################################################################################################################################################################
 ##
 def five_best_avg(mat):
     res = np.zeros((len(mat),1))
     for i in range(len(mat)):
-        mat[i] = np.sort(mat[i])
-        res[i,0] =  sum(mat[i][len(mat[i])-5:])/5
+	mat[i] = np.sort(mat[i])
+	res[i,0] =  sum(mat[i][len(mat[i])-5:])/5
     return res
 #####################################################################################################################################################################################################
 ##
 def five_Worst_avg(mat):
     res = np.zeros((len(mat),1))
     for i in range(len(mat)):
-        mat[i] = np.sort(mat[i])
-        res[i,0] =  sum(mat[i][:5])/5
+	mat[i] = np.sort(mat[i])
+	res[i,0] =  sum(mat[i][:5])/5
     return res
 #####################################################################################################################################################################################################
 ##
 def avg(l):
     res = np.zeros((len(l),1))                                          ##
     for i in range(len(l)):                                             ##
-        res[i,0] = reduce(lambda x, y: x + y, l[i]) / len(l[i])         ##
+	res[i,0] = reduce(lambda x, y: x + y, l[i]) / len(l[i])         ##
     return res                                                          ##
 #####################################################################################################################################################################################################
-def geraGraficos(smetodo,inicio,tamanho,peso):
-    objAr = [rodada(50,7) for i in range(100)]
-    for metodo in smetodo:
-        acc_ = []
-        acc = []
-        for percent in range(inicio,inicio+tamanho+1):
-            objAr[percent] = objAr[percent].load("OBJETOS/{}-{:03d}%-{:03d}Iteracoes-PESOS_TIPO_{:02d}.pkl".format(metodo,percent,50,peso))
-            acc_.append(objAr[percent].get_avg_acc()[1][7,0]*100)
-            acc.append(objAr[percent].get_avg_acc()[0][7,0]*100)
-        
-        t = np.arange(inicio, inicio+tamanho+1, 1)
-        plt.plot(t,acc_,label="Acuracia ++")
-        plt.plot(t,acc,label="Acuracia")
-        plt.ylim([0,100])
-        plt.xlim([inicio,inicio+tamanho])
-
-        plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
-        plt.xlabel('resize (%)')
-        plt.ylabel('Pontos')
-        plt.title("real_"+metodo)
-        plt.grid(True)
-        plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_ACURACIAS.png".format(peso,metodo,inicio,tamanho),bbox_inches='tight',dpi=400)
-        print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_ACURACIAS.png".format(peso,metodo,inicio,tamanho)
-        ##plt.show()
-        plt.gcf().clear()
-
-
+def geraGraficos(smetodo,inicio,tamanho,peso, reta = 01):
+	objAr = [rodada(50,7) for i in range(100)]
+	if reta == 1: tag="ACURACIAS"
+	if reta == 2: tag="ACERTOS"
+	if reta == 3: tag="ERROS"
+	for metodo in smetodo:
+		acc_ = []
+		acc = []
+		for percent in range(inicio,inicio+tamanho+1):
+			print percent
+			objAr[percent] = objAr[percent].load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7Classes.pkl".format(peso,metodo,percent,50))
+			if reta == 1:
+				acc_.append(objAr[percent].get_avg_acc()[1][7,0]*100)
+				acc.append(objAr[percent].get_avg_acc()[0][7,0]*100)
+			if reta == 2:
+				acc_.append(objAr[percent].get_avg_ace()[7,0])
+			if reta == 3:
+				acc_.append(objAr[percent].get_avg_err()[7,0])
+		t = np.arange(inicio, inicio+tamanho+1, 1)
+		if reta == 1:
+			plt.plot(t,acc_,label="Acuracia ++")
+			plt.plot(t,acc,label="Acuracia")
+			plt.ylim([0,100])
+		if reta == 2:
+			plt.plot(t,acc_,label="Acerto")
+			plt.ylim([0,5070])
+		if reta == 3:
+			plt.plot(t,acc_,label="Erro")
+			plt.ylim([0,3705])
+		plt.xlim([inicio,inicio+tamanho])
+		plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
+		plt.xlabel('resize (%)')
+		plt.ylabel('Pontos')
+		plt.title("real_"+metodo)
+		plt.grid(True)
+		plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}.png".format(peso,metodo,inicio,tamanho,tag),bbox_inches='tight',dpi=400)
+		print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}.png".format(peso,metodo,inicio,tamanho,tag)
+		##plt.show()
+		plt.gcf().clear()
