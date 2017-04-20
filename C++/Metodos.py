@@ -130,7 +130,6 @@ def ler_arquivo(address):
 	return bd                                                       ##
 #####################################################################################################################################################################################################
 ##
-@profile
 def getCoOccurrenceMatrix(image, grayscale):
     coOccurence = np.zeros((grayscale,grayscale))                                               ##
     for i in range(image.shape[0]):                                                             ##
@@ -139,7 +138,6 @@ def getCoOccurrenceMatrix(image, grayscale):
     return coOccurence                                                                          ##
 #####################################################################################################################################################################################################
 ##
-@profile
 def normalizeCoOccurrenceMatrix(coOccurence,imageQuantized, grayscale):
 	coOccurenceNormalized = np.zeros((grayscale,grayscale))                                                                 ##
 	for i in range(grayscale):                                                                                              ##
@@ -148,7 +146,6 @@ def normalizeCoOccurrenceMatrix(coOccurence,imageQuantized, grayscale):
 	return coOccurenceNormalized                                                                                            ##
 #####################################################################################################################################################################################################
 ##
-@profile
 def getFeatures(coOccurenceNormalized, grayscale):
     glcm_features = np.zeros(10)                                                                                                ##
     correlation,mean1,mean2,deviation,deviation1,deviation2 = 0,0,0,0,0,0                                                       ##
