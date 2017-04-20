@@ -1,0 +1,396 @@
+---------  1.000% da imagem passo 100
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),100),1.0)"
+		5 loops, best of 5: 5.41 sec per loop
+ 100
+---------  1.010% da imagem passo 099
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),99),1.0)"
+		5 loops, best of 5: 5.11 sec per loop
+ 99
+---------  1.020% da imagem passo 098
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),98),1.0)"
+		5 loops, best of 5: 4.84 sec per loop
+ 98
+---------  1.031% da imagem passo 097
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),97),1.0)"
+		5 loops, best of 5: 5.16 sec per loop
+ 97
+---------  1.042% da imagem passo 096
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),96),1.0)"
+		5 loops, best of 5: 5.66 sec per loop
+ 96
+---------  1.053% da imagem passo 095
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),95),1.0)"
+		5 loops, best of 5: 5.5 sec per loop
+ 95
+---------  1.064% da imagem passo 094
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),94),1.0)"
+		5 loops, best of 5: 5.17 sec per loop
+ 94
+---------  1.075% da imagem passo 093
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),93),1.0)"
+		5 loops, best of 5: 4.96 sec per loop
+ 93
+---------  1.087% da imagem passo 092
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),92),1.0)"
+		5 loops, best of 5: 4.49 sec per loop
+ 92
+---------  1.099% da imagem passo 091
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),91),1.0)"
+		5 loops, best of 5: 4.87 sec per loop
+ 91
+---------  1.111% da imagem passo 090
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),90),1.0)"
+		5 loops, best of 5: 4.84 sec per loop
+ 90
+---------  1.124% da imagem passo 089
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),89),1.0)"
+		5 loops, best of 5: 5.21 sec per loop
+ 89
+---------  1.136% da imagem passo 088
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),88),1.0)"
+		5 loops, best of 5: 5.05 sec per loop
+ 88
+---------  1.149% da imagem passo 087
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),87),1.0)"
+		5 loops, best of 5: 7.65 sec per loop
+ 87
+---------  1.163% da imagem passo 086
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),86),1.0)"
+		5 loops, best of 5: 7.04 sec per loop
+ 86
+---------  1.176% da imagem passo 085
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),85),1.0)"
+		5 loops, best of 5: 7.91 sec per loop
+ 85
+---------  1.190% da imagem passo 084
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),84),1.0)"
+		5 loops, best of 5: 7.92 sec per loop
+ 84
+---------  1.205% da imagem passo 083
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),83),1.0)"
+		5 loops, best of 5: 7.61 sec per loop
+ 83
+---------  1.220% da imagem passo 082
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),82),1.0)"
+		5 loops, best of 5: 6.54 sec per loop
+ 82
+---------  1.235% da imagem passo 081
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),81),1.0)"
+		5 loops, best of 5: 5.61 sec per loop
+ 81
+---------  1.250% da imagem passo 080
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),80),1.0)"
+		5 loops, best of 5: 5.27 sec per loop
+ 80
+---------  1.266% da imagem passo 079
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),79),1.0)"
+		5 loops, best of 5: 5.24 sec per loop
+ 79
+---------  1.282% da imagem passo 078
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),78),1.0)"
+		5 loops, best of 5: 5.64 sec per loop
+ 78
+---------  1.299% da imagem passo 077
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),77),1.0)"
+		5 loops, best of 5: 5.02 sec per loop
+ 77
+---------  1.316% da imagem passo 076
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),76),1.0)"
+		5 loops, best of 5: 4.79 sec per loop
+ 76
+---------  1.333% da imagem passo 075
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),75),1.0)"
+		5 loops, best of 5: 5.94 sec per loop
+ 75
+---------  1.351% da imagem passo 074
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),74),1.0)"
+		5 loops, best of 5: 5.9 sec per loop
+ 74
+---------  1.370% da imagem passo 073
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),73),1.0)"
+		5 loops, best of 5: 6.6 sec per loop
+ 73
+---------  1.389% da imagem passo 072
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),72),1.0)"
+		5 loops, best of 5: 5.95 sec per loop
+ 72
+---------  1.408% da imagem passo 071
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),71),1.0)"
+		5 loops, best of 5: 5.58 sec per loop
+ 71
+---------  1.429% da imagem passo 070
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),70),1.0)"
+		5 loops, best of 5: 5.6 sec per loop
+ 70
+---------  1.449% da imagem passo 069
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),69),1.0)"
+		5 loops, best of 5: 5.32 sec per loop
+ 69
+---------  1.471% da imagem passo 068
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),68),1.0)"
+		5 loops, best of 5: 5.79 sec per loop
+ 68
+---------  1.493% da imagem passo 067
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),67),1.0)"
+		5 loops, best of 5: 5.59 sec per loop
+ 67
+---------  1.515% da imagem passo 066
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),66),1.0)"
+		5 loops, best of 5: 5.34 sec per loop
+ 66
+---------  1.538% da imagem passo 065
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),65),1.0)"
+		5 loops, best of 5: 5.62 sec per loop
+ 65
+---------  1.562% da imagem passo 064
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),64),1.0)"
+		5 loops, best of 5: 5.94 sec per loop
+ 64
+---------  1.587% da imagem passo 063
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),63),1.0)"
+		5 loops, best of 5: 5.97 sec per loop
+ 63
+---------  1.613% da imagem passo 062
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),62),1.0)"
+		5 loops, best of 5: 5.69 sec per loop
+ 62
+---------  1.639% da imagem passo 061
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),61),1.0)"
+		5 loops, best of 5: 5.61 sec per loop
+ 61
+---------  1.667% da imagem passo 060
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),60),1.0)"
+		5 loops, best of 5: 5.63 sec per loop
+ 60
+---------  1.695% da imagem passo 059
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),59),1.0)"
+		5 loops, best of 5: 5.65 sec per loop
+ 59
+---------  1.724% da imagem passo 058
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),58),1.0)"
+		5 loops, best of 5: 5.64 sec per loop
+ 58
+---------  1.754% da imagem passo 057
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),57),1.0)"
+		5 loops, best of 5: 5.68 sec per loop
+ 57
+---------  1.786% da imagem passo 056
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),56),1.0)"
+		5 loops, best of 5: 5.98 sec per loop
+ 56
+---------  1.818% da imagem passo 055
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),55),1.0)"
+		5 loops, best of 5: 6.01 sec per loop
+ 55
+---------  1.852% da imagem passo 054
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),54),1.0)"
+		5 loops, best of 5: 5.99 sec per loop
+ 54
+---------  1.887% da imagem passo 053
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),53),1.0)"
+		5 loops, best of 5: 6.01 sec per loop
+ 53
+---------  1.923% da imagem passo 052
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),52),1.0)"
+		5 loops, best of 5: 5.71 sec per loop
+ 52
+---------  1.961% da imagem passo 051
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),51),1.0)"
+		5 loops, best of 5: 5.72 sec per loop
+ 51
+---------  2.000% da imagem passo 050
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),50),1.0)"
+		5 loops, best of 5: 5.41 sec per loop
+ 50
+---------  2.041% da imagem passo 049
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),49),1.0)"
+		5 loops, best of 5: 4.78 sec per loop
+ 49
+---------  2.083% da imagem passo 048
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),48),1.0)"
+		5 loops, best of 5: 5.03 sec per loop
+ 48
+---------  2.128% da imagem passo 047
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),47),1.0)"
+		5 loops, best of 5: 5.74 sec per loop
+ 47
+---------  2.174% da imagem passo 046
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),46),1.0)"
+		5 loops, best of 5: 5.79 sec per loop
+ 46
+---------  2.222% da imagem passo 045
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),45),1.0)"
+		5 loops, best of 5: 5.2 sec per loop
+ 45
+---------  2.273% da imagem passo 044
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),44),1.0)"
+		5 loops, best of 5: 5.28 sec per loop
+ 44
+---------  2.326% da imagem passo 043
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),43),1.0)"
+		5 loops, best of 5: 5.43 sec per loop
+ 43
+---------  2.381% da imagem passo 042
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),42),1.0)"
+		5 loops, best of 5: 5.22 sec per loop
+ 42
+---------  2.439% da imagem passo 041
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),41),1.0)"
+		5 loops, best of 5: 5.47 sec per loop
+ 41
+---------  2.500% da imagem passo 040
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),40),1.0)"
+		5 loops, best of 5: 5.85 sec per loop
+ 40
+---------  2.564% da imagem passo 039
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),39),1.0)"
+		5 loops, best of 5: 5.13 sec per loop
+ 39
+---------  2.632% da imagem passo 038
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),38),1.0)"
+		5 loops, best of 5: 5.14 sec per loop
+ 38
+---------  2.703% da imagem passo 037
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),37),1.0)"
+		5 loops, best of 5: 6.19 sec per loop
+ 37
+---------  2.778% da imagem passo 036
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),36),1.0)"
+		5 loops, best of 5: 5.61 sec per loop
+ 36
+---------  2.857% da imagem passo 035
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),35),1.0)"
+		5 loops, best of 5: 5.89 sec per loop
+ 35
+---------  2.941% da imagem passo 034
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),34),1.0)"
+		5 loops, best of 5: 5.87 sec per loop
+ 34
+---------  3.030% da imagem passo 033
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),33),1.0)"
+		5 loops, best of 5: 4.9 sec per loop
+ 33
+---------  3.125% da imagem passo 032
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),32),1.0)"
+		5 loops, best of 5: 4.98 sec per loop
+ 32
+---------  3.226% da imagem passo 031
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),31),1.0)"
+		5 loops, best of 5: 4.97 sec per loop
+ 31
+---------  3.333% da imagem passo 030
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),30),1.0)"
+		5 loops, best of 5: 5.1 sec per loop
+ 30
+---------  3.448% da imagem passo 029
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),29),1.0)"
+		5 loops, best of 5: 5.1 sec per loop
+ 29
+---------  3.571% da imagem passo 028
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),28),1.0)"
+		5 loops, best of 5: 5.05 sec per loop
+ 28
+---------  3.704% da imagem passo 027
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),27),1.0)"
+		5 loops, best of 5: 5.1 sec per loop
+ 27
+---------  3.846% da imagem passo 026
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),26),1.0)"
+		5 loops, best of 5: 5.18 sec per loop
+ 26
+---------  4.000% da imagem passo 025
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),25),1.0)"
+		5 loops, best of 5: 5.18 sec per loop
+ 25
+---------  4.167% da imagem passo 024
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),24),1.0)"
+		5 loops, best of 5: 5.96 sec per loop
+ 24
+---------  4.348% da imagem passo 023
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),23),1.0)"
+		5 loops, best of 5: 7.88 sec per loop
+ 23
+---------  4.545% da imagem passo 022
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),22),1.0)"
+		5 loops, best of 5: 6.4 sec per loop
+ 22
+---------  4.762% da imagem passo 021
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),21),1.0)"
+		5 loops, best of 5: 6.95 sec per loop
+ 21
+---------  5.000% da imagem passo 020
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),20),1.0)"
+		5 loops, best of 5: 7.39 sec per loop
+ 20
+---------  5.263% da imagem passo 019
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),19),1.0)"
+		5 loops, best of 5: 8.06 sec per loop
+ 19
+---------  5.556% da imagem passo 018
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),18),1.0)"
+		5 loops, best of 5: 8.3 sec per loop
+ 18
+---------  5.882% da imagem passo 017
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),17),1.0)"
+		5 loops, best of 5: 7.57 sec per loop
+ 17
+---------  6.250% da imagem passo 016
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),16),1.0)"
+		5 loops, best of 5: 9.18 sec per loop
+ 16
+---------  6.667% da imagem passo 015
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),15),1.0)"
+		5 loops, best of 5: 9.56 sec per loop
+ 15
+---------  7.143% da imagem passo 014
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),14),1.0)"
+		5 loops, best of 5: 7.63 sec per loop
+ 14
+---------  7.692% da imagem passo 013
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),13),1.0)"
+		5 loops, best of 5: 10.9 sec per loop
+ 13
+---------  8.333% da imagem passo 012
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),12),1.0)"
+		5 loops, best of 5: 8.97 sec per loop
+ 12
+---------  9.091% da imagem passo 011
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),11),1.0)"
+		5 loops, best of 5: 12.5 sec per loop
+ 11
+---------  10.000% da imagem passo 010
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),10),1.0)"
+		5 loops, best of 5: 10.3 sec per loop
+ 10
+---------  11.111% da imagem passo 009
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),9),1.0)"
+		5 loops, best of 5: 12.7 sec per loop
+ 9
+---------  12.500% da imagem passo 008
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),8),1.0)"
+		5 loops, best of 5: 13.8 sec per loop
+ 8
+---------  14.286% da imagem passo 007
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),7),1.0)"
+		5 loops, best of 5: 17.8 sec per loop
+ 7
+---------  16.667% da imagem passo 006
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),6),1.0)"
+		5 loops, best of 5: 21.7 sec per loop
+ 6
+---------  20.000% da imagem passo 005
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),5),1.0)"
+		5 loops, best of 5: 27.2 sec per loop
+ 5
+---------  25.000% da imagem passo 004
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),4),1.0)"
+		5 loops, best of 5: 49.9 sec per loop
+ 4
+---------  33.333% da imagem passo 003
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),3),1.0)"
+		5 loops, best of 5: 68 sec per loop
+ 3
+---------  50.000% da imagem passo 002
+ python -m timeit -n 5 -r 5 "from Metodos import *" "GLCM(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),2),1.0)"
+		5 loops, best of 5: 151 sec per loop
+ 2

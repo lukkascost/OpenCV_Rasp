@@ -1,11 +1,11 @@
 import subprocess
 from Metodos import *
-de = 1
-ate = 100
-passo = 1
-bateria = 1
-qtdBaterias = 1
-local = "RaspBerry"
+de = 100
+ate = 0
+passo = -1
+bateria = 5
+qtdBaterias = 5
+local = "RaspBerry_1-100"
 importres = []
 result = ""
 ##
@@ -22,17 +22,18 @@ for j,i in enumerate(range(de,ate+1,passo)):
 	command += "'DataBase/c1_1.JPG',0),"+str(i)+")"
 	command += '"'
 	result += command +"\n"
-	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
-	result += "\t\t"+importres[j]
+#	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
+#	result += "\t\t"+importres[j]
 	result += "\n"
-Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE.txt".format(local))
+#	print importres[j]
+#Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE.txt".format(local))
 texto = ""
 for i in importres:
 	texto+= str(i.split(" ")[5])+";"
 	texto+= str(i.split(" ")[6])+";"
 	texto+= str(i.split(" ")[9])+";"
 	texto+= "\n"
-Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE.txt".format(local))
+#Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE.txt".format(local))
 result = ""
 importres = []
 ##
@@ -59,6 +60,7 @@ for i in importres:
 	texto+= str(i.split(" ")[6])+";"
 	texto+= str(i.split(" ")[9])+";"
 	texto+= "\n"
+	print importres[j]
 Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE+GLCM.txt".format(local))
 importres = []
 result = ""
@@ -84,6 +86,7 @@ for j,i in enumerate(range(de,ate+1,passo)):
 	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
 	result += "\t\t"+importres[j]
 	result += "\n"
+	print importres[j]
 Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE+GLCM+SVM.txt".format(local))
 texto = ""
 for i in importres:
