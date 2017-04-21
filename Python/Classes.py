@@ -4,12 +4,12 @@ from Metodos import *
 import pickle as pk
 import copy
 ##################################################################################################################################################################################################
-## CUIDA DE CADA ITERAÇÃO NA EXECUCAO DE TREINO-TESTE
+## CUIDA DE CADA ITERAï¿½ï¿½O NA EXECUCAO DE TREINO-TESTE
 class iteracao(object):
         ## CONSTRUTOR DA CLASSE INIT
         ## nclasses: NUMERO DE CLASSES QUE O CLASSIFICADOR POSSUI.
         ## nTeste: NUMERO DE AMOSTRAS PARA TESTE.
-        def __init__(self,nclasses, nTeste):
+        def __init__(self,nclasses, nTeste, amostras = 50):
                 self.dados = np.zeros((nclasses,nclasses))
                 self.escore_erro = np.zeros((nclasses,1))
                 self.escore_acerto = np.zeros((nclasses,1))
@@ -18,7 +18,9 @@ class iteracao(object):
                 self.conj_teste = []
                 self.resultados_pc = []
                 self.qtdTeste = np.zeros(nclasses)
+                self.qtdTreino = np.zeros(nclasses)
                 self.nTeste = nTeste
+                self.nTreino = amostras - nTeste
                 self.svm_params = ""
         ##################################################################################################################################################################################################
         ## ENCAPSULAMENTO DA VARIAVEL dados
@@ -64,23 +66,23 @@ class rodada(object):
                 self.sum_err = np.add(self.sum_err,np.transpose(self.iteracoes[nIter-1].escore_erro))
                 self.sum_ace = np.add(self.sum_ace,np.transpose(self.iteracoes[nIter-1].escore_acerto))
                 self.sum_cfm = np.add(self.sum_cfm,self.iteracoes[nIter-1].dados)
-                
+
         def get_avg_cfm(self):
                 return np.divide(self.sum_cfm,float(self.num_ite))
-        
+
         def get_avg_ace(self):
                 res = np.zeros((self.num_cls+1,1))
-                res[:7] = np.divide(self.sum_ace,self.num_ite)
-                res[7]  = sum(res)
+                res[:self.num_cls] = np.divide(self.sum_ace,self.num_ite)
+                res[-1]  = sum(res)
                 return res
         def get_avg_err(self):
                 res = np.zeros((self.num_cls+1,1))
-                res[:7] = np.divide(self.sum_err,self.num_ite)
-                res[7]  = sum(res)
+                res[:self.num_cls] = np.divide(self.sum_err,self.num_ite)
+                res[-1]  = sum(res)
                 return res
         def get_avg_acc(self):
-                soma = np.zeros((8,1))
-                soma_= np.zeros((8,1))
+                soma = np.zeros((self.num_cls+1,1))
+                soma_= np.zeros((self.num_cls+1,1))
                 for i in self.iteracoes:
                         for j in range(self.num_cls):
                                 soma[j] += (i.dados[j,j]/i.nTeste)
@@ -93,14 +95,14 @@ class rodada(object):
         def save(self,path):
                 pk.dump(self, open(path,"w"))
                 print "Arquivo salvo com sucesso em ",path
-        
+
         def load(self,path):
                 return copy.copy(pk.load(open(path,"r")))
-        
+
         def __str__(self):
                 string = ""
                 for i in range(self.num_ite):
-                        string+="\n\n\n--------------------------------- iteração {:03d} -----------------------------------".format(i+1)
+                        string+="\n\n\n--------------------------------- iteraï¿½ï¿½o {:03d} -----------------------------------".format(i+1)
                         string+="\n\t---------------------------- KERNEL {} -----------------------------".format(self.iteracoes[i].svm_params['kernel_type'])
                         string+="\n\t-------------------------- GAMMA {:05.02f} ----------------------------".format(self.iteracoes[i].svm_params['gamma'])
                         string+=str(self.iteracoes[i])
@@ -110,7 +112,7 @@ class rodada(object):
                         string+= "Acc = {:014.10f}%\t".format(self.get_avg_acc()[0][i,0]*100)
                         string+= "Acc++ = {:014.10f}%\t".format(self.get_avg_acc()[1][i,0]*100)
                 return string
-        
+
 class GLCM(object):
         def __init__(self,num_atributos):
                 self.num_atrib = num_atributos
@@ -121,6 +123,62 @@ class GLCM(object):
                 self.atributos.append(atributos[:self.num_atrib])
                 self.labels.append(atributos[-1]-1)
                 self.num_objetos+=1
+        def extraiTp1(self,qtdTreino,qtdTeste,nclasses):
+            treino = []
+            qtdtreinopc = np.zeros(nclasses)
+            teste = []
+            qtdtestepc = np.zeros(nclasses)
+            while (len(treino)<qtdTreino*nclasses):
+                rd = random.randint(0,self.num_objetos-1)
+                if rd not in treino:
+                    if qtdtreinopc[self.labels[rd]] < qtdTreino:
+                        treino.append(rd)
+                        qtdtreinopc[self.labels[rd]] +=1
+            while (len(teste)<qtdTeste*nclasses):
+                rd = random.randint(0,self.num_objetos-1)
+                if rd not in treino and rd not in teste:
+                    if qtdtestepc[self.labels[rd]] < qtdTeste:
+                        teste.append(rd)
+                        qtdtestepc[self.labels[rd]] += 1
+            return treino,teste
+        def extraiTp2(self,qtdTreino,qtdTeste,nclasses,fator):
+            treino = []
+            teste = []
+            classe = 0
+            while(len(teste)<fator*qtdTeste):
+                if classe == 5: classe = 0
+                rd = sorteiaClasse(classe,self)
+                while (rd in treino or rd in teste): rd = sorteiaClasse(classe,self)
+                teste.append(rd)
+                classe+=1
+            classe = 5
+            while(len(teste)<2*fator*qtdTeste):
+                if classe == 7: classe = 5
+                rd = sorteiaClasse(classe,self)
+                while (rd in treino or rd in teste): rd = sorteiaClasse(classe,self)
+                teste.append(rd)
+                classe+=1
+            classe = 0
+            while(len(treino)<fator*qtdTreino):
+                if classe == 5: classe = 0
+                rd = sorteiaClasse(classe,self)
+                while (rd in treino or rd in teste): rd = sorteiaClasse(classe,self)
+                treino.append(rd)
+                classe+=1
+            classe = 5
+            while(len(treino)<2*fator*qtdTreino):
+                if classe == 7: classe = 5
+                rd = sorteiaClasse(classe,self)
+                while (rd in treino or rd in teste): rd = sorteiaClasse(classe,self)
+                treino.append(rd)
+                classe+=1
+            return treino,teste
+
+        def extrai_treino_teste(self,nclasses,qtdtreino,qtdteste,tipo,fator=2):
+            if tipo == 1:
+                return self.extraiTp1(qtdtreino,qtdteste,nclasses)
+            if tipo == 2:
+                return self.extraiTp2(qtdtreino,qtdteste,nclasses,fator)
         def __str__(self):
                 res = ""
                 for i in range(self.num_objetos):
