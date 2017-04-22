@@ -17,7 +17,7 @@ pesos = np.matrix(pesos);
 if __name__ == "__main__":
         for metodo in ["PASSO_ROI_PRETO"]:
                 it = 50
-                for percent in range(4,100):
+                for percent in range(2,100):
                         obj = rodada(it,2, nTreino = 26.0)
                         bd = ler_arquivo("GLCM_RESIZE/{}/GLCM_{:d}00.txt".format(metodo,percent))
                         bd = Normalizar(bd,len(bd),len(bd[0])-1)
@@ -53,10 +53,12 @@ if __name__ == "__main__":
                                             test = 0
                                         else: test = 1
                                         oIt.dados[test,res]+=1
+                                oIt.set_acuracia()
                                 ##mul = np.multiply(oIt.dados,pesos)
                                 ##oIt.escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
                                 ##oIt.escore_acerto = np.matrix([pesosCorr[l]*oIt.dados[l,l] for l in range(oIt.nclasses)])
                                 obj.set_iteracao(k+1,oIt)
+
                         obj.max_ace = 5070
                         obj.max_err = 3705
                         for i in range(len(obj.GLCM.labels)):
