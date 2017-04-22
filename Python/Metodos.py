@@ -278,7 +278,7 @@ def cria_Arquivo_GLCM(percent,method, text,caminho, roi=True):
 ##
 def GLCM(img,classe):
 	imgQuantized = img.copy()
-	coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
+	coOccurence = getCoOccurrenceMatrixMod(imgQuantized, 256)
 	coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
 	glcm_features  = getFeatures(coOccurenceNormalized, 256)
 	glcm_features[9] = classe

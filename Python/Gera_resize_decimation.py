@@ -6,6 +6,6 @@ percent = 90
 bd = []
 for i in range(1,8):
     for j in range(1,51):
-        bd.append(GLCM(cv2.imread("../../couro_images_semfundo/c{:d}_{:d}.JPG".format(i,j),0)))
+        bd.append(GLCM(cv2.imread("../../couro_images_semfundo/c{:d}_{:d}.JPG".format(i,j),0),i))
         print i,j
 Salvar_arquivo(bd,"GLCM_RESIZE/PASSO_ROI_PRETO/GLCM_100.txt")
