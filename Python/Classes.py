@@ -11,6 +11,7 @@ class iteracao(object):
         ## nTeste: NUMERO DE AMOSTRAS PARA TESTE.
         def __init__(self,nclasses, nTeste, amostras = 50):
                 self.dados = np.zeros((nclasses,nclasses))
+                self.acuracia = np.zeros((nclasses+1,1))
                 self.escore_erro = np.zeros((nclasses,1))
                 self.escore_acerto = np.zeros((nclasses,1))
                 self.nclasses = nclasses
@@ -32,11 +33,17 @@ class iteracao(object):
                 self.escore_erro = escErr
         def set_escore_acerto(self, escAce):
                 self.escore_acerto = escAce
+        def set_acuracia(self):
+                soma = 0
+                for i in range(self.nclasses):
+                    soma += self.dados[i,i]/self.nTeste
+                    self.acuracia[i] = self.dados[i,i]/self.nTeste
+                self.acuracia[self.nclasses] = soma/self.nclasses
         def __str__(self):
                 string = ""
                 for i in range(self.nclasses):
                         string+="\nClasse "+str(i)+" :"
-                        string+="Acc = {:014.10f}%\t".format((self.dados[i,i]/self.nTeste)*100.0)
+                        string+="Acc = {:014.10f}%\t".format(self.acuracia[i]*100.0)
                         string+="Acc++ = {:014.10f}%\t".format(((sum(self.dados[i,:i+2] if (i==0) else self.dados[i,i-1:i+2]))/self.nTeste)*100.0)
                         string+="Acertos = {:05.02f}\t".format(self.dados[i,i])
                         string+="Acertos++ = {:05.02f}\t".format(sum(self.dados[i,:i+2] if (i==0) else self.dados[i,i-1:i+2]))
@@ -92,6 +99,14 @@ class rodada(object):
                 soma[self.num_cls] = sum(soma[:self.num_cls])/float(self.num_cls)
                 soma_[self.num_cls] = sum(soma_[:self.num_cls])/float(self.num_cls)
                 return soma,soma_
+        def get_std_acc(self):
+            somadesvio = 0
+            for i in self.iteracoes:
+                at = np.subtract(i.acuracia,self.get_avg_acc()[0])
+                at = np.power(at,2)
+                somadesvio = np.add(somadesvio,at)
+            deviation = np.divide(somadesvio,49)
+            return np.sqrt(deviation)
         def save(self,path):
                 pk.dump(self, open(path,"w"))
                 print "Arquivo salvo com sucesso em ",path
