@@ -1,0 +1,14 @@
+Filename: meminfo.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    11  34.6914062500 MiB   0.0000000000 MiB   	@profile(precision=10, stream=fp1)
+    12                             	def GLCM(passo):
+    13  34.6992187500 MiB   0.0078125000 MiB   		img = cv2.imread("Imagens/{:03d}_passo.JPG".format(passo),0)
+    14  34.6992187500 MiB   0.0000000000 MiB   		imgQuantized = img.copy()
+    15  35.1289062500 MiB   0.4296875000 MiB   		coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
+    16  35.6367187500 MiB   0.5078125000 MiB   		coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
+    17  35.6406250000 MiB   0.0039062500 MiB   		glcm_features  = getFeatures(coOccurenceNormalized, 256)
+    18  35.6406250000 MiB   0.0000000000 MiB   		return glcm_features
+
+

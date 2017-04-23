@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 import math as mp
 from memory_profiler import profile
-for i in range(100,0,-5):
+for i in range(72,0,-1):
+	print i 
 	fp1 = open("MEMORIA/{:03d}_PASSO_GLCM.txt".format(i),'w+')
 	fp2 = open("MEMORIA/{:03d}_PASSO_coOccurrence.txt".format(i),'w+')
 	fp3 = open("MEMORIA/{:03d}_PASSO_Normalize.txt".format(i),'w+')
