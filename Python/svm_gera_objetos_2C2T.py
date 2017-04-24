@@ -17,7 +17,7 @@ pesos = np.matrix(pesos);
 if __name__ == "__main__":
         for metodo in ["PASSO_ROI_PRETO"]:
                 it = 50
-                for percent in range(2,100):
+                for percent in range(1,100):
                         obj = rodada(it,2, nTreino = 26.0)
                         bd = ler_arquivo("GLCM_RESIZE/{}/GLCM_{:d}00.txt".format(metodo,percent))
                         bd = Normalizar(bd,len(bd),len(bd[0])-1)
