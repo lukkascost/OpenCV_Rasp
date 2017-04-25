@@ -372,7 +372,6 @@ def geraGraficos(smetodo,passos,peso, reta = 01,tipo = "7C1T"):
 			plt.ylim([0,3705])
 			plt.xlabel('passo (M)')
 			plt.ylabel('Erro (escore)')
-		plt.xlim(passos)
 		plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
 		plt.title(tag+" Tipo: "+tipo)
 		plt.grid(True)
