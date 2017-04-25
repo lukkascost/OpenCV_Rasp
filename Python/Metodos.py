@@ -336,25 +336,26 @@ def avg(l):
 	res[i,0] = reduce(lambda x, y: x + y, l[i]) / len(l[i])         ##
     return res                                                          ##
 #####################################################################################################################################################################################################
-def geraGraficos(smetodo,inicio,tamanho,peso, reta = 01,tipo = "7C1T"):
-	objAr = [rodada(50,7) for i in range(100)]
+def geraGraficos(smetodo,passos,peso, reta = 01,tipo = "7C1T"):
+	objAr = []
 	if reta == 1: tag="ACURACIAS"
 	if reta == 2: tag="ACERTOS"
 	if reta == 3: tag="ERROS"
 	for metodo in smetodo:
 		acc_ = []
 		acc = []
-		for percent in range(inicio,inicio+tamanho+1):
-			print percent
-			objAr[percent] = objAr[percent].load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_{}.pkl".format(peso,metodo,percent,50,tipo))
+		for j,percent in enumerate(passos):
+			print percent,j
+			objAr.append(rodada(50,7))
+			objAr.append(objAr[j].load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_{}.pkl".format(peso,metodo,percent,50,tipo)))
 			if reta == 1:
-				acc_.append(objAr[percent].get_avg_acc()[1][-1,0]*100)
-				acc.append(objAr[percent].get_avg_acc()[0][-1,0]*100)
+				acc_.append(objAr[j].get_avg_acc()[1][-1,0]*100)
+				acc.append(objAr[j].get_avg_acc()[0][-1,0]*100)
 			if reta == 2:
-				acc_.append(objAr[percent].get_avg_ace()[-1,0])
+				acc_.append(objAr[j].get_avg_ace()[-1,0])
 			if reta == 3:
-				acc_.append(objAr[percent].get_avg_err()[-1,0])
-		t = np.arange(inicio, inicio+tamanho+1, 1)
+				acc_.append(objAr[j].get_avg_err()[-1,0])
+		t = np.array(passos)
 		if reta == 1:
 			plt.plot(t,acc_,label="Acuracia ++")
 			plt.plot(t,acc,label="Acuracia")
@@ -371,12 +372,12 @@ def geraGraficos(smetodo,inicio,tamanho,peso, reta = 01,tipo = "7C1T"):
 			plt.ylim([0,3705])
 			plt.xlabel('passo (M)')
 			plt.ylabel('Erro (escore)')
-		plt.xlim([inicio,inicio+tamanho])
+		plt.xlim(passos)
 		plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
 		plt.title(tag+" Tipo: "+tipo)
 		plt.grid(True)
-		plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,inicio,tamanho,tag,tipo),bbox_inches='tight',dpi=400)
-		print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,inicio,tamanho,tag,tipo)
+		plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,min(passos),len(passos),tag,tipo),bbox_inches='tight',dpi=400)
+		print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,min(passos),len(passos),tag,tipo)
 		##plt.show()
 		plt.gcf().clear()
 def sorteiaClasse(classe,conj):
