@@ -11,13 +11,20 @@ pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
          [  0.   ,0.   ,0.    ,0.    ,0.    ,0.    ,5.],
          [  0.   ,0.   ,0.    ,0.    ,0.    ,0.    ,0.]]
 pesosCorr = [100.   ,85.   ,75.   ,55.   ,40.   ,20.   ,15.]
+passos = range(1,100)
+lista = []
+for i in range(101,1000):
+    if (3456/i,4608/i) not in lista:
+        lista.append((3456/i,4608/i))
+        passos.append(i)
+passos.sort(reverse=True)
 
 
 pesos = np.matrix(pesos);
 if __name__ == "__main__":
         for metodo in ["PASSO_ROI_PRETO"]:
                 it = 50
-                for percent in range(1,100):
+                for percent in passos:
                         obj = rodada(it,2, nTreino = 26.0)
                         bd = ler_arquivo("GLCM_RESIZE/{}/GLCM_{:d}00.txt".format(metodo,percent))
                         bd = Normalizar(bd,len(bd),len(bd[0])-1)

@@ -264,7 +264,7 @@ def cria_Arquivo_GLCM(percent,method, text,caminho, roi=True):
 	    if(method ==5 ): img = resize_img(img,percent*100)
 	    if(method ==6 ): img = resize_img_passo(img,percent)
 	    imgQuantized = img.copy()
-	    if roi:coOccurence = getCoOccurrenceMatrixMod(imgQuantized, 256)
+	    if roi: coOccurence = getCoOccurrenceMatrixMod(imgQuantized, 256)
 	    else:  coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
 	    coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
 	    glcm_features  = getFeatures(coOccurenceNormalized, 256)
