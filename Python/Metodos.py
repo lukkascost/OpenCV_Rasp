@@ -131,19 +131,19 @@ def ler_arquivo(address):
 #####################################################################################################################################################################################################
 ##
 def getCoOccurrenceMatrix(image, grayscale):
-    coOccurence = np.zeros((grayscale,grayscale))                                               ##
-    for i in range(image.shape[0]):                                                             ##
-	for j in range(image.shape[1]-1):                                                       ##
-		coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
-    return coOccurence                                                                          ##
+	coOccurence = np.zeros((grayscale,grayscale))                                               ##
+	for i in range(image.shape[0]):                                                             ##
+		for j in range(image.shape[1]-1):                                                       ##
+			coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
+	return coOccurence                                                                          ##
 #####################################################################################################################################################################################################
 ##
 def getCoOccurrenceMatrixMod(image, grayscale):
     coOccurence = np.zeros((grayscale,grayscale))                                               ##
     for i in range(image.shape[0]):                                                             ##
-	for j in range(image.shape[1]-1):                                                       ##
-		if not (image[i,j] == 0 or image[i,j+1] == 0):
-			coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
+                for j in range(image.shape[1]-1):                                                       ##
+                        if not (image[i,j] == 0 or image[i,j+1] == 0):
+                                coOccurence[image[i,j],image[i,j+1]] += 1                                       ##
     return coOccurence                                                                          ##
 #####################################################################################################################################################################################################
 ##
@@ -159,21 +159,21 @@ def getFeatures(coOccurenceNormalized, grayscale):
     glcm_features = np.zeros(10)                                                                                                ##
     correlation,mean1,mean2,deviation,deviation1,deviation2 = 0,0,0,0,0,0                                                       ##
     for i in range(grayscale):                                                                                                  ##
-	for j in range(grayscale):                                                                                              ##
-	    glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i,j]))                                ##
-	    glcm_features[2] =glcm_features[2] + (coOccurenceNormalized[i,j] * coOccurenceNormalized[i,j] )                     ##
-	    glcm_features[3] =glcm_features[3] + (( coOccurenceNormalized[i,j]) / ( 1+abs(i-j) ));                              ##
-	    if(i!=j):                                                                                                           ##
-		glcm_features[4]=glcm_features[4] + (coOccurenceNormalized[i,j] / (1 + (i-j)*(i-j)))                            ##
-		glcm_features[6]=glcm_features[6] + (coOccurenceNormalized[i,j]*(abs(i-j)) )                                    ##
-	    if(coOccurenceNormalized[i,j]!=0):                                                                                  ##
-		glcm_features[5] =glcm_features[5] + (coOccurenceNormalized[i,j]*mp.log10(coOccurenceNormalized[i,j]))          ##
-	    glcm_features[7] = glcm_features[7] +(coOccurenceNormalized[i,j]*coOccurenceNormalized[i,j])                        ##
-	    correlation = correlation + ( (i*j) * ( (coOccurenceNormalized[i,j]) ) )                                            ##
-	    mean1 = mean1+(i * ( (coOccurenceNormalized[i,j]) ))                                                                ##
-	    mean2+= (j * ( (coOccurenceNormalized[i,j]) ))                                                                      ##
-	    deviation1+= ( (i*i) * (coOccurenceNormalized[i,j]) )                                                               ##
-	    deviation2+= ( (j*j) * (coOccurenceNormalized[i,j]) )                                                               ##
+        for j in range(grayscale):                                                                                              ##
+            glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i,j]))                                ##
+            glcm_features[2] =glcm_features[2] + (coOccurenceNormalized[i,j] * coOccurenceNormalized[i,j] )                     ##
+            glcm_features[3] =glcm_features[3] + (( coOccurenceNormalized[i,j]) / ( 1+abs(i-j) ));                              ##
+            if(i!=j):                                                                                                           ##
+                glcm_features[4]=glcm_features[4] + (coOccurenceNormalized[i,j] / (1 + (i-j)*(i-j)))                            ##
+                glcm_features[6]=glcm_features[6] + (coOccurenceNormalized[i,j]*(abs(i-j)) )                                    ##
+            if(coOccurenceNormalized[i,j]!=0):                                                                                  ##
+                glcm_features[5] =glcm_features[5] + (coOccurenceNormalized[i,j]*mp.log10(coOccurenceNormalized[i,j]))          ##
+            glcm_features[7] = glcm_features[7] +(coOccurenceNormalized[i,j]*coOccurenceNormalized[i,j])                        ##
+            correlation = correlation + ( (i*j) * ( (coOccurenceNormalized[i,j]) ) )                                            ##
+            mean1 = mean1+(i * ( (coOccurenceNormalized[i,j]) ))                                                                ##
+            mean2+= (j * ( (coOccurenceNormalized[i,j]) ))                                                                      ##
+            deviation1+= ( (i*i) * (coOccurenceNormalized[i,j]) )                                                               ##
+            deviation2+= ( (j*j) * (coOccurenceNormalized[i,j]) )                                                               ##
     glcm_features[5] *= -1                                                                                                      ##
     deviation1-=mean1*mean1                                                                                                     ##
     deviation2-=mean2*mean2                                                                                                     ##
@@ -346,46 +346,44 @@ def geraGraficos(smetodo,passos,peso, reta = 01,tipo = "7C1T"):
 		acc = []
 		for j,percent in enumerate(passos):
 			print percent,j
-			objAr.append(rodada(50,7))
-			objAr.append(objAr[j].load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_{}.pkl".format(peso,metodo,percent,50,tipo)))
+			obj = rodada(50,7)
+			obj = obj.load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_{}.pkl".format(peso,metodo,percent,50,tipo))
 			if reta == 1:
-				acc_.append(objAr[j].get_avg_acc()[1][-1,0]*100)
-				acc.append(objAr[j].get_avg_acc()[0][-1,0]*100)
+				acc_.append(obj.get_avg_acc()[1][-1,0]*100)
+				acc.append(obj.get_avg_acc()[0][-1,0]*100)
 			if reta == 2:
-				acc_.append(objAr[j].get_avg_ace()[-1,0])
+				acc_.append(obj.get_avg_ace()[-1,0])
 			if reta == 3:
-				acc_.append(objAr[j].get_avg_err()[-1,0])
-		t = np.array(passos)
+				acc_.append(obj.get_avg_err()[-1,0])
 		if reta == 1:
-			plt.plot(t,acc_,label="Acuracia ++")
-			plt.plot(t,acc,label="Acuracia")
-			plt.ylim([0,100])
+			plt.bar(passos,acc_,label="Acuracia ++")
+			plt.bar(passos,acc,label="Acuracia")
 			plt.xlabel('passo (M)')
 			plt.ylabel('Acuracia (%)')
 		if reta == 2:
-			plt.plot(t,acc_,label="Acerto")
+			plt.plot(passos,acc_,label="Acerto")
 			plt.ylim([0,5070])
 			plt.xlabel('passo (M)')
 			plt.ylabel('Acerto (escore)')
 		if reta == 3:
-			plt.plot(t,acc_,label="Erro")
+			plt.plot(passos,acc_,label="Erro")
 			plt.ylim([0,3705])
 			plt.xlabel('passo (M)')
 			plt.ylabel('Erro (escore)')
-		plt.legend(bbox_to_anchor=(1, 1), bbox_transform=plt.gcf().transFigure)
+		plt.x
 		plt.title(tag+" Tipo: "+tipo)
 		plt.grid(True)
 		plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,min(passos),len(passos),tag,tipo),bbox_inches='tight',dpi=400)
 		print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,min(passos),len(passos),tag,tipo)
-		##plt.show()
+		plt.show()
 		plt.gcf().clear()
 def sorteiaClasse(classe,conj):
     """
     classe:
     """
     if classe not in conj.labels:
-        return -1
+	return -1
     while(True):
-        rd = random.randint(0,conj.num_objetos-1)
-        if conj.labels[rd] == classe:
-            return rd
+	rd = random.randint(0,conj.num_objetos-1)
+	if conj.labels[rd] == classe:
+	    return rd

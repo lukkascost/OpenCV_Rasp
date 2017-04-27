@@ -43,7 +43,7 @@ class iteracao(object):
                 string = ""
                 for i in range(self.nclasses):
                         string+="\nClasse "+str(i)+" :"
-                        string+="Acc = {:014.10f}%\t".format(self.acuracia[i]*100.0)
+                        string+="Acc = {:014.10f}%\t".format(float(self.acuracia[i])*100.0)
                         string+="Acc++ = {:014.10f}%\t".format(((sum(self.dados[i,:i+2] if (i==0) else self.dados[i,i-1:i+2]))/self.nTeste)*100.0)
                         string+="Acertos = {:05.02f}\t".format(self.dados[i,i])
                         string+="Acertos++ = {:05.02f}\t".format(sum(self.dados[i,:i+2] if (i==0) else self.dados[i,i-1:i+2]))
