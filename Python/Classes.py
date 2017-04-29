@@ -80,7 +80,7 @@ class rodada(object):
         def get_avg_ace(self):
                 res = np.zeros((self.num_cls+1,1))
                 res[:self.num_cls] = np.divide(self.sum_ace,self.num_ite)
-                res[-1]  = sum(res)
+                res[-1]  = sum(res)/self.num_cls
                 return res
         def get_avg_err(self):
                 res = np.zeros((self.num_cls+1,1))
@@ -127,6 +127,17 @@ class rodada(object):
                         string+= "Acc = {:014.10f}%\t".format(self.get_avg_acc()[0][i,0]*100)
                         string+= "Acc++ = {:014.10f}%\t".format(self.get_avg_acc()[1][i,0]*100)
                 return string
+        def normalizaItEscore(self,maior):
+                maior = np.multiply(maior, self.iteracoes[0].nTreino)
+                menor = np.zeros(self.num_cls)
+                for i in self.iteracoes:
+                        for j in range(self.num_cls):
+                                i.escore_acerto[0,j] = (i.escore_acerto[0,j]-menor[j])/(maior[j]-menor[j])
+                                i.escore_acerto[0,j] *=100
+        def atualiza_sums(self):
+                self.sum_ace = np.zeros((self.num_cls,1))
+                for i in self.iteracoes:
+                        self.sum_ace = np.add(self.sum_ace, i.escore_acerto.T)
 
 class GLCM(object):
         def __init__(self,num_atributos):
@@ -139,23 +150,23 @@ class GLCM(object):
                 self.labels.append(atributos[-1]-1)
                 self.num_objetos+=1
         def extraiTp1(self,qtdTreino,qtdTeste,nclasses):
-            treino = []
-            qtdtreinopc = np.zeros(nclasses)
-            teste = []
-            qtdtestepc = np.zeros(nclasses)
-            while (len(treino)<qtdTreino*nclasses):
-                rd = random.randint(0,self.num_objetos-1)
-                if rd not in treino:
-                    if qtdtreinopc[self.labels[rd]] < qtdTreino:
-                        treino.append(rd)
-                        qtdtreinopc[self.labels[rd]] +=1
-            while (len(teste)<qtdTeste*nclasses):
-                rd = random.randint(0,self.num_objetos-1)
-                if rd not in treino and rd not in teste:
-                    if qtdtestepc[self.labels[rd]] < qtdTeste:
-                        teste.append(rd)
-                        qtdtestepc[self.labels[rd]] += 1
-            return treino,teste
+                treino = []
+                qtdtreinopc = np.zeros(nclasses)
+                teste = []
+                qtdtestepc = np.zeros(nclasses)
+                while (len(treino)<qtdTreino*nclasses):
+                        rd = random.randint(0,self.num_objetos-1)
+                        if rd not in treino:
+                                if qtdtreinopc[int(self.labels[rd])] < qtdTreino:
+                                        treino.append(rd)
+                                        qtdtreinopc[int(self.labels[rd])] +=1
+                while (len(teste)<qtdTeste*nclasses):
+                        rd = random.randint(0,self.num_objetos-1)
+                        if rd not in treino and rd not in teste:
+                                if qtdtestepc[int(self.labels[rd])] < qtdTeste:
+                                        teste.append(rd)
+                                        qtdtestepc[int(self.labels[rd])] += 1
+                return treino,teste
         def extraiTp2(self,qtdTreino,qtdTeste,nclasses,fator):
             treino = []
             teste = []

@@ -11,13 +11,13 @@ pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
          [  0.   ,0.   ,0.    ,0.    ,0.    ,0.    ,5.],
          [  0.   ,0.   ,0.    ,0.    ,0.    ,0.    ,0.]]
 pesosCorr = [100.   ,85.   ,75.   ,55.   ,40.   ,20.   ,15.]
-passos = range(1,100)
+passos = range(2,100)
 lista = []
 for i in range(101,1000):
     if (3456/i,4608/i) not in lista:
         lista.append((3456/i,4608/i))
         passos.append(i)
-passos.sort(reverse=True)
+passos.sort(reverse=0)
 
 pesos = np.matrix(pesos);
 if __name__ == "__main__":
@@ -62,4 +62,7 @@ if __name__ == "__main__":
                                 obj.set_iteracao(k+1,oIt)
                         obj.max_ace = 5070
                         obj.max_err = 3705
-                        obj.save("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7C1T.pkl".format(PesosTipo,metodo,percent,it))
+                        objInit = obj.load("OBJETOS/02-PASSO_ROI_PRETO-001%-050Iteracoes_7C1T.pkl")
+                        obj.normalizaItEscore()
+                        obj.atualiza_sums()
+                        #obj.save("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7C1T.pkl".format(PesosTipo,metodo,percent,it))
