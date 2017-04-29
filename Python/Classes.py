@@ -127,7 +127,8 @@ class rodada(object):
                         string+= "Acc = {:014.10f}%\t".format(self.get_avg_acc()[0][i,0]*100)
                         string+= "Acc++ = {:014.10f}%\t".format(self.get_avg_acc()[1][i,0]*100)
                 return string
-        def normalizaItEscore(self,maior):
+        def normalizaItEscore(self):
+                maior = np.array([100.,85.,75.,55.,40.,20.,15.])
                 maior = np.multiply(maior, self.iteracoes[0].nTreino)
                 menor = np.zeros(self.num_cls)
                 for i in self.iteracoes:
