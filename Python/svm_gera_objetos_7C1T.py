@@ -63,7 +63,4 @@ if __name__ == "__main__":
                         obj.max_ace = 5070
                         obj.max_err = 3705
                         objInit = obj.load("OBJETOS/02-PASSO_ROI_PRETO-001%-050Iteracoes_7C1T.pkl")
-                        obj.normalizaItEscore()
-                        obj.atualiza_sums()
-                        #print obj.get_avg_ace()
                         obj.save("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7C1T.pkl".format(PesosTipo,metodo,percent,it))
