@@ -2,7 +2,14 @@ import cv2
 import numpy as np
 import math as mp
 from memory_profiler import profile
-for i in range(72,0,-1):
+passos = []
+lista = []
+for i in range(101,1000):
+    if (3456/i,4608/i) not in lista:
+        lista.append((3456/i,4608/i))
+        passos.append(i)
+passos.sort(reverse=0)
+for i in passos:
 	print i 
 	fp1 = open("MEMORIA/{:03d}_PASSO_GLCM.txt".format(i),'w+')
 	fp2 = open("MEMORIA/{:03d}_PASSO_coOccurrence.txt".format(i),'w+')
