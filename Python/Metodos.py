@@ -4,7 +4,7 @@ import numpy as np
 import math as mp
 import random
 from Classes import *
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #####################################################################################################################################################################################################
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
 def GetObjetosAtributos(ad):

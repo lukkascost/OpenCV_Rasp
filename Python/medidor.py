@@ -1,16 +1,20 @@
 import subprocess
 from Metodos import *
-de = 100
-ate = 0
-passo = -1
 bateria = 5
 qtdBaterias = 5
-local = "RaspBerry_1-100"
+lista = []
+passos = []
+for i in range(100,1000):
+    if (3456/i,4608/i) not in lista:
+        lista.append((3456/i,4608/i))
+        passos.append(i)
+passos.sort(reverse=True)
+local = "RaspBerry_100-922"
 importres = []
 result = ""
 ##
 print "Medindo RESIZE  ..... "
-for j,i in enumerate(range(de,ate+1,passo)):
+for j,i in enumerate(passos):
 	print "\tPasso: ",i
 	percent = 3456.0/float(i)
 	percent /= 3456.0
@@ -22,23 +26,23 @@ for j,i in enumerate(range(de,ate+1,passo)):
 	command += "'DataBase/c1_1.JPG',0),"+str(i)+")"
 	command += '"'
 	result += command +"\n"
-#	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
-#	result += "\t\t"+importres[j]
+	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
+	result += "\t\t"+importres[j]
 	result += "\n"
-#	print importres[j]
-#Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE.txt".format(local))
+	print importres[j]
+Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE.txt".format(local))
 texto = ""
 for i in importres:
 	texto+= str(i.split(" ")[5])+";"
 	texto+= str(i.split(" ")[6])+";"
 	texto+= str(i.split(" ")[9])+";"
 	texto+= "\n"
-#Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE.txt".format(local))
+Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE.txt".format(local))
 result = ""
 importres = []
 ##
 print "Medindo RESIZE + GLCM ..... "
-for j,i in enumerate(range(de,ate+1,passo)):
+for j,i in enumerate(passos):
 	print "\tPasso: ",i
 	percent = 3456.0/float(i)
 	percent /= 3456.0
@@ -66,7 +70,7 @@ importres = []
 result = ""
 ##
 print "Medindo RESIZE + GLCM + SVM ..... "
-for j,i in enumerate(range(de,ate+1,passo)):
+for j,i in enumerate(passos):
 	print "\tPasso: ",i
 	percent = 3456.0/float(i)
 	percent /= 3456.0
