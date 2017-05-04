@@ -3,7 +3,7 @@ from Metodos import *
 bd = []
 for i in range(1,8):
     for j in range(1,50):
-        k = 1
+        k = 2
         gray = 256
         img = cv2.imread("../../couro_images_semfundo/c{:d}_{:d}.JPG".format(i,j),0)
         for x in range(k):
