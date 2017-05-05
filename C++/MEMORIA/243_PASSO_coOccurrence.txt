@@ -1,0 +1,13 @@
+Filename: meminfo.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    26  34.4101562500 MiB   0.0000000000 MiB   	@profile(precision=10, stream=fp2)
+    27                             	def getCoOccurrenceMatrix(image, grayscale):
+    28  34.4140625000 MiB   0.0039062500 MiB   	    coOccurence = np.zeros((grayscale,grayscale))
+    29  34.5429687500 MiB   0.1289062500 MiB   	    for i in range(image.shape[0]):
+    30  34.5429687500 MiB   0.0000000000 MiB   	        for j in range(image.shape[1]-1):
+    31  34.5429687500 MiB   0.0000000000 MiB   	            coOccurence[image[i][j]][image[i][j+1]]= coOccurence[image[i][j]][image[i][j+1]] +1
+    32  34.5429687500 MiB   0.0000000000 MiB   	    return coOccurence 
+
+

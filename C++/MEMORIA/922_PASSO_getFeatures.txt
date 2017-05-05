@@ -1,0 +1,40 @@
+Filename: meminfo.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    40  34.9687500000 MiB   0.0000000000 MiB   	@profile(precision=10,stream=fp4)
+    41                             	def getFeatures(coOccurenceNormalized, grayscale):
+    42  34.9687500000 MiB   0.0000000000 MiB   	    glcm_features = np.zeros(10)
+    43  34.9687500000 MiB   0.0000000000 MiB   	    correlation,mean1,mean2,deviation,deviation1,deviation2 = 0,0,0,0,0,0
+    44  34.9687500000 MiB   0.0000000000 MiB   	    for i in range(grayscale):
+    45  34.9687500000 MiB   0.0000000000 MiB   	        for j in range(grayscale):
+    46  34.9687500000 MiB   0.0000000000 MiB   	            glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i][j]))
+    47  34.9687500000 MiB   0.0000000000 MiB   	            glcm_features[2] =glcm_features[2] + (coOccurenceNormalized[i][j] * coOccurenceNormalized[i][j] )
+    48  34.9687500000 MiB   0.0000000000 MiB   	            glcm_features[3] =glcm_features[3] + (( coOccurenceNormalized[i][j]) / ( 1+abs(i-j) ));
+    49  34.9687500000 MiB   0.0000000000 MiB   	            if(i!=j):
+    50  34.9687500000 MiB   0.0000000000 MiB   	                glcm_features[4]=glcm_features[4] + (coOccurenceNormalized[i][j] / (1 + (i-j)*(i-j)))
+    51  34.9687500000 MiB   0.0000000000 MiB   	                glcm_features[6]=glcm_features[6] + (coOccurenceNormalized[i][j]*(abs(i-j)) )
+    52  34.9687500000 MiB   0.0000000000 MiB   	            if(coOccurenceNormalized[i][j]!=0):
+    53  34.9687500000 MiB   0.0000000000 MiB   	                glcm_features[5] =glcm_features[5] + (coOccurenceNormalized[i][j]*mp.log10(coOccurenceNormalized[i][j]))
+    54  34.9687500000 MiB   0.0000000000 MiB   	            glcm_features[7] = glcm_features[7] +(coOccurenceNormalized[i][j]*coOccurenceNormalized[i][j])
+    55  34.9687500000 MiB   0.0000000000 MiB   	            correlation = correlation + ( (i*j) * ( (coOccurenceNormalized[i][j]) ) )
+    56  34.9687500000 MiB   0.0000000000 MiB   	            mean1 = mean1+(i * ( (coOccurenceNormalized[i][j]) ))
+    57  34.9687500000 MiB   0.0000000000 MiB   	            mean2+= (j * ( (coOccurenceNormalized[i][j]) ))
+    58  34.9687500000 MiB   0.0000000000 MiB   	            deviation1+= ( (i*i) * (coOccurenceNormalized[i][j]) )
+    59  34.9687500000 MiB   0.0000000000 MiB   	            deviation2+= ( (j*j) * (coOccurenceNormalized[i][j]) )
+    60  34.9687500000 MiB   0.0000000000 MiB   	    glcm_features[5] *= -1
+    61  34.9687500000 MiB   0.0000000000 MiB   	    deviation1-=mean1*mean1
+    62  34.9687500000 MiB   0.0000000000 MiB   	    deviation2-=mean2*mean2
+    63  34.9687500000 MiB   0.0000000000 MiB   	    deviation1=mp.sqrt(deviation1)
+    64  34.9687500000 MiB   0.0000000000 MiB   	    deviation2=mp.sqrt(deviation2)
+    65  34.9687500000 MiB   0.0000000000 MiB   	    deviation=(deviation1*deviation2)
+    66  34.9687500000 MiB   0.0000000000 MiB   	    if(deviation==0):
+    67                             	        deviation = 1
+    68  34.9687500000 MiB   0.0000000000 MiB   	    glcm_features[1]=(correlation-(mean1*mean2))/deviation
+    69                             
+    70  34.9687500000 MiB   0.0000000000 MiB   	    for i in range(grayscale):
+    71  34.9687500000 MiB   0.0000000000 MiB   	        for j in range(grayscale):
+    72  34.9687500000 MiB   0.0000000000 MiB   	            glcm_features[8] += ((i-(mean1+mean2)/2)*(i-(mean1+mean2)/2))*coOccurenceNormalized[i][j]
+    73  34.9687500000 MiB   0.0000000000 MiB   	    return glcm_features
+
+
