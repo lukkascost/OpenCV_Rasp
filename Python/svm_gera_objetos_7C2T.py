@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 it = 50
                 for percent in passos:
                         obj = rodada(it,7)
-                        bd = ler_arquivo("GLCM_RESIZE/GLCM_{:d}GScale.txt".format(percent))
+                        bd = ler_arquivo("GLCM_RESIZE/GLCM_{:03d}GScale.txt".format(percent))
                         bd = Normalizar(bd,len(bd),len(bd[0])-1)
                         for i in bd:
                                 obj.GLCM.add_objeto(i)
@@ -56,5 +56,4 @@ if __name__ == "__main__":
                                 obj.set_iteracao(k+1,oIt)
                         obj.max_ace = 5070
                         obj.max_err = 3705
-                        #objInit = obj.load("OBJETOS/02-PASSO_ROI_PRETO-001%-050Iteracoes_7C2T.pkl")
                         obj.save("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7C2T.pkl".format(PesosTipo,metodo,percent,it))
