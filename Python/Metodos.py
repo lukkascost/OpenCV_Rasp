@@ -4,7 +4,7 @@ import numpy as np
 import math as mp
 import random
 from Classes import *
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #####################################################################################################################################################################################################
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
 def GetObjetosAtributos(ad):
@@ -341,43 +341,43 @@ def geraGraficos(smetodo,passos,peso, reta = 01,tipo = "7C1T"):
         if reta == 1: tag="ACURACIAS"
         if reta == 2: tag="VALORES"
         if reta == 3: tag="ERROS"
-        for metodo in smetodo:
-                acc_ = []
-                acc = []
-                for j,percent in enumerate(passos):
-                        print percent,j
-                        obj = rodada(50,7)
-                        obj = obj.load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_{}.pkl".format(peso,metodo,percent,50,tipo))
-                        if reta == 1:
-                                acc_.append(obj.get_avg_acc()[1][-1,0]*100)
-                                acc.append(obj.get_avg_acc()[0][-1,0]*100)
-                        if reta == 2:
-                                acc.append(obj.get_avg_acc()[0][-1,0]*100)
-                                acc_.append(obj.get_avg_ace()[-1,0])
-                        if reta == 3:
-                                acc_.append(obj.get_avg_err()[-1,0])
+        acc_ = []
+        acc = []
+        for j,percent in enumerate(passos):
+                print percent,j
+                obj = rodada(50,7)
+                obj = obj.load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_{}.pkl".format(peso,smetodo,percent,50,tipo))
                 if reta == 1:
-                        plt.bar(passos,acc_,label="Acuracia ++")
-                        plt.bar(passos,acc,label="Acuracia")
-                        plt.xlabel('passo (M)')
-                        plt.ylabel('Acuracia (%)')
+                        acc_.append(obj.get_avg_acc()[1][-1,0]*100)
+                        acc.append(obj.get_avg_acc()[0][-1,0]*100)
                 if reta == 2:
-                        _ax = plt.axes()
-                        xpos = np.arange(len(acc_))
-                        _chartBars = plt.bar(xpos, acc_)  
-                        _ax.set_xticks(xpos)
-                        _ax.set_xticklabels(passos)
+                        acc.append(obj.get_avg_acc()[0][-1,0]*100)
+                        acc_.append(obj.get_avg_ace()[-1,0])
                 if reta == 3:
-                        plt.plot(passos,acc_,label="Erro")
-                        plt.ylim([0,3705])
-                        plt.xlabel('passo (M)')
-                        plt.ylabel('Erro (escore)')
-                plt.title(tag+" Tipo: "+tipo)
-                plt.grid(True)
-                plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,min(passos),len(passos),tag,tipo),bbox_inches='tight',dpi=400)
-                print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,metodo,min(passos),len(passos),tag,tipo)
-                plt.show()
-                plt.gcf().clear()
+                        acc_.append(obj.get_avg_err()[-1,0])
+        if reta == 1:
+                _ax = plt.axes()
+                xpos = np.arange(len(acc))
+                _chartBars = plt.bar(xpos, acc)  
+                _ax.set_xticks(xpos)
+                _ax.set_xticklabels(passos)
+        if reta == 2:
+                _ax = plt.axes()
+                xpos = np.arange(len(acc_))
+                _chartBars = plt.bar(xpos, acc_)  
+                _ax.set_xticks(xpos)
+                _ax.set_xticklabels(passos)
+        if reta == 3:
+                plt.plot(passos,acc_,label="Erro")
+                plt.ylim([0,3705])
+                plt.xlabel('passo (M)')
+                plt.ylabel('Erro (escore)')
+        plt.title(tag+" ATTS: "+str(smetodo))
+        plt.grid(True)
+        plt.savefig("GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,str(smetodo),min(passos),len(passos),tag,tipo),bbox_inches='tight',dpi=400)
+        print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,str(smetodo),min(passos),len(passos),tag,tipo)
+        #plt.show()
+        plt.gcf().clear()
 def sorteiaClasse(classe,conj):
         """
         classe:
