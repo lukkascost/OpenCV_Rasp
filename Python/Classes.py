@@ -1,15 +1,19 @@
 # -*- coding: cp1252 -*-
 ##################################################################################################################################################################################################
 from Metodos import *
+import cv2
 import pickle as pk
 import copy
 ##################################################################################################################################################################################################
 ## CUIDA DE CADA ITERA��O NA EXECUCAO DE TREINO-TESTE
 class iteracao(object):
-        ## CONSTRUTOR DA CLASSE INIT
-        ## nclasses: NUMERO DE CLASSES QUE O CLASSIFICADOR POSSUI.
-        ## nTeste: NUMERO DE AMOSTRAS PARA TESTE.
+        """
+        Class for data control at iteration level.        """
         def __init__(self,nclasses, nTeste, amostras = 50):
+                '''
+                P1: Number of qualifier classes
+                P2: Number of samples for Test
+                amostras: Default 50, Number of samples in each class                '''
                 self.dados = np.zeros((nclasses,nclasses))
                 self.acuracia = np.zeros((nclasses+1,1))
                 self.escore_erro = np.zeros((nclasses,1))
@@ -23,12 +27,12 @@ class iteracao(object):
                 self.nTeste = nTeste
                 self.nTreino = amostras - nTeste
                 self.svm_params = ""
-        ##################################################################################################################################################################################################
-        ## ENCAPSULAMENTO DA VARIAVEL dados
-        ## conf_mat UMA MATRIZ NUMPY nclasses X nclasses CONTENDO A MATRIZ CONFUSAO.
         def set_dados(self,conf_mat):
+                """
+                Description: load confusion matrix on object
+                P1: NUMPY MATRIX NxN WITH CONFUSION MATRIX VALUES WHERE:
+                N IS THE NUMBER OF CLASSES                 """
                 self.dados = conf_mat
-        ##################################################################################################################################################################################################
         def set_escore_erro(self,escErr):
                 self.escore_erro = escErr
         def set_escore_acerto(self, escAce):
@@ -36,8 +40,8 @@ class iteracao(object):
         def set_acuracia(self):
                 soma = 0
                 for i in range(self.nclasses):
-                    soma += self.dados[i,i]/self.nTeste
-                    self.acuracia[i] = self.dados[i,i]/self.nTeste
+                        soma += self.dados[i,i]/self.nTeste
+                        self.acuracia[i] = self.dados[i,i]/self.nTeste
                 self.acuracia[self.nclasses] = soma/self.nclasses
         def __str__(self):
                 string = ""
@@ -68,6 +72,8 @@ class rodada(object):
                 self.num_ite = nIteracoes
                 self.num_cls = nclasses
                 self.GLCM = GLCM(nAtrib)
+                self.pesos = []
+                self.pesosCorr = []
         def set_iteracao(self,nIter,oIter):
                 self.iteracoes[nIter-1] = copy.copy(oIter)
                 self.sum_err = np.add(self.sum_err,np.transpose(self.iteracoes[nIter-1].escore_erro))
@@ -114,6 +120,35 @@ class rodada(object):
         def load(self,path):
                 return copy.copy(pk.load(open(path,"r")))
 
+        def execIteractions(self,positions,typeRandom = 1, params = None):
+                for i in range(self.num_ite):
+                        self.iteracoes[i].conj_treino,self.iteracoes[i].conj_teste = self.GLCM.extrai_treino_teste(self.num_cls,self.iteracoes[i].nTreino,self.iteracoes[i].nTeste,typeRandom)
+                        train = []
+                        trainLabel =[]
+                        for k in self.iteracoes[i].conj_treino:
+                                train.append(self.GLCM.getNewAtrib(k,positions))
+                                trainLabel.append(self.GLCM.labels[k])
+                        if params is None:
+                                self.iteracoes[i].svm_params = dict(kernel_type = cv2.SVM_RBF,svm_type = cv2.SVM_C_SVC,C = 7.0,degree =1.0,gamma=2,nu = 0.0,p = 0.0,coef0 = 0,class_weights = None,epsilon = 1e-6)
+                        else: self.iteracoes[i].svm_params = params
+                        svm = cv2.SVM()
+                        svm.train(np.float32(train),np.float32(trainLabel),params = self.iteracoes[i].svm_params)
+                        for k in self.iteracoes[i].conj_teste:
+                                sample = np.float32(self.GLCM.getNewAtrib(k, positions))
+                                res = int(svm.predict(sample))
+                                test = int(self.GLCM.labels[k])
+                                self.iteracoes[i].dados[test,res]+=1
+                        self.iteracoes[i].set_acuracia()
+                        mul = np.multiply(self.iteracoes[i].dados,self.pesos)
+                        self.iteracoes[i].escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
+                        self.iteracoes[i].escore_acerto = np.matrix([self.pesosCorr[l]*self.iteracoes[i].dados[l,l] for l in range(self.iteracoes[i].nclasses)])  
+                        self.sum_err = np.add(self.sum_err,np.transpose(self.iteracoes[i].escore_erro))
+                        self.sum_ace = np.add(self.sum_ace,np.transpose(self.iteracoes[i].escore_acerto))
+                        self.sum_cfm = np.add(self.sum_cfm,self.iteracoes[i].dados) 
+                        
+                        
+                
+                        
         def __str__(self):
                 string = ""
                 for i in range(self.num_ite):
@@ -206,6 +241,19 @@ class GLCM(object):
                 return self.extraiTp1(qtdtreino,qtdteste,nclasses)
             if tipo == 2:
                 return self.extraiTp2(qtdtreino,qtdteste,nclasses,fator)
+        def getNewAtrib(self,index, posicoes):
+                """
+                Return:
+                R1: List of atributes in positions P2 of index P1.
+                Params:
+                P1: Index of element atribute in list of GLCM object
+                P2: list of elements atributes selecteds. None for all.                """
+                if posicoes is None: posicoes = [x for x in range(self.num_atrib)]
+                newAtt = []
+                for i,j in enumerate(self.atributos[index]):
+                        if i+1 in posicoes:
+                                newAtt.append(j)
+                return newAtt
         def __str__(self):
                 res = ""
                 for i in range(self.num_objetos):
