@@ -2,8 +2,8 @@ from Classes import *
 
 ## tipo 02
 PesosTipo = 2
-positions = [1,3,5,14]
-
+#positions = [x for x in range(1,15)]
+positions = [1,2,3,4,5,9]
 pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
          [  0.   ,0.   ,10.   ,20.   ,45.   ,65.   ,70.],
          [  0.   ,0.   ,0.    ,20.   ,35.   ,55.   ,60.],
@@ -14,7 +14,7 @@ pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
 pesosCorr = [100.   ,85.   ,75.   ,55.   ,40.   ,20.   ,15.]
 passos = []
 lista = []
-for i in range(1,1000):
+for i in range(1,2):
         if (3456/i,4608/i) not in lista:
                 lista.append((3456/i,4608/i))
                 passos.append(i)
