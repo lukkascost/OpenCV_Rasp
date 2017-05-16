@@ -129,7 +129,12 @@ class rodada(object):
                                 train.append(self.GLCM.getNewAtrib(k,positions))
                                 trainLabel.append(self.GLCM.labels[k])
                         if params is None:
-                                self.iteracoes[i].svm_params = dict(kernel_type = cv2.SVM_RBF,svm_type = cv2.SVM_C_SVC,C = 7.0,degree =1.0,gamma=2,nu = 0.0,p = 0.0,coef0 = 0,class_weights = None,epsilon = 1e-6)
+                                self.iteracoes[i].svm_params = dict(kernel_type = cv2.SVM_RBF,
+                                                                    svm_type = cv2.SVM_C_SVC,
+                                                                    gamma=2.0,
+                                                                    nu = 0.0,
+                                                                    p = 0.0,
+                                                                    coef0 = 0)
                         else: self.iteracoes[i].svm_params = params
                         svm = cv2.SVM()
                         svm.train(np.float32(train),np.float32(trainLabel),params = self.iteracoes[i].svm_params)

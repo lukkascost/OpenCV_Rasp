@@ -23,19 +23,19 @@ passos.sort(reverse=0)
 print passos
 
 pesos = np.matrix(pesos);
-if __name__ == "__main__":
-        for metodo in ["PASSO_ROI_PRETO"]:
-                it = 50
-                for percent in passos:
-                        obj = rodada(it,7)
-                        obj.pesos = pesos
-                        obj.pesosCorr = pesosCorr
-                        bd = ler_arquivo("GLCM_RESIZE/PASSO_ROI_PRETO_ATT14/FEATURES_M{:d}.txt".format(percent))
-                        bd = Normalizar(bd,len(bd),len(bd[0])-1)
-                        for i in bd:
-                                obj.GLCM.add_objeto(i)
-                        obj.execIteractions(positions)
-                        obj.max_ace = 5070
-                        obj.max_err = 3705
-                        obj.save("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7C3T.pkl".format(PesosTipo,positions,percent,it))
-                       
+p = []
+for metodo in ["PASSO_ROI_PRETO"]:
+        it = 50
+        for percent in passos:
+                obj = rodada(it,7)
+                obj.pesos = pesos
+                obj.pesosCorr = pesosCorr
+                bd = ler_arquivo("GLCM_RESIZE/PASSO_ROI_PRETO_ATT14/FEATURES_M{:d}.txt".format(percent))
+                bd = Normalizar(bd,len(bd),len(bd[0])-1)
+                for i in bd:
+                        obj.GLCM.add_objeto(i)
+                obj.execIteractions(positions)
+                obj.max_ace = 5070
+                obj.max_err = 3705
+                obj.save("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_7C3T.pkl".format(PesosTipo,positions,percent,it))
+               

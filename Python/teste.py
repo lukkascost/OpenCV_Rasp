@@ -1,15 +1,29 @@
 from Metodos import *
-
-percent =1 
-obj = rodada(50,7,nAtrib = 14)
-#obj = obj.load("OBJETOS/02-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]-001%-050Iteracoes_7C3T.pkl")
-obj = obj.load("OBJETOS/02-[1, 2, 3, 4, 5, 9]-001%-050Iteracoes_7C3T.pkl")
-print "COM 6 ATRIBUTOS"
-print obj.get_avg_cfm()
-print "ACURACIA MEDIA:",obj.get_avg_acc()[0].T
-print "DESVIOS: ", obj.get_std_acc().T
-print "COM 9 ATRIBUTOS"
-obj = obj.load("OBJETOS/02-PASSO_ROI_PRETO-001%-050Iteracoes_7C1T.pkl")
-print obj.get_avg_cfm()
-print "ACURACIA MEDIA:",obj.get_avg_acc()[0].T
-print "DESVIOS: ", obj.get_std_acc().T
+import svmlight as sl
+positions = [1,3,5,14]
+obj = rodada(50, 7, nAtrib=14).load("OBJETOS/COMBINACOES/02-[1, 3, 5, 14]-001%-050Iteracoes_7C3T.pkl")
+train = []
+trainLabel =[]
+for k in obj.iteracoes[0].conj_treino:
+    train.append(obj.GLCM.getNewAtrib(k,positions))
+    trainLabel.append(obj.GLCM.labels[k])
+    
+Training_data = []
+for i,j in enumerate(train):
+    newj = []
+    for o,k in enumerate(j):
+        newj.append((o,k))
+    Training_data.append(tuple([trainLabel[i]]+[newj]))
+Training_data = tuple(Training_data)  
+model = sl.learn(Training_data, kernel="rbf",rbf_gamma=2.0,verbosite=0)
+sl.write_model(model, "teste.svml")
+Testing_data = []
+for i,j in enumerate(obj.iteracoes[0].conj_teste):
+    newj = []
+    for o,k in enumerate(obj.GLCM.atributos[j]):
+        if o+1 in positions:
+            newj.append((positions.index(o+1),k))
+    Testing_data.append([obj.GLCM.labels[j]]+[newj])
+Training_data = tuple(Training_data)
+predictions = sl.classify(model, tuple(Testing_data))
+print predictions
