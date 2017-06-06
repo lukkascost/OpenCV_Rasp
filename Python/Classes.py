@@ -74,6 +74,13 @@ class rodada(object):
                 self.GLCM = GLCM(nAtrib)
                 self.pesos = []
                 self.pesosCorr = []
+        def clean(self):
+                self.iteracoes = [iteracao(self.num_cls,self.iteracoes[0].nTeste) for i in range(self.num_ite)]
+                self.sum_err = np.zeros((self.num_cls,1))
+                self.sum_ace = np.zeros((self.num_cls,1))
+                self.sum_cfm = np.zeros((self.num_cls,self.num_cls))  
+                self.max_err = 0
+                self.max_ace = 0  
         def set_iteracao(self,nIter,oIter):
                 self.iteracoes[nIter-1] = copy.copy(oIter)
                 self.sum_err = np.add(self.sum_err,np.transpose(self.iteracoes[nIter-1].escore_erro))
@@ -121,6 +128,7 @@ class rodada(object):
                 return copy.copy(pk.load(open(path,"r")))
 
         def execIteractions(self,positions,typeRandom = 1, params = None):
+                self.clean()
                 for i in range(self.num_ite):
                         self.iteracoes[i].conj_treino,self.iteracoes[i].conj_teste = self.GLCM.extrai_treino_teste(self.num_cls,self.iteracoes[i].nTreino,self.iteracoes[i].nTeste,typeRandom)
                         train = []
@@ -128,6 +136,7 @@ class rodada(object):
                         for k in self.iteracoes[i].conj_treino:
                                 train.append(self.GLCM.getNewAtrib(k,positions))
                                 trainLabel.append(self.GLCM.labels[k])
+                        
                         if params is None:
                                 self.iteracoes[i].svm_params = dict(kernel_type = cv2.SVM_RBF,
                                                                     svm_type = cv2.SVM_C_SVC,

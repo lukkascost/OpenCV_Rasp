@@ -2,8 +2,8 @@ from Classes import *
 
 ## tipo 02
 PesosTipo = 2
-#positions = [x for x in range(1,15)]
-positions = [1,2,3,4,5,9]
+positions = [x for x in range(1,25)]
+#positions = [1,2,3,4,5,9]
 pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
          [  0.   ,0.   ,10.   ,20.   ,45.   ,65.   ,70.],
          [  0.   ,0.   ,0.    ,20.   ,35.   ,55.   ,60.],
@@ -27,10 +27,10 @@ p = []
 for metodo in ["PASSO_ROI_PRETO"]:
         it = 50
         for percent in passos:
-                obj = rodada(it,7)
+                obj = rodada(it,7,nAtrib=24)
                 obj.pesos = pesos
                 obj.pesosCorr = pesosCorr
-                bd = ler_arquivo("GLCM_RESIZE/PASSO_ROI_PRETO_ATT14/FEATURES_M{:d}.txt".format(percent))
+                bd = ler_arquivo("GLCM_RESIZE/PASSO_ROI_PRETO_ATT24/FEATURES_M{:d}.txt".format(percent))
                 bd = Normalizar(bd,len(bd),len(bd[0])-1)
                 for i in bd:
                         obj.GLCM.add_objeto(i)
