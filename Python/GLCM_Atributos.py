@@ -1,8 +1,6 @@
 from Metodos import *
 def GLCM24(img,gray):
-        glcm_atributes = np.zeros(25,dtype=np.float64)
-        
-        
+        glcm_atributes = np.zeros(25,dtype=np.float64)        
         coOccurence = getCoOccurrenceMatrixMod(img, gray)
         coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,img,gray)
         

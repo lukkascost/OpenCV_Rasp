@@ -359,7 +359,7 @@ def geraGraficos(smetodo,passos,peso, reta = 01,tipo = "7C1T"):
                 _ax = plt.axes()
                 xpos = np.arange(len(acc))
                 _chartBars = plt.bar(xpos, acc)  
-                _ax.set_xticks(xpos)
+                #_ax.set_xticks(xpos)
                 _ax.set_xticklabels(passos)
         if reta == 2:
                 _ax = plt.axes()

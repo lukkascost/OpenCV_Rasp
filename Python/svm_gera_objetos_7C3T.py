@@ -14,7 +14,7 @@ pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
 pesosCorr = [100.   ,85.   ,75.   ,55.   ,40.   ,20.   ,15.]
 passos = []
 lista = []
-for i in range(1,2):
+for i in range(1,1000):
         if (3456/i,4608/i) not in lista:
                 lista.append((3456/i,4608/i))
                 passos.append(i)
@@ -30,7 +30,7 @@ for metodo in ["PASSO_ROI_PRETO"]:
                 obj = rodada(it,7,nAtrib=24)
                 obj.pesos = pesos
                 obj.pesosCorr = pesosCorr
-                bd = ler_arquivo("GLCM_RESIZE/PASSO_ROI_PRETO_ATT24/FEATURES_M{:d}.txt".format(percent))
+                bd = ler_arquivo("GLCM_RESIZE/DECIMACAO_BASE_24/FEATURES_M{:d}.txt".format(percent))
                 bd = Normalizar(bd,len(bd),len(bd[0])-1)
                 for i in bd:
                         obj.GLCM.add_objeto(i)
