@@ -1,95 +1,37 @@
-import subprocess
 from Metodos import *
-de = 90
-ate = 100
-passo = 5
-bateria = 1
-qtdBaterias = 1
-local = "PC"
-result = ""
-importres = []
-##
-print "Medindo RESIZE + GLCM ..... "
-for j,i in enumerate(range(de,ate+1,passo)):
-	print "\tPasso: ",i
-	percent = 3456.0/float(i)
-	percent /= 3456.0
-	percent *= 100.0
-	result +=  "---------  {:04.03f}% da imagem passo {:03d}\n".format(percent,i)
-	command = " python -m timeit -n {:d} -r {:d}".format(bateria, qtdBaterias)
-	command += ' "from Metodos import *"'
-	command += ' "GLCM(resize_img_passo(cv2.imread('
-	command += "'DataBase/c1_1.JPG',0),"+str(i)+"),1.0)"
-	command += '"'
-	result +=  command +"\n"
-	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
-	result += "\t\t"+importres[j]
-	result += "\n"
-Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE+GLCM.txt".format(local))
-texto = ""
-for i in importres:
-	texto+= str(i.split(" ")[5])+";"
-	texto+= str(i.split(" ")[6])+";"
-	texto+= str(i.split(" ")[9])+";"
-	texto+= "\n"
-Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE+GLCM.txt".format(local))
-importres = []
-result = ""
-##
-print "Medindo RESIZE  ..... "
-for j,i in enumerate(range(de,ate+1,passo)):
-	print "\tPasso: ",i
-	percent = 3456.0/float(i)
-	percent /= 3456.0
-	percent *= 100.0
-	result += "--------- {:04.03f}% da imagem passo {:03d}\n".format(percent,i)
-	command = " python -m timeit -n {:d} -r {:d}".format(bateria, qtdBaterias)
-	command += ' "from Metodos import *"'
-	command += ' "resize_img_passo(cv2.imread('
-	command += "'DataBase/c1_1.JPG',0),"+str(i)+")"
-	command += '"'
-	result += command +"\n"
-	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
-	result += "\t\t"+importres[j]
-	result += "\n"
-Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE.txt".format(local))
-texto = ""
-for i in importres:
-	texto+= str(i.split(" ")[5])+";"
-	texto+= str(i.split(" ")[6])+";"
-	texto+= str(i.split(" ")[9])+";"
-	texto+= "\n"
-Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE.txt".format(local))
-importres = []
-result = ""
-##
-print "Medindo RESIZE + GLCM + SVM ..... "
-for j,i in enumerate(range(de,ate+1,passo)):
-	print "\tPasso: ",i
-	percent = 3456.0/float(i)
-	percent /= 3456.0
-	percent *= 100.0
-	result  += "--------- {:04.03f}% da imagem passo {:03d}\n".format(percent,i)
-	command = " python -m timeit -n {:d} -r {:d}".format(bateria, qtdBaterias)
-	command += ' "from Metodos import *"'
-	command += ' "atr = GLCM(resize_img_passo(cv2.imread('
-	command += "'DataBase/c1_1.JPG',0),"+str(i)+"),1.0)[:10]"
-	command += '"'
-	command += ' "Vetores = cv2.SVM()"'
-	command += ' "'
-	command += "Vetores.load('DataBase/SVM_Vectors.txt')"
-	command += '" '
-	command += '"Vetores.predict(np.float32(atr))"'
-	result += command +"\n"
-	importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
-	result += "\t\t"+importres[j]
-	result += "\n"
-Salvar_texto(result,"../RESULTADOS/tempos_{}_RESIZE+GLCM+SVM.txt".format(local))
-texto = ""
-for i in importres:
-	texto+= str(i.split(" ")[5])+";"
-	texto+= str(i.split(" ")[6])+";"
-	texto+= str(i.split(" ")[9])+";"
-	texto+= "\n"
-Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_RESIZE+GLCM+SVM.txt".format(local))
-importres = []
+import subprocess
+
+passos = []
+lista = []
+for i in range(1,1000):
+        if (3456/i,4608/i) not in lista:
+                lista.append((3456/i,4608/i))
+                passos.append(i)
+for i,j in enumerate(passos):
+        print lista[i],passos[i]
+passos = [11,33,34,68,69,105,108,165,171,922]
+passos.sort(reverse=1)
+for i in passos:
+        resultado = []
+        resultado2 = []              
+        for j in range(10):  
+                command = " python -m timeit -n {:d} -r {:d}".format(1, 1)
+                command += ' "from Metodos import GLCM_tipo1,resize_img_passo"'
+                command += ' "import cv2"'
+                command += ' "GLCM_tipo1(cv2.imread('
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0),1.0)".format(i)
+                command += '"'
+                resultado.append(float(subprocess.check_output(command, shell=True).split(" ")[5]))
+                command = " python -m timeit -n {:d} -r {:d}".format(1, 1)
+                command += ' "from Metodos import GLCM_tipo2,resize_img_passo"'
+                command += ' "import cv2"'
+                command += ' "GLCM_tipo2(cv2.imread('
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0),1.0)".format(i)
+                command += '"'
+                resultado2.append(float(subprocess.check_output(command, shell=True).split(" ")[5]))
+                #print resultado
+                print resultado,resultado2
+                print np.average(resultado), np.average(resultado2), i,j
+                Salvar_texto(str(resultado), "../RESULTADOS/time_GLCM_{}_lucas10.txt".format(i))
+                Salvar_texto(str(resultado2), "../RESULTADOS/time_GLCM_{}_CFS.txt".format(i))        
+
