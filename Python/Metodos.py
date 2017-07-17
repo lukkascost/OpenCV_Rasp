@@ -4,7 +4,7 @@ import numpy as np
 import math as mp
 import random
 from Classes import *
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #####################################################################################################################################################################################################
 ## retorna o numero de objetos e o numero de atributos do arquivo MomCent padronizado.
 def GetObjetosAtributos(ad):
@@ -159,7 +159,8 @@ def getFeatures(coOccurenceNormalized, grayscale):
         glcm_features = np.zeros(10)                                                                                                ##
         correlation,mean1,mean2,deviation,deviation1,deviation2 = 0,0,0,0,0,0                                                       ##
         for i in range(grayscale):                                                                                                  ##
-                for j in range(grayscale):                                                                                              ##
+                for j in range(grayscale):          ##
+                        
                         glcm_features[0] =glcm_features[0] + ( (i-j) * (i-j) * (coOccurenceNormalized[i,j]))                                ##
                         glcm_features[2] =glcm_features[2] + (coOccurenceNormalized[i,j] * coOccurenceNormalized[i,j] )                     ##
                         glcm_features[3] =glcm_features[3] + (( coOccurenceNormalized[i,j]) / ( 1+abs(i-j) ));                              ##
@@ -378,6 +379,8 @@ def geraGraficos(smetodo,passos,peso, reta = 01,tipo = "7C1T"):
         print "GRAFICOS/{:02d} - {}-INICIO_{:03d}-TAMANHO_{:03d}_{}_{}.png".format(peso,str(smetodo),min(passos),len(passos),tag,tipo)
         #plt.show()
         plt.gcf().clear()
+
+
 def sorteiaClasse(classe,conj):
         """
         classe:
@@ -388,3 +391,52 @@ def sorteiaClasse(classe,conj):
                 rd = random.randint(0,conj.num_objetos-1)
                 if conj.labels[rd] == classe:
                         return rd
+def GLCM_tipo1(img, classe):
+        glcm_atributes = np.zeros(25,dtype=np.float64)  
+        gray = 256
+        coOccurence = getCoOccurrenceMatrixMod(img, 256)
+        coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,img,256)
+        for i in range(gray):       
+                for j in range(gray):
+                        ij = coOccurenceNormalized[i,j]
+                        glcm_atributes[1]  += ij*ij
+                        glcm_atributes[2]  += ((i-j)*(i-j) * (ij))
+                        glcm_atributes[5]  += (ij)/(1+((i-j)*(i-j)))
+                        glcm_atributes[9]  += ij* np.log10(ij+ 1e-30)                        
+                        glcm_atributes[15] += (ij)/(1+abs(i-j))
+                        glcm_atributes[16] += ij*(i+j)
+                        glcm_atributes[21] += ij*abs(i-j)
+                        glcm_atributes[22] += ij*(i-j)
+                        glcm_atributes[23] += ij*i*j
+        glcm_atributes[17] = np.amax(coOccurenceNormalized)
+        glcm_atributes[16] /= 2
+        glcm_atributes[22] /= 2
+        return glcm_atributes[1:]  
+
+def GLCM_tipo2(img, classe):
+        glcm_atributes = np.zeros(25,dtype=np.float64)  
+        gray = 256
+        coOccurence = getCoOccurrenceMatrixMod(img, gray)
+        coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,img,gray)
+        
+        px = np.zeros(gray)
+        py = np.zeros(gray)
+        px_minus_y = np.zeros(gray)
+        for i in range(gray):
+                px[i] = sum(coOccurenceNormalized[i,:])
+                py[i] = sum(coOccurenceNormalized[:,i])        
+                for j in range(gray):
+                        ij = coOccurenceNormalized[i,j]
+                        px_minus_y[abs(i-j)] += ij
+                        glcm_atributes[1]  += ij*ij
+                        glcm_atributes[3]  += (i*j) * ij
+                        glcm_atributes[22] += ij*(i-j)
+        glcm_atributes[3]  = (glcm_atributes[3]  - (np.mean(px)*np.mean(py)))
+        glcm_atributes[3]  /= np.std(px)*np.std(py)
+        glcm_atributes[22] /= 2
+        for i in range(gray):
+                for j in range(gray):
+                        glcm_atributes[20] += coOccurenceNormalized[i,j] * pow(i+j-np.mean(px)-np.mean(py),4)
+        glcm_atributes[10]  = np.var(px_minus_y)
+        glcm_atributes[17] = np.amax(coOccurenceNormalized)
+        return glcm_atributes[1:]
