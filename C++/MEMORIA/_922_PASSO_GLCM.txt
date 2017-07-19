@@ -2,16 +2,16 @@ Filename: meminfo.py
 
 Line #    Mem usage    Increment   Line Contents
 ================================================
-    20  34.4921875000 MiB   0.0000000000 MiB   	@profile(precision=10, stream=fp1)
+    20  30.8593750000 MiB   0.0000000000 MiB   	@profile(precision=10, stream=fp1)
     21                             	def GLCM(passo):
-    22  35.1210937500 MiB   0.6289062500 MiB   		img = cv2.imread("Imagens/{:03d}_passo.JPG".format(passo),0)
-    23  35.1210937500 MiB   0.0000000000 MiB   		imgQuantized = img.copy()
-    24  35.2500000000 MiB   0.1289062500 MiB   		coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
-    25  35.7578125000 MiB   0.5078125000 MiB   		coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
-    26  35.7656250000 MiB   0.0078125000 MiB   		glcm_features  = getFeatures(coOccurenceNormalized, 256)
-    27  36.0078125000 MiB   0.2421875000 MiB   		svm  = cv2.SVM()
-    28  36.2734375000 MiB   0.2656250000 MiB   		svm.load("vetores.txt")
-    29  36.3984375000 MiB   0.1250000000 MiB   		svm.predict(np.float32([1,2,3,4,5,6,7,8,9]))
-    30  36.3984375000 MiB   0.0000000000 MiB   		return glcm_features
+    22  31.0156250000 MiB   0.1562500000 MiB   		img = cv2.imread("Imagens/{:03d}_passo.JPG".format(passo),0)
+    23  31.0234375000 MiB   0.0078125000 MiB   		imgQuantized = img.copy()
+    24  31.1328125000 MiB   0.1093750000 MiB   		coOccurence = getCoOccurrenceMatrix(imgQuantized, 256)
+    25  32.0976562500 MiB   0.9648437500 MiB   		coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,imgQuantized,256)
+    26  32.1601562500 MiB   0.0625000000 MiB   		glcm_features  = getFeatures(coOccurenceNormalized, 256)
+    27  32.1796875000 MiB   0.0195312500 MiB   		svm  = cv2.SVM()
+    28  32.4804687500 MiB   0.3007812500 MiB   		svm.load("vetores.txt")
+    29  32.5507812500 MiB   0.0703125000 MiB   		svm.predict(np.float32([1,2,3,4,5,6,7,8,9]))
+    30  32.5507812500 MiB   0.0000000000 MiB   		return glcm_features
 
 
