@@ -2,13 +2,14 @@ import cv2
 import numpy as np
 import math as mp
 from memory_profiler import profile
+import sys 
 passos = []
 lista = []
 for i in range(101,1000):
     if (3456/i,4608/i) not in lista:
         lista.append((3456/i,4608/i))
         passos.append(i)
-passos = [100]
+passos = [int(sys.argv[1])]
 passos.sort(reverse=1)
 for i in passos:
 	print i 
