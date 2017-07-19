@@ -2,24 +2,24 @@ Filename: meminfo.py
 
 Line #    Mem usage    Increment   Line Contents
 ================================================
-    45  31.9101562500 MiB   0.0000000000 MiB   	@profile(precision=10,stream=fp4)
+    45  35.9882812500 MiB   0.0000000000 MiB   	@profile(precision=10,stream=fp4)
     46                             	def getFeatures(coOccurenceNormalized, gray):
-    47  31.9140625000 MiB   0.0039062500 MiB   	        glcm_atributes = np.zeros(25,dtype=np.float64)  
-    48  31.9140625000 MiB   0.0000000000 MiB   		for i in range(gray):       
-    49  31.9140625000 MiB   0.0000000000 MiB   		    for j in range(gray):
-    50  31.9140625000 MiB   0.0000000000 MiB   			ij = coOccurenceNormalized[i,j]
-    51  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[1]  += ij*ij
-    52  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[2]  += ((i-j)*(i-j) * (ij))
-    53  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[5]  += (ij)/(1+((i-j)*(i-j)))
-    54  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[9]  += ij* np.log10(ij+ 1e-30)                        
-    55  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[15] += (ij)/(1+abs(i-j))
-    56  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[16] += ij*(i+j)
-    57  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[21] += ij*abs(i-j)
-    58  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[22] += ij*(i-j)
-    59  31.9140625000 MiB   0.0000000000 MiB   			glcm_atributes[23] += ij*i*j
-    60  31.9726562500 MiB   0.0585937500 MiB   		glcm_atributes[17] = np.amax(coOccurenceNormalized)
-    61  31.9726562500 MiB   0.0000000000 MiB   		glcm_atributes[16] /= 2
-    62  31.9726562500 MiB   0.0000000000 MiB   		glcm_atributes[22] /= 2
-    63  31.9726562500 MiB   0.0000000000 MiB   		return glcm_atributes[1:] 
+    47  35.9882812500 MiB   0.0000000000 MiB   	        glcm_atributes = np.zeros(25,dtype=np.float64)  
+    48  35.9882812500 MiB   0.0000000000 MiB   		for i in range(gray):       
+    49  35.9882812500 MiB   0.0000000000 MiB   		    for j in range(gray):
+    50  35.9882812500 MiB   0.0000000000 MiB   			ij = coOccurenceNormalized[i,j]
+    51  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[1]  += ij*ij
+    52  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[2]  += ((i-j)*(i-j) * (ij))
+    53  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[5]  += (ij)/(1+((i-j)*(i-j)))
+    54  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[9]  += ij* np.log10(ij+ 1e-30)                        
+    55  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[15] += (ij)/(1+abs(i-j))
+    56  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[16] += ij*(i+j)
+    57  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[21] += ij*abs(i-j)
+    58  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[22] += ij*(i-j)
+    59  35.9882812500 MiB   0.0000000000 MiB   			glcm_atributes[23] += ij*i*j
+    60  35.9921875000 MiB   0.0039062500 MiB   		glcm_atributes[17] = np.amax(coOccurenceNormalized)
+    61  35.9921875000 MiB   0.0000000000 MiB   		glcm_atributes[16] /= 2
+    62  35.9921875000 MiB   0.0000000000 MiB   		glcm_atributes[22] /= 2
+    63  35.9921875000 MiB   0.0000000000 MiB   		return glcm_atributes[1:] 
 
 

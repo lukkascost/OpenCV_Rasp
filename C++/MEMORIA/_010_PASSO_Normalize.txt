@@ -2,12 +2,12 @@ Filename: meminfo.py
 
 Line #    Mem usage    Increment   Line Contents
 ================================================
-    38  31.4023437500 MiB   0.0000000000 MiB   	@profile(precision=10, stream=fp3)
+    38  35.8437500000 MiB   0.0000000000 MiB   	@profile(precision=10, stream=fp3)
     39                             	def normalizeCoOccurrenceMatrix(coOccurence,imageQuantized, grayscale):
-    40  31.4023437500 MiB   0.0000000000 MiB   		coOccurenceNormalized = np.zeros((grayscale,grayscale))
-    41  31.9765625000 MiB   0.5742187500 MiB   		for i in range(grayscale):
-    42  31.9765625000 MiB   0.0000000000 MiB   			for j in range(grayscale):
-    43  31.9765625000 MiB   0.0000000000 MiB   				coOccurenceNormalized[i][j] = coOccurence[i][j]/(len(imageQuantized)*(len(imageQuantized[0]) -1)) 
-    44  31.9765625000 MiB   0.0000000000 MiB   		return coOccurenceNormalized
+    40  35.8476562500 MiB   0.0039062500 MiB   		coOccurenceNormalized = np.zeros((grayscale,grayscale))
+    41  36.3476562500 MiB   0.5000000000 MiB   		for i in range(grayscale):
+    42  36.3476562500 MiB   0.0000000000 MiB   			for j in range(grayscale):
+    43  36.3476562500 MiB   0.0000000000 MiB   				coOccurenceNormalized[i][j] = coOccurence[i][j]/(len(imageQuantized)*(len(imageQuantized[0]) -1)) 
+    44  36.3476562500 MiB   0.0000000000 MiB   		return coOccurenceNormalized
 
 

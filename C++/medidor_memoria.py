@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import math as mp
 import subprocess
+from Metodos import *
 
 passos = [100,50,10,1]
 valors = [[],[],[],[],[]]
@@ -44,3 +45,4 @@ for i in stri:
         print i
         
 
+Salvar_texto(stri,"resultado_memoria.txt")
