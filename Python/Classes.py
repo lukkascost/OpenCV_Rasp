@@ -62,8 +62,8 @@ class iteracao(object):
 ##################################################################################################################################################################################################
 
 class rodada(object):
-        def __init__(self, nIteracoes, nclasses, nTreino = 13, nAtrib = 9):
-                self.iteracoes = [iteracao(nclasses,nTreino) for i in range(nIteracoes)]
+        def __init__(self, nIteracoes, nclasses, nTreino = 13, nAtrib = 9, nAmostras = 50):
+                self.iteracoes = [iteracao(nclasses,nTreino, amostras=nAmostras) for i in range(nIteracoes)]
                 self.sum_err = np.zeros((nclasses,1))
                 self.sum_ace = np.zeros((nclasses,1))
                 self.sum_cfm = np.zeros((nclasses,nclasses))
@@ -75,7 +75,7 @@ class rodada(object):
                 self.pesos = []
                 self.pesosCorr = []
         def clean(self):
-                self.iteracoes = [iteracao(self.num_cls,self.iteracoes[0].nTeste) for i in range(self.num_ite)]
+                self.iteracoes = [iteracao(self.num_cls,self.iteracoes[0].nTeste, amostras=self.iteracoes[0].nTeste+self.iteracoes[0].nTreino) for i in range(self.num_ite)]
                 self.sum_err = np.zeros((self.num_cls,1))
                 self.sum_ace = np.zeros((self.num_cls,1))
                 self.sum_cfm = np.zeros((self.num_cls,self.num_cls))  
@@ -153,11 +153,11 @@ class rodada(object):
                                 test = int(self.GLCM.labels[k])
                                 self.iteracoes[i].dados[test,res]+=1
                         self.iteracoes[i].set_acuracia()
-                        mul = np.multiply(self.iteracoes[i].dados,self.pesos)
-                        self.iteracoes[i].escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
-                        self.iteracoes[i].escore_acerto = np.matrix([self.pesosCorr[l]*self.iteracoes[i].dados[l,l] for l in range(self.iteracoes[i].nclasses)])  
-                        self.sum_err = np.add(self.sum_err,np.transpose(self.iteracoes[i].escore_erro))
-                        self.sum_ace = np.add(self.sum_ace,np.transpose(self.iteracoes[i].escore_acerto))
+                        #mul = np.multiply(self.iteracoes[i].dados,self.pesos)
+                        #self.iteracoes[i].escore_erro = np.matrix(map(lambda x: np.sum(x) ,mul))
+                        #self.iteracoes[i].escore_acerto = np.matrix([self.pesosCorr[l]*self.iteracoes[i].dados[l,l] for l in range(self.iteracoes[i].nclasses)])  
+                        #self.sum_err = np.add(self.sum_err,np.transpose(self.iteracoes[i].escore_erro))
+                        #self.sum_ace = np.add(self.sum_ace,np.transpose(self.iteracoes[i].escore_acerto))
                         self.sum_cfm = np.add(self.sum_cfm,self.iteracoes[i].dados) 
                         
                         
@@ -222,7 +222,7 @@ class GLCM(object):
             teste = []
             classe = 0
             while(len(teste)<fator*qtdTeste):
-                if classe == 5: classe = 0
+                if classe == nclasses: classe = 0
                 rd = sorteiaClasse(classe,self)
                 while (rd in treino or rd in teste): rd = sorteiaClasse(classe,self)
                 teste.append(rd)
@@ -250,7 +250,7 @@ class GLCM(object):
                 classe+=1
             return treino,teste
 
-        def extrai_treino_teste(self,nclasses,qtdtreino,qtdteste,tipo,fator=2):
+        def extrai_treino_teste(self,nclasses,qtdtreino,qtdteste,tipo,fator=1):
             if tipo == 1:
                 return self.extraiTp1(qtdtreino,qtdteste,nclasses)
             if tipo == 2:
