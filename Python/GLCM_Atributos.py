@@ -3,7 +3,6 @@ def GLCM24(img,gray):
         glcm_atributes = np.zeros(25,dtype=np.float64)        
         coOccurence = getCoOccurrenceMatrixMod(img, gray)
         coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,img,gray)
-        
         HXY1 = 0.0
         HXY2 = 0.0
         HX   = 0.0
@@ -66,9 +65,7 @@ def GLCM24(img,gray):
                 glcm_atributes[12]  /= m1
         else:
                 glcm_atributes[12]  /= m2
-        
         glcm_atributes[13]  = pow((1-np.exp(-2.0*(HXY2-glcm_atributes[9] ))), 1/2)
-        
         
         for i in range(gray*2-1):
                 glcm_atributes[7]  += pow(i-glcm_atributes[8] ,2)*px_plus_y[i]

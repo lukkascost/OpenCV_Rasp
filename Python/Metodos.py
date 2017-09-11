@@ -391,6 +391,7 @@ def sorteiaClasse(classe,conj):
                 rd = random.randint(0,conj.num_objetos-1)
                 if conj.labels[rd] == classe:
                         return rd
+                
 def GLCM_tipo1(img, classe):
         glcm_atributes = np.zeros(25,dtype=np.float64)  
         gray = 256
