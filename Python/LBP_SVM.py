@@ -22,12 +22,13 @@ for i in range(1,1000):
                 lista.append((3456/i,4608/i))
                 passos.append(i)
 passos.sort(reverse=1)
-for k in [2,1]:        
+for k in [1]:        
         print k
         bd = []
         for i in range(1,8):
                 for j in range(1,51):
                         img = cv2.imread("../../couro_images_semfundo/c{}_{}.JPG".format(i,j),0)
+                        print i,j 
                         img = resize_img_passo(img,k)
                         lbp = LBP_img(img)
                         bd.append(lbp[0][0])
