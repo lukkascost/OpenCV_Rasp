@@ -190,14 +190,14 @@ class rodada(object):
                         self.sum_ace = np.add(self.sum_ace, i.escore_acerto.T)
 
 class GLCM(object):
-        def __init__(self,num_atributos):
+        def __init__(self,num_atributos) :
                 self.num_atrib = num_atributos
                 self.num_objetos = 0
                 self.atributos = []
                 self.labels = []
-        def add_objeto(self,atributos):
+        def add_objeto(self,atributos, minus =1  ):
                 self.atributos.append(atributos[:self.num_atrib])
-                self.labels.append(atributos[-1]-1)
+                self.labels.append(atributos[-1] - minus)
                 self.num_objetos+=1
         def extraiTp1(self,qtdTreino,qtdTeste,nclasses):
                 treino = []
