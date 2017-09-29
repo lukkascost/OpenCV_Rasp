@@ -1,0 +1,420 @@
+---------  2.000% da imagem passo 050
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),50))"
+		1 loops, best of 1: 501 msec per loop
+ 50
+---------  1.961% da imagem passo 051
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),51))"
+		1 loops, best of 1: 497 msec per loop
+ 51
+---------  1.923% da imagem passo 052
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),52))"
+		1 loops, best of 1: 454 msec per loop
+ 52
+---------  1.887% da imagem passo 053
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),53))"
+		1 loops, best of 1: 536 msec per loop
+ 53
+---------  1.852% da imagem passo 054
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),54))"
+		1 loops, best of 1: 543 msec per loop
+ 54
+---------  1.818% da imagem passo 055
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),55))"
+		1 loops, best of 1: 514 msec per loop
+ 55
+---------  1.786% da imagem passo 056
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),56))"
+		1 loops, best of 1: 468 msec per loop
+ 56
+---------  1.754% da imagem passo 057
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),57))"
+		1 loops, best of 1: 407 msec per loop
+ 57
+---------  1.724% da imagem passo 058
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),58))"
+		1 loops, best of 1: 424 msec per loop
+ 58
+---------  1.695% da imagem passo 059
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),59))"
+		1 loops, best of 1: 346 msec per loop
+ 59
+---------  1.667% da imagem passo 060
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),60))"
+		1 loops, best of 1: 470 msec per loop
+ 60
+---------  1.639% da imagem passo 061
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),61))"
+		1 loops, best of 1: 431 msec per loop
+ 61
+---------  1.613% da imagem passo 062
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),62))"
+		1 loops, best of 1: 409 msec per loop
+ 62
+---------  1.587% da imagem passo 063
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),63))"
+		1 loops, best of 1: 441 msec per loop
+ 63
+---------  1.562% da imagem passo 064
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),64))"
+		1 loops, best of 1: 475 msec per loop
+ 64
+---------  1.538% da imagem passo 065
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),65))"
+		1 loops, best of 1: 457 msec per loop
+ 65
+---------  1.515% da imagem passo 066
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),66))"
+		1 loops, best of 1: 398 msec per loop
+ 66
+---------  1.493% da imagem passo 067
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),67))"
+		1 loops, best of 1: 320 msec per loop
+ 67
+---------  1.471% da imagem passo 068
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),68))"
+		1 loops, best of 1: 283 msec per loop
+ 68
+---------  1.449% da imagem passo 069
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),69))"
+		1 loops, best of 1: 351 msec per loop
+ 69
+---------  1.429% da imagem passo 070
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),70))"
+		1 loops, best of 1: 432 msec per loop
+ 70
+---------  1.408% da imagem passo 071
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),71))"
+		1 loops, best of 1: 379 msec per loop
+ 71
+---------  1.370% da imagem passo 073
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),73))"
+		1 loops, best of 1: 367 msec per loop
+ 73
+---------  1.351% da imagem passo 074
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),74))"
+		1 loops, best of 1: 371 msec per loop
+ 74
+---------  1.333% da imagem passo 075
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),75))"
+		1 loops, best of 1: 364 msec per loop
+ 75
+---------  1.316% da imagem passo 076
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),76))"
+		1 loops, best of 1: 374 msec per loop
+ 76
+---------  1.299% da imagem passo 077
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),77))"
+		1 loops, best of 1: 303 msec per loop
+ 77
+---------  1.266% da imagem passo 079
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),79))"
+		1 loops, best of 1: 361 msec per loop
+ 79
+---------  1.250% da imagem passo 080
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),80))"
+		1 loops, best of 1: 347 msec per loop
+ 80
+---------  1.235% da imagem passo 081
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),81))"
+		1 loops, best of 1: 311 msec per loop
+ 81
+---------  1.205% da imagem passo 083
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),83))"
+		1 loops, best of 1: 328 msec per loop
+ 83
+---------  1.190% da imagem passo 084
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),84))"
+		1 loops, best of 1: 335 msec per loop
+ 84
+---------  1.176% da imagem passo 085
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),85))"
+		1 loops, best of 1: 367 msec per loop
+ 85
+---------  1.163% da imagem passo 086
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),86))"
+		1 loops, best of 1: 350 msec per loop
+ 86
+---------  1.149% da imagem passo 087
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),87))"
+		1 loops, best of 1: 363 msec per loop
+ 87
+---------  1.124% da imagem passo 089
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),89))"
+		1 loops, best of 1: 374 msec per loop
+ 89
+---------  1.099% da imagem passo 091
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),91))"
+		1 loops, best of 1: 422 msec per loop
+ 91
+---------  1.075% da imagem passo 093
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),93))"
+		1 loops, best of 1: 382 msec per loop
+ 93
+---------  1.064% da imagem passo 094
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),94))"
+		1 loops, best of 1: 387 msec per loop
+ 94
+---------  1.053% da imagem passo 095
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),95))"
+		1 loops, best of 1: 348 msec per loop
+ 95
+---------  1.031% da imagem passo 097
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),97))"
+		1 loops, best of 1: 333 msec per loop
+ 97
+---------  1.010% da imagem passo 099
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),99))"
+		1 loops, best of 1: 277 msec per loop
+ 99
+---------  0.990% da imagem passo 101
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),101))"
+		1 loops, best of 1: 283 msec per loop
+ 101
+---------  0.980% da imagem passo 102
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),102))"
+		1 loops, best of 1: 356 msec per loop
+ 102
+---------  0.971% da imagem passo 103
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),103))"
+		1 loops, best of 1: 338 msec per loop
+ 103
+---------  0.952% da imagem passo 105
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),105))"
+		1 loops, best of 1: 335 msec per loop
+ 105
+---------  0.926% da imagem passo 108
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),108))"
+		1 loops, best of 1: 329 msec per loop
+ 108
+---------  0.917% da imagem passo 109
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),109))"
+		1 loops, best of 1: 324 msec per loop
+ 109
+---------  0.909% da imagem passo 110
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),110))"
+		1 loops, best of 1: 382 msec per loop
+ 110
+---------  0.893% da imagem passo 112
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),112))"
+		1 loops, best of 1: 365 msec per loop
+ 112
+---------  0.885% da imagem passo 113
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),113))"
+		1 loops, best of 1: 357 msec per loop
+ 113
+---------  0.862% da imagem passo 116
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),116))"
+		1 loops, best of 1: 261 msec per loop
+ 116
+---------  0.840% da imagem passo 119
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),119))"
+		1 loops, best of 1: 298 msec per loop
+ 119
+---------  0.833% da imagem passo 120
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),120))"
+		1 loops, best of 1: 289 msec per loop
+ 120
+---------  0.820% da imagem passo 122
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),122))"
+		1 loops, best of 1: 253 msec per loop
+ 122
+---------  0.806% da imagem passo 124
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),124))"
+		1 loops, best of 1: 348 msec per loop
+ 124
+---------  0.800% da imagem passo 125
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),125))"
+		1 loops, best of 1: 350 msec per loop
+ 125
+---------  0.775% da imagem passo 129
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),129))"
+		1 loops, best of 1: 305 msec per loop
+ 129
+---------  0.758% da imagem passo 132
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),132))"
+		1 loops, best of 1: 295 msec per loop
+ 132
+---------  0.752% da imagem passo 133
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),133))"
+		1 loops, best of 1: 299 msec per loop
+ 133
+---------  0.735% da imagem passo 136
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),136))"
+		1 loops, best of 1: 326 msec per loop
+ 136
+---------  0.719% da imagem passo 139
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),139))"
+		1 loops, best of 1: 280 msec per loop
+ 139
+---------  0.714% da imagem passo 140
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),140))"
+		1 loops, best of 1: 244 msec per loop
+ 140
+---------  0.690% da imagem passo 145
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),145))"
+		1 loops, best of 1: 306 msec per loop
+ 145
+---------  0.671% da imagem passo 149
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),149))"
+		1 loops, best of 1: 322 msec per loop
+ 149
+---------  0.662% da imagem passo 151
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),151))"
+		1 loops, best of 1: 290 msec per loop
+ 151
+---------  0.649% da imagem passo 154
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),154))"
+		1 loops, best of 1: 316 msec per loop
+ 154
+---------  0.633% da imagem passo 158
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),158))"
+		1 loops, best of 1: 288 msec per loop
+ 158
+---------  0.629% da imagem passo 159
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),159))"
+		1 loops, best of 1: 356 msec per loop
+ 159
+---------  0.606% da imagem passo 165
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),165))"
+		1 loops, best of 1: 296 msec per loop
+ 165
+---------  0.585% da imagem passo 171
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),171))"
+		1 loops, best of 1: 301 msec per loop
+ 171
+---------  0.578% da imagem passo 173
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),173))"
+		1 loops, best of 1: 313 msec per loop
+ 173
+---------  0.562% da imagem passo 178
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),178))"
+		1 loops, best of 1: 330 msec per loop
+ 178
+---------  0.549% da imagem passo 182
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),182))"
+		1 loops, best of 1: 346 msec per loop
+ 182
+---------  0.541% da imagem passo 185
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),185))"
+		1 loops, best of 1: 326 msec per loop
+ 185
+---------  0.518% da imagem passo 193
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),193))"
+		1 loops, best of 1: 323 msec per loop
+ 193
+---------  0.498% da imagem passo 201
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),201))"
+		1 loops, best of 1: 288 msec per loop
+ 201
+---------  0.490% da imagem passo 204
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),204))"
+		1 loops, best of 1: 268 msec per loop
+ 204
+---------  0.476% da imagem passo 210
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),210))"
+		1 loops, best of 1: 309 msec per loop
+ 210
+---------  0.461% da imagem passo 217
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),217))"
+		1 loops, best of 1: 250 msec per loop
+ 217
+---------  0.455% da imagem passo 220
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),220))"
+		1 loops, best of 1: 299 msec per loop
+ 220
+---------  0.433% da imagem passo 231
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),231))"
+		1 loops, best of 1: 308 msec per loop
+ 231
+---------  0.412% da imagem passo 243
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),243))"
+		1 loops, best of 1: 296 msec per loop
+ 243
+---------  0.405% da imagem passo 247
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),247))"
+		1 loops, best of 1: 283 msec per loop
+ 247
+---------  0.389% da imagem passo 257
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),257))"
+		1 loops, best of 1: 305 msec per loop
+ 257
+---------  0.376% da imagem passo 266
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),266))"
+		1 loops, best of 1: 292 msec per loop
+ 266
+---------  0.368% da imagem passo 272
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),272))"
+		1 loops, best of 1: 356 msec per loop
+ 272
+---------  0.346% da imagem passo 289
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),289))"
+		1 loops, best of 1: 324 msec per loop
+ 289
+---------  0.325% da imagem passo 308
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),308))"
+		1 loops, best of 1: 330 msec per loop
+ 308
+---------  0.317% da imagem passo 315
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),315))"
+		1 loops, best of 1: 323 msec per loop
+ 315
+---------  0.303% da imagem passo 330
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),330))"
+		1 loops, best of 1: 219 msec per loop
+ 330
+---------  0.289% da imagem passo 346
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),346))"
+		1 loops, best of 1: 243 msec per loop
+ 346
+---------  0.282% da imagem passo 355
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),355))"
+		1 loops, best of 1: 263 msec per loop
+ 355
+---------  0.260% da imagem passo 385
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),385))"
+		1 loops, best of 1: 226 msec per loop
+ 385
+---------  0.239% da imagem passo 419
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),419))"
+		1 loops, best of 1: 263 msec per loop
+ 419
+---------  0.231% da imagem passo 433
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),433))"
+		1 loops, best of 1: 283 msec per loop
+ 433
+---------  0.217% da imagem passo 461
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),461))"
+		1 loops, best of 1: 275 msec per loop
+ 461
+---------  0.202% da imagem passo 494
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),494))"
+		1 loops, best of 1: 268 msec per loop
+ 494
+---------  0.195% da imagem passo 513
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),513))"
+		1 loops, best of 1: 283 msec per loop
+ 513
+---------  0.173% da imagem passo 577
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),577))"
+		1 loops, best of 1: 277 msec per loop
+ 577
+---------  0.152% da imagem passo 659
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),659))"
+		1 loops, best of 1: 295 msec per loop
+ 659
+---------  0.145% da imagem passo 692
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),692))"
+		1 loops, best of 1: 258 msec per loop
+ 692
+---------  0.130% da imagem passo 769
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),769))"
+		1 loops, best of 1: 296 msec per loop
+ 769
+---------  0.116% da imagem passo 865
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),865))"
+		1 loops, best of 1: 283 msec per loop
+ 865
+---------  0.108% da imagem passo 922
+ python -m timeit -n 1 -r 1 "from Metodos import *" "LBP(resize_img_passo(cv2.imread('DataBase/c1_1.JPG',0),922))"
+		1 loops, best of 1: 302 msec per loop
+ 922
