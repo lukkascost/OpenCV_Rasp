@@ -1,0 +1,3 @@
+[submodule "Python/MachineLearn"]
+	path = Python/MachineLearn
+	url = https://github.com/lukkascost/MachineLearn.git
