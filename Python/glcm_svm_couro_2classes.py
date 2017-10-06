@@ -69,16 +69,17 @@ lin1 = ""
 lin2 = ""
 lin3 = ""
 lin4 = ""
-for percent in passos:
+for percent in [70]:
+        print 3456/percent , 4608/percent
         obj = rodada(1, 1)
         obj = obj.load("OBJETOS/{:02d}-{}-{:03d}%-{:03d}Iteracoes_2C3T.pkl".format(PesosTipo,positions,percent,50))
-        lin1+=  "{:02.04f}\t".format(obj.get_avg_acc()[0][-1][0])
-        p2 = [1,3,10,14,17,20,22]
+        #lin1+=  "{:02.04f}\t".format(obj.get_avg_acc()[0][-1][0])
+        p2 = [1,2,3,4]
         obj.execIteractions(p2)
         lin2+=  "{:02.04f}\t".format(obj.get_avg_acc()[0][-1][0])
-        p2 = [1,2,5,9,15,16,17,21,22,23]
-        obj.execIteractions(p2)
-        lin3+=  "{:02.04f}\t".format(obj.get_avg_acc()[0][-1][0])
+        #p2 = [1,2,5,9,15,16,17,21,22,23]
+        #obj.execIteractions(p2)
+        #lin3+=  "{:02.04f}\t".format(obj.get_avg_acc()[0][-1][0])
         #p2 = [1,2,5,9,15,16,17,21,22,23]
         #obj.execIteractions(p2)
         #lin4+=  "{:02.04f}\t".format(obj.get_avg_acc()[0][-1][0])
