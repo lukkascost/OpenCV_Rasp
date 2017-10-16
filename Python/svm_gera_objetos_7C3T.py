@@ -14,7 +14,7 @@ pesos = [[  0.   ,15.  ,25.   ,45.   ,60.   ,80.   ,85.],
 pesosCorr = [100.   ,85.   ,75.   ,55.   ,40.   ,20.   ,15.]
 passos = []
 lista = []
-for i in range(1,1000):
+for i in range(60,80):
         if (3456/i,4608/i) not in lista:
                 lista.append((3456/i,4608/i))
                 passos.append(i)
