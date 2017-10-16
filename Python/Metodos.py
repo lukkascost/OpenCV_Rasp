@@ -444,3 +444,22 @@ def GLCM_tipo2(img, classe):
         glcm_atributes[10]  = np.var(px_minus_y)
         glcm_atributes[17] = np.amax(coOccurenceNormalized)
         return glcm_atributes[1:]
+
+def LBP_img(img, att58):
+        histogran = np.zeros(258)
+        for i in range(1,img.shape[0]-1):
+                for j in range(1,img.shape[1]-1):
+                        central = img[i,j]                        
+                        p11 = int(img[i-1,j-1] < central)
+                        p12 = int(img[i-1,j]   < central)
+                        p13 = int(img[i-1,j+1] < central)       
+                        p21 = int(img[i,j-1]   < central)
+                        p23 = int(img[i,j+1]   < central)
+                        p31 = int(img[i+1,j-1] < central)
+                        p32 = int(img[i+1,j]   < central)
+                        p33 = int(img[i+1,j+1] < central)
+                        output = p13 + p23*2 + p33*4 + p32*8 + p31*16 + p21*32 + p11*64 + p12*128
+                        histogran[output] += 1
+                        if not(output in att58):
+                                histogran[-2]+=1
+        return histogran
