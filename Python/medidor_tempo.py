@@ -32,51 +32,51 @@ def getFeatures2(coOccurenceNormalized, gray):
         return glcm_atributes[1:] 
 
 
-passos = []
-lista = []
-for i in range(1,1000):
-        if (3456/i,4608/i) not in lista:
-                lista.append((3456/i,4608/i))
-                passos.append(i)
-#for i,j in enumerate(passos):
-        #print lista[i],passos[i]
+#passos = []
+#lista = []
+#for i in range(1,1000):
+        #if (3456/i,4608/i) not in lista:
+                #lista.append((3456/i,4608/i))
+                #passos.append(i)
+##for i,j in enumerate(passos):
+        ##print lista[i],passos[i]
         
-passos = [100,50,10,1]
-passos.sort(reverse=1)
+#passos = [100,50,10,1]
+#passos.sort(reverse=1)
 stri = []
 stri.append("")
-for i in passos:
-        stri[0]+= "{}\t".format((3456/i,4608/i))
+#for i in passos:
+        #stri[0]+= "{}\t".format((3456/i,4608/i))
 stri.append("")
 stri.append("")
 stri.append("")
 stri.append("")
 stri.append("")
-for i in passos:
-        resultado = []
-        resultado2 = []              
-        for j in range(10):  
-                command = " python -m timeit -n {:d} -r {:d}".format(1, 1)
-                command += ' "from Metodos import GLCM_tipo1,resize_img_passo"'
-                command += ' "import cv2"'
-                command += ' "GLCM_tipo1(cv2.imread('
-                command += "'../C++/Imagens/{:03d}_passo.JPG',0),1.0)".format(i)
-                command += '"'
-                resultado.append(timeit_msec(command))
-                command = " python -m timeit -n {:d} -r {:d}".format(1, 1)
-                command += ' "from Metodos import GLCM_tipo2,resize_img_passo"'
-                command += ' "import cv2"'
-                command += ' "GLCM_tipo2(cv2.imread('
-                command += "'../C++/Imagens/{:03d}_passo.JPG',0),1.0)".format(i)
-                command += '"'
-                resultado2.append(timeit_msec(command))
-                #print resultado
-                Salvar_texto(str(resultado), "../RESULTADOS/time_GLCM_{}_lucas10.txt".format(i))
-                Salvar_texto(str(resultado2), "../RESULTADOS/time_GLCM_{}_CFS.txt".format(i))    
-        stri[1]+= "{:4.02f}\t".format(float(np.average(resultado)))
-        stri[2]+= "{:4.02f}\t".format(float(np.average(resultado2)))
-        for lin in stri:
-                print lin        
+#for i in passos:
+        #resultado = []
+        #resultado2 = []              
+        #for j in range(10):  
+                #command = " python -m timeit -n {:d} -r {:d}".format(1, 1)
+                #command += ' "from Metodos import GLCM_tipo1,resize_img_passo"'
+                #command += ' "import cv2"'
+                #command += ' "GLCM_tipo1(cv2.imread('
+                #command += "'../C++/Imagens/{:03d}_passo.JPG',0),1.0)".format(i)
+                #command += '"'
+                #resultado.append(timeit_msec(command))
+                #command = " python -m timeit -n {:d} -r {:d}".format(1, 1)
+                #command += ' "from Metodos import GLCM_tipo2,resize_img_passo"'
+                #command += ' "import cv2"'
+                #command += ' "GLCM_tipo2(cv2.imread('
+                #command += "'../C++/Imagens/{:03d}_passo.JPG',0),1.0)".format(i)
+                #command += '"'
+                #resultado2.append(timeit_msec(command))
+                ##print resultado
+                #Salvar_texto(str(resultado), "../RESULTADOS/time_GLCM_{}_lucas10.txt".format(i))
+                #Salvar_texto(str(resultado2), "../RESULTADOS/time_GLCM_{}_CFS.txt".format(i))    
+        #stri[1]+= "{:4.02f}\t".format(float(np.average(resultado)))
+        #stri[2]+= "{:4.02f}\t".format(float(np.average(resultado2)))
+        #for lin in stri:
+                #print lin        
 
                 
                 
@@ -132,66 +132,61 @@ for i in passos:
                 #print ki
 
         
-#for i in passos:
-        #cmd1 = []
-        #cmd2 = []
-        #cmd3 = [] 
-        #cmd4 = []
-        #cmd5 = []
-        #for j in range(3):
-                ###Carregar Imagem:
-                #command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
-                #command += ' "from Metodos import *"'
-                #command += ' "import cv2"'
-                #command += ' "cv2.imread('
-                #command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
-                #command += '"'        
-                #cmd1.append(timeit_msec(command))
-                #print cmd1
-                ###Extrair a coOccurence                
-                #command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
-                #command += ' "from Metodos import *"'
-                #command += ' "import cv2"'
-                #command += ' "img = cv2.imread('
-                #command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
-                #command += '"' 
-                #command += ' "coOccurence = getCoOccurrenceMatrixMod(img, 256)"'
-                #cmd2.append(timeit_msec(command))
-                #print cmd2
-                ###Normalizar a coOccurence                
-                #command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
-                #command += ' "from Metodos import *"'
-                #command += ' "import cv2"'
-                #command += ' "img = cv2.imread('
-                #command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
-                #command += '"' 
-                #command += ' "coOccurence = getCoOccurrenceMatrixMod(img, 256)"'
-                #command += ' "coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,img,256)"'
-                #cmd3.append(timeit_msec(command))
-                #print cmd3
-                ###Extrair as caracteristicas               
-                #command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
-                #command += ' "from Metodos import *"'
-                #command += ' "import cv2"'
-                #command += ' "img = cv2.imread('
-                #command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
-                #command += '"' 
-                #command += ' "GLCM_tipo1(img, 1.0)"'
-                #cmd4.append(timeit_msec(command))
-                #print cmd4
-                ###Classificacao               
-                #command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
-                #command += ' "from Metodos import *"'
-                #command += ' "import cv2;import numpy as np"'
-                #command += ' "svm = cv2.SVM()"' 
-                #command += ' "svm.load(' + "'DataBase/SVM_Vectors.txt')" +'"'
-                #command += ' "svm.predict(np.float32([1,2,3,4,5,6,7,8,9,10]))"'
-                #cmd5.append(timeit_msec(command))
-                #for ki in stri:
-                        #print ki                
-        #stri[1] += "{:05.02f}\t".format(np.average(cmd1))
-        #stri[2] += "{:05.02f}\t".format(np.average(cmd2)-np.average(cmd1))
-        #stri[3] += "{:05.02f}\t".format(np.average(cmd3)-np.average(cmd2))
-        #stri[4] += "{:05.02f}\t".format(np.average(cmd4)-np.average(cmd3))
-        #stri[5] += "{:05.02f}\t".format(np.average(cmd5))
-        
+for i in [73,99]:
+        cmd1 = []
+        cmd2 = []
+        cmd3 = [] 
+        cmd4 = []
+        cmd5 = []
+        for j in range(3):
+                ##Carregar Imagem:
+                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo2"'
+                command += ' "cv2.imread('
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
+                command += '"'        
+                cmd1.append(timeit_msec(command))
+                print cmd1
+                ##Extrair a coOccurence                
+                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo2"'
+                command += ' "img = cv2.imread('
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
+                command += '"' 
+                command += ' "coOccurence = getCoOccurrenceMatrixMod(img, 256)"'
+                cmd2.append(timeit_msec(command))
+                print cmd2
+                ##Normalizar a coOccurence                
+                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo2"'
+                command += ' "img = cv2.imread('
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
+                command += '"' 
+                command += ' "coOccurence = getCoOccurrenceMatrixMod(img, 256)"'
+                command += ' "coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,img,256)"'
+                cmd3.append(timeit_msec(command))
+                print cmd3
+                ##Extrair as caracteristicas               
+                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo2"'
+                command += ' "import cv2"'
+                command += ' "img = cv2.imread('
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
+                command += '"' 
+                command += ' "GLCM_tipo2(img, 1.0)"'
+                cmd4.append(timeit_msec(command))
+                print cmd4
+                ##Classificacao               
+                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo2"'
+                command += ' "svm = cv2.SVM()"' 
+                command += ' "svm.load(' + "'DataBase/SVM_Vectors.txt')" +'"'
+                command += ' "svm.predict(np.float32([1,2,3,4,5,6,7,8,9,10]))"'
+                cmd5.append(timeit_msec(command))              
+        stri[1] += "{:05.02f}\t".format(np.average(cmd1))
+        stri[2] += "{:05.02f}\t".format(np.average(cmd2)-np.average(cmd1))
+        stri[3] += "{:05.02f}\t".format(np.average(cmd3)-np.average(cmd2))
+        stri[4] += "{:05.02f}\t".format(np.average(cmd4)-np.average(cmd3))
+        stri[5] += "{:05.02f}\t".format(np.average(cmd5))
+        for ki in stri:
+                print ki  
