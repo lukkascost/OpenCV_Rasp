@@ -5,8 +5,8 @@ qtdBaterias = 1
 lista = []
 passos = []
 for i in range(1,1000):
-        if (3456/i,4608/i) not in lista:
-                lista.append((3456/i,4608/i))
+        if (4000/i,3000/i) not in lista:
+                lista.append((4000/i,3000/i))
                 passos.append(i)
 passos.sort(reverse=False)
 local = "RaspBerry_001-922"
@@ -17,28 +17,28 @@ att58 = "[1, 2, 3, 4, 5, 7, 8, 9, 13, 15, 16, 17, 25, 29, 31, 32, 33, 49, 57, 61
 print "Medindo LBP  ..... "
 for j,i in enumerate(passos):
         print "\tPasso: ",i
-        percent = 3456.0/float(i)
-        percent /= 3456.0
+        percent = 4000.0/float(i)
+        percent /= 4000.0
         percent *= 100.0
         result += "--------- {:04.03f}% da imagem passo {:03d}\n".format(percent,i)
         command = " python -m timeit -n {:d} -r {:d}".format(bateria, qtdBaterias)
         command += ' "from Metodos import LBP_img, cv2"'
         command += ' "LBP_img(cv2.imread('
-        command += "'../C++/Imagens/{:03d}_passo.JPG',0),".format(i)+att58+")"
+        command += "'../C++/Imagens_Leandro/{:03d}_passo.JPG',0),".format(i)+att58+")"
         command += '"'
         result += command +"\n"
         importres.append(subprocess.check_output(command, shell=True)+" "+str(i))
         result += "\t\t"+importres[j]
         result += "\n"
         print importres[j]
-Salvar_texto(result,"../RESULTADOS/tempos_{}_LBP.txt".format(local))
+Salvar_texto(result,"../RESULTADOS/tempos_{}_LBP_Leandro.txt".format(local))
 texto = ""
 for i in importres:
         texto+= str(i.split(" ")[5])+";"
         texto+= str(i.split(" ")[6])+";"
         texto+= str(i.split(" ")[9])+";"
         texto+= "\n"
-Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_LBP.txt".format(local))
+Salvar_texto(texto,"../RESULTADOS/import_tempos_{}_LBP_Leandro.txt".format(local))
 result = ""
 importres = []
 ###

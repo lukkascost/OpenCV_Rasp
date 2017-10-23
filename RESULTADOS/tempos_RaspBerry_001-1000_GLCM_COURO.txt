@@ -1,0 +1,616 @@
+--------- 100.000% da imagem passo 001
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/001_passo.JPG',0),1.0)"
+		1 loops, best of 1: 531 sec per loop
+ 1
+--------- 50.000% da imagem passo 002
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/002_passo.JPG',0),1.0)"
+		1 loops, best of 1: 135 sec per loop
+ 2
+--------- 33.333% da imagem passo 003
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/003_passo.JPG',0),1.0)"
+		1 loops, best of 1: 66.6 sec per loop
+ 3
+--------- 25.000% da imagem passo 004
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/004_passo.JPG',0),1.0)"
+		1 loops, best of 1: 40.6 sec per loop
+ 4
+--------- 20.000% da imagem passo 005
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/005_passo.JPG',0),1.0)"
+		1 loops, best of 1: 30.2 sec per loop
+ 5
+--------- 16.667% da imagem passo 006
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/006_passo.JPG',0),1.0)"
+		1 loops, best of 1: 23.6 sec per loop
+ 6
+--------- 14.286% da imagem passo 007
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/007_passo.JPG',0),1.0)"
+		1 loops, best of 1: 19.5 sec per loop
+ 7
+--------- 12.500% da imagem passo 008
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/008_passo.JPG',0),1.0)"
+		1 loops, best of 1: 17.3 sec per loop
+ 8
+--------- 11.111% da imagem passo 009
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/009_passo.JPG',0),1.0)"
+		1 loops, best of 1: 15.5 sec per loop
+ 9
+--------- 10.000% da imagem passo 010
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/010_passo.JPG',0),1.0)"
+		1 loops, best of 1: 14.4 sec per loop
+ 10
+--------- 9.091% da imagem passo 011
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/011_passo.JPG',0),1.0)"
+		1 loops, best of 1: 13.5 sec per loop
+ 11
+--------- 8.333% da imagem passo 012
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/012_passo.JPG',0),1.0)"
+		1 loops, best of 1: 12.8 sec per loop
+ 12
+--------- 7.692% da imagem passo 013
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/013_passo.JPG',0),1.0)"
+		1 loops, best of 1: 12.3 sec per loop
+ 13
+--------- 7.143% da imagem passo 014
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/014_passo.JPG',0),1.0)"
+		1 loops, best of 1: 11.9 sec per loop
+ 14
+--------- 6.667% da imagem passo 015
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/015_passo.JPG',0),1.0)"
+		1 loops, best of 1: 11.6 sec per loop
+ 15
+--------- 6.250% da imagem passo 016
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/016_passo.JPG',0),1.0)"
+		1 loops, best of 1: 11.3 sec per loop
+ 16
+--------- 5.882% da imagem passo 017
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/017_passo.JPG',0),1.0)"
+		1 loops, best of 1: 11.2 sec per loop
+ 17
+--------- 5.556% da imagem passo 018
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/018_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.8 sec per loop
+ 18
+--------- 5.263% da imagem passo 019
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/019_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.8 sec per loop
+ 19
+--------- 5.000% da imagem passo 020
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/020_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.5 sec per loop
+ 20
+--------- 4.762% da imagem passo 021
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/021_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.5 sec per loop
+ 21
+--------- 4.545% da imagem passo 022
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/022_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.3 sec per loop
+ 22
+--------- 4.348% da imagem passo 023
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/023_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.3 sec per loop
+ 23
+--------- 4.167% da imagem passo 024
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/024_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.2 sec per loop
+ 24
+--------- 4.000% da imagem passo 025
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/025_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10.1 sec per loop
+ 25
+--------- 3.846% da imagem passo 026
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/026_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10 sec per loop
+ 26
+--------- 3.704% da imagem passo 027
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/027_passo.JPG',0),1.0)"
+		1 loops, best of 1: 10 sec per loop
+ 27
+--------- 3.571% da imagem passo 028
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/028_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.9 sec per loop
+ 28
+--------- 3.448% da imagem passo 029
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/029_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.93 sec per loop
+ 29
+--------- 3.333% da imagem passo 030
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/030_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.83 sec per loop
+ 30
+--------- 3.226% da imagem passo 031
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/031_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.83 sec per loop
+ 31
+--------- 3.125% da imagem passo 032
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/032_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.79 sec per loop
+ 32
+--------- 3.030% da imagem passo 033
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/033_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.66 sec per loop
+ 33
+--------- 2.941% da imagem passo 034
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/034_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.7 sec per loop
+ 34
+--------- 2.857% da imagem passo 035
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/035_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.76 sec per loop
+ 35
+--------- 2.778% da imagem passo 036
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/036_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.69 sec per loop
+ 36
+--------- 2.703% da imagem passo 037
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/037_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.63 sec per loop
+ 37
+--------- 2.632% da imagem passo 038
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/038_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.64 sec per loop
+ 38
+--------- 2.564% da imagem passo 039
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/039_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.59 sec per loop
+ 39
+--------- 2.500% da imagem passo 040
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/040_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.64 sec per loop
+ 40
+--------- 2.439% da imagem passo 041
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/041_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.6 sec per loop
+ 41
+--------- 2.381% da imagem passo 042
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/042_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.55 sec per loop
+ 42
+--------- 2.326% da imagem passo 043
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/043_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.53 sec per loop
+ 43
+--------- 2.273% da imagem passo 044
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/044_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.61 sec per loop
+ 44
+--------- 2.222% da imagem passo 045
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/045_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.56 sec per loop
+ 45
+--------- 2.174% da imagem passo 046
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/046_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.47 sec per loop
+ 46
+--------- 2.128% da imagem passo 047
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/047_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.57 sec per loop
+ 47
+--------- 2.083% da imagem passo 048
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/048_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.52 sec per loop
+ 48
+--------- 2.041% da imagem passo 049
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/049_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.42 sec per loop
+ 49
+--------- 2.000% da imagem passo 050
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/050_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.6 sec per loop
+ 50
+--------- 1.961% da imagem passo 051
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/051_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.4 sec per loop
+ 51
+--------- 1.923% da imagem passo 052
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/052_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.34 sec per loop
+ 52
+--------- 1.887% da imagem passo 053
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/053_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.47 sec per loop
+ 53
+--------- 1.852% da imagem passo 054
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/054_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.47 sec per loop
+ 54
+--------- 1.818% da imagem passo 055
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/055_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.46 sec per loop
+ 55
+--------- 1.786% da imagem passo 056
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/056_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.45 sec per loop
+ 56
+--------- 1.754% da imagem passo 057
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/057_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.39 sec per loop
+ 57
+--------- 1.724% da imagem passo 058
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/058_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.39 sec per loop
+ 58
+--------- 1.695% da imagem passo 059
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/059_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.4 sec per loop
+ 59
+--------- 1.667% da imagem passo 060
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/060_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.44 sec per loop
+ 60
+--------- 1.639% da imagem passo 061
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/061_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.49 sec per loop
+ 61
+--------- 1.613% da imagem passo 062
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/062_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.41 sec per loop
+ 62
+--------- 1.587% da imagem passo 063
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/063_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.38 sec per loop
+ 63
+--------- 1.562% da imagem passo 064
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/064_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.44 sec per loop
+ 64
+--------- 1.538% da imagem passo 065
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/065_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 65
+--------- 1.515% da imagem passo 066
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/066_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.38 sec per loop
+ 66
+--------- 1.493% da imagem passo 067
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/067_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.4 sec per loop
+ 67
+--------- 1.471% da imagem passo 068
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/068_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.39 sec per loop
+ 68
+--------- 1.449% da imagem passo 069
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/069_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.36 sec per loop
+ 69
+--------- 1.429% da imagem passo 070
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/070_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.41 sec per loop
+ 70
+--------- 1.408% da imagem passo 071
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/071_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.48 sec per loop
+ 71
+--------- 1.370% da imagem passo 073
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/073_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.45 sec per loop
+ 73
+--------- 1.351% da imagem passo 074
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/074_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.36 sec per loop
+ 74
+--------- 1.333% da imagem passo 075
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/075_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.46 sec per loop
+ 75
+--------- 1.316% da imagem passo 076
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/076_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.36 sec per loop
+ 76
+--------- 1.299% da imagem passo 077
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/077_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 77
+--------- 1.266% da imagem passo 079
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/079_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.39 sec per loop
+ 79
+--------- 1.250% da imagem passo 080
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/080_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.33 sec per loop
+ 80
+--------- 1.235% da imagem passo 081
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/081_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.42 sec per loop
+ 81
+--------- 1.205% da imagem passo 083
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/083_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.33 sec per loop
+ 83
+--------- 1.190% da imagem passo 084
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/084_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.36 sec per loop
+ 84
+--------- 1.176% da imagem passo 085
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/085_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 85
+--------- 1.163% da imagem passo 086
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/086_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 86
+--------- 1.149% da imagem passo 087
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/087_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.39 sec per loop
+ 87
+--------- 1.124% da imagem passo 089
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/089_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.27 sec per loop
+ 89
+--------- 1.099% da imagem passo 091
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/091_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.38 sec per loop
+ 91
+--------- 1.075% da imagem passo 093
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/093_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.33 sec per loop
+ 93
+--------- 1.064% da imagem passo 094
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/094_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.35 sec per loop
+ 94
+--------- 1.053% da imagem passo 095
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/095_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.23 sec per loop
+ 95
+--------- 1.031% da imagem passo 097
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/097_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.25 sec per loop
+ 97
+--------- 1.010% da imagem passo 099
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/099_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 99
+--------- 0.990% da imagem passo 101
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/101_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.37 sec per loop
+ 101
+--------- 0.980% da imagem passo 102
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/102_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 102
+--------- 0.971% da imagem passo 103
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/103_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.22 sec per loop
+ 103
+--------- 0.952% da imagem passo 105
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/105_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.29 sec per loop
+ 105
+--------- 0.926% da imagem passo 108
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/108_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.39 sec per loop
+ 108
+--------- 0.917% da imagem passo 109
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/109_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.21 sec per loop
+ 109
+--------- 0.909% da imagem passo 110
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/110_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.29 sec per loop
+ 110
+--------- 0.893% da imagem passo 112
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/112_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.4 sec per loop
+ 112
+--------- 0.885% da imagem passo 113
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/113_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.37 sec per loop
+ 113
+--------- 0.862% da imagem passo 116
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/116_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.27 sec per loop
+ 116
+--------- 0.840% da imagem passo 119
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/119_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.3 sec per loop
+ 119
+--------- 0.833% da imagem passo 120
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/120_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.25 sec per loop
+ 120
+--------- 0.820% da imagem passo 122
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/122_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 122
+--------- 0.806% da imagem passo 124
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/124_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.3 sec per loop
+ 124
+--------- 0.800% da imagem passo 125
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/125_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.23 sec per loop
+ 125
+--------- 0.775% da imagem passo 129
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/129_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.3 sec per loop
+ 129
+--------- 0.758% da imagem passo 132
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/132_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.25 sec per loop
+ 132
+--------- 0.752% da imagem passo 133
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/133_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.37 sec per loop
+ 133
+--------- 0.735% da imagem passo 136
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/136_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.23 sec per loop
+ 136
+--------- 0.719% da imagem passo 139
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/139_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.29 sec per loop
+ 139
+--------- 0.714% da imagem passo 140
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/140_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.3 sec per loop
+ 140
+--------- 0.690% da imagem passo 145
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/145_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.25 sec per loop
+ 145
+--------- 0.671% da imagem passo 149
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/149_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 149
+--------- 0.662% da imagem passo 151
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/151_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 151
+--------- 0.649% da imagem passo 154
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/154_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.37 sec per loop
+ 154
+--------- 0.633% da imagem passo 158
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/158_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.35 sec per loop
+ 158
+--------- 0.629% da imagem passo 159
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/159_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.25 sec per loop
+ 159
+--------- 0.606% da imagem passo 165
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/165_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.33 sec per loop
+ 165
+--------- 0.585% da imagem passo 171
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/171_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.3 sec per loop
+ 171
+--------- 0.578% da imagem passo 173
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/173_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.3 sec per loop
+ 173
+--------- 0.562% da imagem passo 178
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/178_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.22 sec per loop
+ 178
+--------- 0.549% da imagem passo 182
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/182_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.26 sec per loop
+ 182
+--------- 0.541% da imagem passo 185
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/185_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.24 sec per loop
+ 185
+--------- 0.518% da imagem passo 193
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/193_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.29 sec per loop
+ 193
+--------- 0.498% da imagem passo 201
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/201_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 201
+--------- 0.490% da imagem passo 204
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/204_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 204
+--------- 0.476% da imagem passo 210
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/210_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.24 sec per loop
+ 210
+--------- 0.461% da imagem passo 217
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/217_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.29 sec per loop
+ 217
+--------- 0.455% da imagem passo 220
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/220_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 220
+--------- 0.433% da imagem passo 231
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/231_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.31 sec per loop
+ 231
+--------- 0.412% da imagem passo 243
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/243_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.24 sec per loop
+ 243
+--------- 0.405% da imagem passo 247
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/247_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 247
+--------- 0.389% da imagem passo 257
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/257_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.24 sec per loop
+ 257
+--------- 0.376% da imagem passo 266
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/266_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.39 sec per loop
+ 266
+--------- 0.368% da imagem passo 272
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/272_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.26 sec per loop
+ 272
+--------- 0.346% da imagem passo 289
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/289_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 289
+--------- 0.325% da imagem passo 308
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/308_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.32 sec per loop
+ 308
+--------- 0.317% da imagem passo 315
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/315_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 315
+--------- 0.303% da imagem passo 330
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/330_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.29 sec per loop
+ 330
+--------- 0.289% da imagem passo 346
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/346_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 346
+--------- 0.282% da imagem passo 355
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/355_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.26 sec per loop
+ 355
+--------- 0.260% da imagem passo 385
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/385_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.29 sec per loop
+ 385
+--------- 0.239% da imagem passo 419
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/419_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.35 sec per loop
+ 419
+--------- 0.231% da imagem passo 433
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/433_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.37 sec per loop
+ 433
+--------- 0.217% da imagem passo 461
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/461_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.27 sec per loop
+ 461
+--------- 0.202% da imagem passo 494
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/494_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.21 sec per loop
+ 494
+--------- 0.195% da imagem passo 513
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/513_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.27 sec per loop
+ 513
+--------- 0.173% da imagem passo 577
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/577_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.23 sec per loop
+ 577
+--------- 0.152% da imagem passo 659
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/659_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.27 sec per loop
+ 659
+--------- 0.145% da imagem passo 692
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/692_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.21 sec per loop
+ 692
+--------- 0.130% da imagem passo 769
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/769_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.23 sec per loop
+ 769
+--------- 0.116% da imagem passo 865
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/865_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.28 sec per loop
+ 865
+--------- 0.108% da imagem passo 922
+ python -m timeit -n 1 -r 1 "from Metodos import GLCM_tipo2, cv2" "GLCM_tipo2(cv2.imread('../C++/Imagens/922_passo.JPG',0),1.0)"
+		1 loops, best of 1: 9.18 sec per loop
+ 922
