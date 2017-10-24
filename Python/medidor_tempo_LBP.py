@@ -144,18 +144,18 @@ stri.append("")
 stri.append("")
 
         
-for i in [1, 10, 50, 73, 99]:
+for i in [98, 50, 38, 10, 1]:
         cmd1 = []
         cmd2 = []
         cmd3 = [] 
         cmd4 = []
         cmd5 = []
-        for j in range(5):
+        for j in range(1):
                 ##Carregar Imagem:
-                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command = " python -m timeit -n {:d} -r {:d} -t".format(5, 5)
                 command += ' "from Metodos import np,cv2,LBP_img"'
                 command += ' "cv2.imread('
-                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
+                command += "'../C++/Imagens_Leandro/{:03d}_passo.JPG',0)".format(i)
                 command += '"'        
                 cmd1.append(timeit_msec(command))
                 print cmd1
@@ -163,13 +163,13 @@ for i in [1, 10, 50, 73, 99]:
                 command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
                 command += ' "from Metodos import np,cv2,LBP_img"'
                 command += ' "img = cv2.imread('
-                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
+                command += "'../C++/Imagens_Leandro/{:03d}_passo.JPG',0)".format(i)
                 command += '"' 
                 command += ' "LBP_img(img,'+att58+')"'
                 cmd2.append(timeit_msec(command))
                 print cmd2
                 ##Classificacao               
-                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command = " python -m timeit -n {:d} -r {:d} -t".format(5, 5)
                 command += ' "from Metodos import np,cv2,LBP_img"'
                 command += ' "svm = cv2.SVM()"' 
                 command += ' "svm.load(' + "'DataBase/SVM_Vectors.txt')" +'"'

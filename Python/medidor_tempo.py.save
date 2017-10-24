@@ -3,6 +3,7 @@ import subprocess
 import time
 def timeit_msec(command):
         resultado =  subprocess.check_output(command, shell=True).split(" ")
+        print resultado
         if resultado[6] == "usec":
                 return float(resultado[5])/1000
         if resultado[6] == "sec":
@@ -131,45 +132,45 @@ stri.append("")
                 #print ki
 
         
-for i in [1]:
+for i in [73]:
         cmd1 = []
         cmd2 = []
         cmd3 = [] 
         cmd4 = []
         cmd5 = []
-        for j in range(1):
+        for j in range(5):
                 ##Carregar Imagem:
                 command = " python -m timeit -n {:d} -r {:d} -t".format(5, 5)
-                command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo1"'
+                command += ' "from Metodos import *"'
                 command += ' "cv2.imread('
-                command += "'../C++/Imagens_Leandro/{:03d}_passo.JPG',0)".format(i)
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
                 command += '"'        
                 cmd1.append(timeit_msec(command))
                 print cmd1
                 ##Extrair a coOccurence                
-                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command = " python -m timeit -n {:d} -r {:d} -t".format(5, 5)
                 command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo1"'
                 command += ' "img = cv2.imread('
-                command += "'../C++/Imagens_Leandro/{:03d}_passo.JPG',0)".format(i)
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
                 command += '"' 
                 command += ' "coOccurence = getCoOccurrenceMatrixMod(img, 256)"'
                 cmd2.append(timeit_msec(command))
                 print cmd2
                 ##Normalizar a coOccurence                
-                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command = " python -m timeit -n {:d} -r {:d} -t".format(5, 5)
                 command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo1"'
                 command += ' "img = cv2.imread('
-                command += "'../C++/Imagens_Leandro/{:03d}_passo.JPG',0)".format(i)
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
                 command += '"' 
                 command += ' "coOccurence = getCoOccurrenceMatrixMod(img, 256)"'
                 command += ' "coOccurenceNormalized = normalizeCoOccurrenceMatrix(coOccurence,img,256)"'
                 cmd3.append(timeit_msec(command))
                 print cmd3
                 ##Extrair as caracteristicas               
-                command = " python -m timeit -n {:d} -r {:d} -t".format(1, 1)
+                command = " python -m timeit -n {:d} -r {:d} -t".format(5, 5)
                 command += ' "from Metodos import np,cv2,getCoOccurrenceMatrixMod,normalizeCoOccurrenceMatrix,GLCM_tipo1"'
                 command += ' "img = cv2.imread('
-                command += "'../C++/Imagens_Leandro/{:03d}_passo.JPG',0)".format(i)
+                command += "'../C++/Imagens/{:03d}_passo.JPG',0)".format(i)
                 command += '"' 
                 command += ' "GLCM_tipo1(img, 1.0)"'
                 cmd4.append(timeit_msec(command))
