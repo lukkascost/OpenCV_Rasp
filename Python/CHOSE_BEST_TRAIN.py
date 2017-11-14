@@ -11,7 +11,7 @@ nVetores = 10000;
 
 
 
-
+###############################################################################################################################
 #basemask = basemask-1
 #best = 0
 
@@ -23,7 +23,7 @@ nVetores = 10000;
         #oDataSet.normalizeDataSet()
         #for j in range(10000):
                 #oData  = Data(7, 13)
-                #oData.randomTrainingTest()
+                #oData.radndomTrainingTestPerClass()
                 #svm = cv2.SVM()
                 #oData.params = dict(kernel_type = cv2.SVM_RBF,svm_type = cv2.SVM_C_SVC,gamma=2.0,nu = 0.0,p = 0.0, coef0 = 0)
                 #svm.train(np.float32( oDataSet.atributes[oData.Training_indexes]) , np.float32( oDataSet.labels[oData.Training_indexes]) , params = oData.params)
@@ -45,7 +45,17 @@ nVetores = 10000;
 
 
 
-##########################
+################################################################################################################################
 oExp = oExp.load("OBJETOS/EXPERIMENTO_01_MELHOR_TREINAMENTO_10000_COURO.txt")
 print oExp
-print oExp.experimentResults[0].dataSet[5136].getAccuracePerClass()
+oData = oExp.experimentResults[0].dataSet[9170]
+oDataSet = oExp.experimentResults[0]
+
+print "Acuracias por classe: \n", oData.getAccuracePerClass()
+print "Acuracia Geral: \n",oData.getAccuraceAllClass()
+print "Matriz Confusao: \n",oData.confusion_matrix
+
+svm = cv2.SVM()
+svm.train(np.float32( oDataSet.atributes[oData.Training_indexes]) , np.float32( oDataSet.labels[oData.Training_indexes]) , params = oData.params)
+print "Numero de vetores suporte: ",svm.get_support_vector_count()
+svm.save("SVM_LUCAS10_70.txt")
