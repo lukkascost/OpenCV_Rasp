@@ -48,4 +48,4 @@ nVetores = 10000;
 ##########################
 oExp = oExp.load("OBJETOS/EXPERIMENTO_01_MELHOR_TREINAMENTO_10000_COURO.txt")
 print oExp
-print oExp.experimentResults[0].dataSet[5697].getAccuracePerClass()
+print oExp.experimentResults[0].dataSet[5136].getAccuracePerClass()
