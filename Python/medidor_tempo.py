@@ -28,6 +28,7 @@ def getFeatures2(coOccurenceNormalized, gray):
         glcm_atributes[17] = np.amax(coOccurenceNormalized)
         glcm_atributes[16] /= 2
         glcm_atributes[22] /= 2
+        glcm_atributes[9] *= -1        
         return glcm_atributes[1:] 
 
 
