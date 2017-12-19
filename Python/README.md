@@ -1,18 +1,7 @@
 # PYTHON FILES
-## File: ```SVM_GERA_OBJETOS_2C1T.py```
+## File: ```CHOOSE_BEST_TRAIN.py```
 TEXT
 
-## File: ```SVM_GERA_OBJETOS_2C2T.py```
-TEXT
-
-## File: ```SVM_GERA_OBJETOS_7C1T.py```
-TEXT
-
-## File: ```SVM_GERA_OBJETOS_7C2T.py```
-TEXT
-
-## File: ```SVM_GERA_OBJETOS_7C3T.py```
-TEXT
 
 # DIRECTORIES
 TEXT
