@@ -71,7 +71,7 @@ def measureTime():
         return times
 
 total_times = []
-for i in range(100):
+for i in range(1000):
         total_times.append(measureTime())
 total_times = np.array(total_times)
 
