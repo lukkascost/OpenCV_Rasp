@@ -67,7 +67,7 @@ def measureTime():
         end = tm.time()
         times[3] = end-start
         ########################################################################
-        
+        print times
         return times
 
 total_times = []
