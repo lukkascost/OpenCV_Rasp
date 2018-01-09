@@ -4,14 +4,13 @@ import cv2
 from MachineLearn.Classes.Extractors.GLCM import GLCM
 
 
-def measureTime():
+def measureTime(img):
         
         """
         Input data
         """        
         ########################################################################
         bits = 6
-        img = cv2.imread("../C++/Imagens/073_passo.JPG",0)
         img = img/2**(8-bits)
         oGlcm = GLCM(img, bits, number_of_Attributes=10)
         basemask = np.array([1,2,5,9,15,16,17,21,22,23])
@@ -67,12 +66,17 @@ def measureTime():
         end = tm.time()
         times[3] = end-start
         ########################################################################
-        print times
         return times
 
-total_times = []
-for i in range(1000):
-        total_times.append(measureTime())
-total_times = np.array(total_times)
-
-print np.sum(np.min(total_times,axis=0))*1000
+imgs_times = np.zeros((350,5))
+for j in range(7):
+        for k in range(50):
+                total_times = []
+                for i in range(100):
+                        total_times.append(measureTime(cv2.imread("img_resize_73/c{}_{}.JPG".format(j+1,k+1),0)))
+                total_times = np.array(total_times)
+                imgs_times[k+(j*50),:4] = np.min(total_times,axis=0)
+                imgs_times[k+(j*50),-1] = np.sum(np.min(total_times,axis=0))*1000 
+                #print np.sum(np.min(total_times,axis=0))*1000          
+                print imgs_times[k+(j*50)],k+(j*50)
+                np.savetxt("../RESULTADOS/TIMES_FOR_EACH_IMG.txt", imgs_times, delimiter=',')
