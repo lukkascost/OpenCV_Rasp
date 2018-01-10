@@ -82,10 +82,11 @@ path = "../RESULTADOS/TIMES_FOR_EACH_IMG.txt"
                 #np.savetxt("../RESULTADOS/TIMES_FOR_EACH_IMG.txt", imgs_times, delimiter=',')
                 
 array = np.loadtxt(path,delimiter=",")
-print "Menor tempo total: ", np.min(array,axis=0)[-1]
-print "Maior tempo total: ", np.max(array,axis=0)[-1]
-array = array[:,-1]
+print "Menor tempo total: ", np.min(array,axis=0)[-2]
+print "Maior tempo total: ", np.max(array,axis=0)[-2]
+array = array[:,-2]
 array =  array.reshape((7,50,1))
+array = array*1000000
 
 
 for i,a in enumerate(array):
