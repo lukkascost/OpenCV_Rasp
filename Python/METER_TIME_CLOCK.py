@@ -84,5 +84,9 @@ path = "../RESULTADOS/TIMES_FOR_EACH_IMG.txt"
 array = np.loadtxt(path,delimiter=",")
 print "Menor tempo total: ", np.min(array,axis=0)[-1]
 print "Maior tempo total: ", np.max(array,axis=0)[-1]
+array = array[:,-1]
+array =  array.reshape((7,50,1))
 
 
+for i,a in enumerate(array):
+        print "Class: ",i+1,"\tAVG: ",np.average(a) ," \tSTD: " , np.std(a)
