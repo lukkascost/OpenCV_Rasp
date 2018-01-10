@@ -67,16 +67,22 @@ def measureTime(img):
         times[3] = end-start
         ########################################################################
         return times
+path = "../RESULTADOS/TIMES_FOR_EACH_IMG.txt"
+#imgs_times = np.zeros((350,5))
+#for j in range(7):
+        #for k in range(50):
+                #total_times = []
+                #for i in range(100):
+                        #total_times.append(measureTime(cv2.imread("img_resize_73/c{}_{}.JPG".format(j+1,k+1),0)))
+                #total_times = np.array(total_times)
+                #imgs_times[k+(j*50),:4] = np.min(total_times,axis=0)
+                #imgs_times[k+(j*50),-1] = np.sum(np.min(total_times,axis=0))*1000 
+                ##print np.sum(np.min(total_times,axis=0))*1000          
+                #print imgs_times[k+(j*50)],k+(j*50)
+                #np.savetxt("../RESULTADOS/TIMES_FOR_EACH_IMG.txt", imgs_times, delimiter=',')
+                
+array = np.loadtxt(path,delimiter=",")
+print "Menor tempo total: ", np.min(array,axis=0)[-1]
+print "Maior tempo total: ", np.max(array,axis=0)[-1]
 
-imgs_times = np.zeros((350,5))
-for j in range(7):
-        for k in range(50):
-                total_times = []
-                for i in range(100):
-                        total_times.append(measureTime(cv2.imread("img_resize_73/c{}_{}.JPG".format(j+1,k+1),0)))
-                total_times = np.array(total_times)
-                imgs_times[k+(j*50),:4] = np.min(total_times,axis=0)
-                imgs_times[k+(j*50),-1] = np.sum(np.min(total_times,axis=0))*1000 
-                #print np.sum(np.min(total_times,axis=0))*1000          
-                print imgs_times[k+(j*50)],k+(j*50)
-                np.savetxt("../RESULTADOS/TIMES_FOR_EACH_IMG.txt", imgs_times, delimiter=',')
+
