@@ -99,6 +99,8 @@ def measureTime(img,bits=6):
 
 
 ### T2_M100,50,10,1_CM5b
+        
+        
 strResult = ""
 for k in range(4):
         for i,j in enumerate([100,50,10,1]):
@@ -115,3 +117,4 @@ print strResult
 
 
 print "-"*30
+
