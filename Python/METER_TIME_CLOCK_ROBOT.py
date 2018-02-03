@@ -68,26 +68,26 @@ def measureTime(img,bits=6):
         ########################################################################
         return times
 
-## medicoes para cm=5b e variando o M.
-imgs_times = np.zeros((4,5))
-for k,m in enumerate([101,50,10,1]):
-        total_times = []
-        for i in range(100):
-                total_times.append(measureTime(cv2.imread(path1+"{:03d}_passo.JPG".format(m),0),bits=5))        
-        total_times = np.array(total_times)
-        imgs_times[k,:4] = np.min(total_times,axis=0)
-        imgs_times[k,-1] = np.sum(np.min(total_times,axis=0))   
-        print imgs_times   
-        np.savetxt("../RESULTADOS/T2_M100,50,10,1_CM5b.txt", imgs_times, delimiter=',')
-        np.savetxt("../RESULTADOS/T2_M100,50,10,1_CM5b_Line_{:03d}.txt".format(k), total_times, delimiter=',')
+### medicoes para cm=5b e variando o M.
+#imgs_times = np.zeros((4,5))
+#for k,m in enumerate([101,50,10,1]):
+#        total_times = []
+#        for i in range(100):
+#                total_times.append(measureTime(cv2.imread(path1+"{:03d}_passo.JPG".format(m),0),bits=5))        
+#        total_times = np.array(total_times)
+#        imgs_times[k,:4] = np.min(total_times,axis=0)
+#        imgs_times[k,-1] = np.sum(np.min(total_times,axis=0))   
+#        print imgs_times   
+#        np.savetxt("../RESULTADOS/T2_M100,50,10,1_CM5b.txt", imgs_times, delimiter=',')
+#        np.savetxt("../RESULTADOS/T2_M100,50,10,1_CM5b_Line_{:03d}.txt".format(k), total_times, delimiter=',')
         
         
 
-## medicoes para m=1 e variando a matriz de correlaçao.
+## medicoes para m=1 e variando a matriz de correlacao.
 imgs_times = np.zeros((8,5))
 for b in range(1,9):
         total_times = []
-        for i in range(100):
+        for i in range(10):
                 total_times.append(measureTime(cv2.imread(path1+"001_passo.JPG",0),bits=b))
                 print total_times[-1],i
         total_times = np.array(total_times)
