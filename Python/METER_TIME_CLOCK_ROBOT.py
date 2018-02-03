@@ -83,17 +83,35 @@ def measureTime(img,bits=6):
         
         
 
-## medicoes para m=1 e variando a matriz de correlacao.
-imgs_times = np.zeros((8,5))
-for b in range(1,9):
-        total_times = []
-        for i in range(100):
-                total_times.append(measureTime(cv2.imread(path1+"050_passo.JPG",0),bits=b))
-                print total_times[-1],i
-        total_times = np.array(total_times)
-        imgs_times[b-1,:4] = np.min(total_times,axis=0)
-        imgs_times[b-1,-1] = np.sum(np.min(total_times,axis=0))
-        print imgs_times  
-        np.savetxt("../RESULTADOS/T1_M50_CM1-8b.txt", imgs_times, delimiter=',')
-        np.savetxt("../RESULTADOS/T1_M50_CM1-8b_Line_{:03d}.txt".format(b-1), total_times, delimiter=',')
-        
+### medicoes para m=1 e variando a matriz de correlacao.
+#imgs_times = np.zeros((8,5))
+#for b in range(1,9):
+        #total_times = []
+        #for i in range(100):
+                #total_times.append(measureTime(cv2.imread(path1+"050_passo.JPG",0),bits=b))
+                #print total_times[-1],i
+        #total_times = np.array(total_times)
+        #imgs_times[b-1,:4] = np.min(total_times,axis=0)
+        #imgs_times[b-1,-1] = np.sum(np.min(total_times,axis=0))
+        #print imgs_times  
+        #np.savetxt("../RESULTADOS/T1_M50_CM1-8b.txt", imgs_times, delimiter=',')
+        #np.savetxt("../RESULTADOS/T1_M50_CM1-8b_Line_{:03d}.txt".format(b-1), total_times, delimiter=',')
+
+
+### T2_M100,50,10,1_CM5b
+strResult = ""
+for k in range(4):
+        for i,j in enumerate([100,50,10,1]):
+                totals = np.loadtxt("../RESULTADOS/T2_M100,50,10,1_CM5b_Line_{:03d}.txt".format(i),delimiter=",")*1000
+                strResult+= str(round(np.average(totals,axis=0)[k],4)) + " +- "   
+                strResult+= str(round(np.std(totals,axis=0)[k],4)) + "\t" 
+        strResult += "\n"
+
+for i,j in enumerate([100,50,10,1]):
+        totals = np.loadtxt("../RESULTADOS/T2_M100,50,10,1_CM5b_Line_{:03d}.txt".format(i),delimiter=",")*1000
+        strResult += str(np.round(np.sum(np.average(totals,axis=0)),4)) + " +- "   
+        strResult += str(np.round(np.sum(np.std(totals,axis=0)),4)) + "\t" 
+print strResult
+
+
+print "-"*30
