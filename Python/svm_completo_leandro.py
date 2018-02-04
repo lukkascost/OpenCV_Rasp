@@ -35,4 +35,10 @@ CMs = np.array(CMs)
 np.savetxt("../../1.txt",np.average(CMs , axis=0), delimiter="\t", fmt="%.4f")
 np.savetxt("../../2.txt",np.std(CMs , axis=0), delimiter="\t", fmt="%.4f")
 
-print oExp
+lista = []
+for i in oExp.experimentResults[0].dataSet:
+        lista.append(i.getMetrics())
+lista = np.array(lista)
+np.savetxt("../../media_escores.txt",np.average(lista,axis=0).T ,delimiter="\t", fmt="%.4f", header="acc\tse\tes\tf1" )
+np.savetxt("../../desvio_escores.txt",np.std(lista,axis=0).T ,delimiter="\t", fmt="%.6f", header="acc\tse\tes\tf1")
+
