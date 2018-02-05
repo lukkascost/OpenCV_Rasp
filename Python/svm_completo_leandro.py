@@ -6,27 +6,30 @@ import cv2
 
 oExp = Experiment()
 basemask = np.array([1,2,5,9,15,16,17,21,22,23,25])
+svmVectors = []
 
 ###############################################################################################################################
-#basemask = basemask-1
-#for i in range(1):
-        #oDataSet = DataSet()
-        #base = np.loadtxt("GLCM_RESIZE/DECIMACAO_BASE_LEANDRO/FEATURES_M50_CM5b.txt",delimiter=",")
-        #for k in base:
-                #oDataSet.addSampleOfAtt(k[basemask])
-        #oDataSet.normalizeDataSet()  
-        #for j in range(50):
-                #oData  = Data(15, 10, samples=40)
-                #oData.randomTrainingTestPerClass()
-                #svm = cv2.SVM()
-                #oData.params = dict(kernel_type = cv2.SVM_RBF,svm_type = cv2.SVM_C_SVC,gamma=2.0,nu = 0.0,p = 0.0, coef0 = 0)
-                #svm.train(np.float32( oDataSet.atributes[oData.Training_indexes]) , np.float32( oDataSet.labels[oData.Training_indexes]) , params = oData.params)
-                #results = svm.predict_all(np.float32(oDataSet.atributes[oData.Testing_indexes])) 
-                #oData.setResultsFromClassfier(results, oDataSet.labels[oData.Testing_indexes])
-                #oDataSet.append(oData)
-        #oExp.addDataSet(oDataSet, description="  50 execucoes M=50 base ROBOT ")
-#oExp.save("OBJETOS/EXPERIMENTO_02_ACC_M50_50_ROBOT.txt")
-#print oExp
+basemask = basemask-1
+for i in range(1):
+        oDataSet = DataSet()
+        base = np.loadtxt("GLCM_RESIZE/DECIMACAO_BASE_LEANDRO/FEATURES_M50_CM5b.txt",delimiter=",")
+        for k in base:
+                oDataSet.addSampleOfAtt(k[basemask])
+        oDataSet.normalizeDataSet()  
+        for j in range(50):
+                oData  = Data(15, 10, samples=40)
+                oData.randomTrainingTestPerClass()
+                svm = cv2.SVM()
+                oData.params = dict(kernel_type = cv2.SVM_RBF,svm_type = cv2.SVM_C_SVC,gamma=2.0,nu = 0.0,p = 0.0, coef0 = 0)
+                svm.train(np.float32( oDataSet.atributes[oData.Training_indexes]) , np.float32( oDataSet.labels[oData.Training_indexes]) , params = oData.params)
+                svmVectors.append(svm.get_support_vector_count())
+                results = svm.predict_all(np.float32(oDataSet.atributes[oData.Testing_indexes])) 
+                oData.setResultsFromClassfier(results, oDataSet.labels[oData.Testing_indexes])
+                oDataSet.append(oData)
+        oExp.addDataSet(oDataSet, description="  50 execucoes M=50 base ROBOT ")
+oExp.save("OBJETOS/EXPERIMENTO_02_ACC_M50_50_ROBOT.txt")
+print oExp
+print min(svmVectors), max(svmVectors), np.average(svmVectors) , np.std(svmVectors)
 
 ###############################################################################################################################
 oExp =  oExp.load("OBJETOS/EXPERIMENTO_02_ACC_M50_50_ROBOT.txt")
